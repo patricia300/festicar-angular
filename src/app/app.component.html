@@ -1,0 +1,45 @@
+
+<router-outlet>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
+        <div class="container-fluid">
+
+            <a class="navbar-brand fs-1 fw-semi-bold" href="#home">
+                <img class="d-inline-block align-top" height="15%" width="15%" src="../assets/icon/festicar-icon.png" alt="Logo Festicar">
+                FESTICAR
+            </a>
+
+            <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+                <div class="offcanvas-header">
+                    <a id="offcanvasDarkNavbarLabel" class="offcanvas-title h5 text-white text-decoration-none" href="#home">
+                        <img class="d-inline-block align-top" height="30px" width="30px" src="../assets/icon/icon-festicar.png" alt="Logo Festicar">
+                        Festicar
+                    </a>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+                        <li class="nav-item mx-2">
+                            <a class="nav-link active" href="#festival">Festival</a>
+                        </li>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link active" href="#offres-covoiturage">Offres covoiturage</a>
+                        </li>
+                    </ul>
+
+                    <div class="d-flex justify-content-start align-item-center gap-4">
+                        <button class="btn btn-outline-light rounded-pill" href="">Login</button>
+                        <button class="btn btn-light rounded-pill" href="">Sign Up</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+
+</router-outlet>
