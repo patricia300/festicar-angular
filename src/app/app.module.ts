@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { httpInterceptorProviders } from './http-interceptors';
+import { HttpClientModule } from '@angular/common/http';
 import { HomePageComponent } from './home-page/home-page.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FestivalFinderComponent } from './festival-finder/festival-finder.component';
@@ -23,8 +25,11 @@ import { PanierPageComponent } from './panier-page/panier-page.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    httpInterceptorProviders
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
