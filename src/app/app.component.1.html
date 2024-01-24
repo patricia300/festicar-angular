@@ -1,0 +1,290 @@
+<router-outlet>
+</router-outlet>
+
+<!-- NavBar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-transparent" aria-label="Navigation bar">
+  <div class="container-fluid">
+
+    <!-- Logo -->
+    <a class="d-flex navbar-brand fs-1 fw-semi-bold text-light" href="#home">
+      <img class="" height="15%" width="15%" src="../assets/icon/icon-festicar.png" alt="Logo Festicar">
+      FESTICAR
+    </a>
+
+    <div class="d-flex justify-content-center align-item-center gap-4">
+      <!-- Cart Menu Button -->
+      <div class="dropdown">
+        <a class="dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="true">
+          <i class="bi bi-bag-fill icon-regular"></i>
+        </a>
+
+        <ul class="dropdown-menu dropdown-menu-end">
+          <li><a class="dropdown-item" href="#">3 articles pour €100</a></li>
+        </ul>
+      </div>
+
+      <!-- User Menu Button -->
+      <div class="dropdown">
+        <a class="dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="true">
+          <i class="bi bi-person-circle icon-regular"></i>
+        </a>
+
+        <ul class="dropdown-menu dropdown-menu-end">
+          <li><a class="dropdown-item" href="#">Se connecter</a></li>
+          <li><a class="dropdown-item" href="#">S'enregistrer</a></li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+<!-- Search section -->
+<section class="container">
+
+  <!-- Title and text -->
+  <div class="row mt-5">
+    <div class="col-12">
+      <h1 class="display-1 text-center text-white fw-medium">Chercher un festival</h1>
+
+      <p class="text-center fs-5 text-white">Cherchez un festival par son nom, par sa date de début et de fin, par sa localisation et par son style.
+        <br>Cliquez sur un festival et sélectionner les offres de covoiturage désirées qui passe par celui-ci.
+        <br>Indiquer le nombre de passe que vous voulez acheter pour ce festival et ajouter les à votre panier.
+      </p>
+    </div>
+  </div>
+
+  <!-- Search Bar -->
+  <div class="row mt-5">
+    <div class="col-3"></div>
+    <div class="col-6 search-container justify-content-center align-item-center">
+      <div class="search-bar d-flex bg-light rounded-pill">
+        <input type="text" class="form-control search-input bg-transparent border-0 shadow-none" placeholder="Search..." aria-label="Search">
+        <button class="btn btn-outline-secondary search-btn bg-transparent border-0" type="button">
+          <i class="bi bi-search icon-small-grey" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+    <div class="col-3"></div>
+  </div>
+
+  <!-- Filtering and Sorting -->
+  <div class="row mt-5">
+    <!-- Filtr by Starting date -->
+    <div class="col-2 date-input-container justify-content-center align-item-center">
+      <label class="text-light ms-3"><i class="bi bi-calendar-check-fill icon-small"></i> Date de début :</label>
+      <div class="date-bar bg-light rounded-pill">
+        <input type="date" class="form-control search-input bg-transparent border-0 shadow-none">
+      </div>
+    </div>
+
+    <!-- Filter by Ending date -->
+    <div class="col-2 date-input-container justify-content-center align-item-center">
+      <label class="text-light ms-3"><i class="bi bi-calendar-x-fill icon-small"></i> Date de fin :</label>
+      <div class="date-bar bg-light rounded-pill">
+        <input type="date" class="form-control search-input bg-transparent border-0 shadow-none">
+      </div>
+    </div>
+
+    <!-- Filter by Location -->
+    <div class="col-3">
+      <label class="text-light ms-3"><i class="bi bi-geo-alt-fill icon-small"></i> Localisation :</label>
+      <select class="form-control rounded-pill shadow-none" id="exampleSelect">
+        <option value="option1">Option 1</option>
+        <option value="option2">Option 2</option>
+      </select>
+    </div>
+
+    <!-- Filter by Style -->
+    <div class="col-3">
+      <label class="text-light ms-3"><i class="bi bi-balloon-fill icon-small"></i> Style :</label>
+      <select class="form-control rounded-pill shadow-none" id="exampleSelect">
+        <optgroup label="Group 1">
+          <option value="option1">Option 1</option>
+          <option value="option2">Option 2</option>
+        </optgroup>
+        <optgroup label="Group 2">
+          <option value="option3">Option 3</option>
+          <option value="option4">Option 4</option>
+        </optgroup>
+        <optgroup label="Group 3">
+          <option value="option5">Option 5</option>
+          <option value="option6">Option 6</option>
+        </optgroup>
+      </select>
+    </div>
+
+    <!-- Sort by Price -->
+    <div class="col-2">
+      <label class="text-light ms-3"><i class="bi bi-currency-exchange icon-small"></i> Trier prix :</label>
+      <select class="form-control rounded-pill shadow-none" id="exampleSelect">
+        <option value="option1">Prix croissant</option>
+        <option value="option2">Prix décroissant</option>
+      </select>
+    </div>
+  </div>
+
+</section>
+
+<!-- Festivals section -->
+<section class="container">
+
+  <!-- Pagination top -->
+  <div class="row">
+    <div class="col-5">
+    </div>
+    <div class="col-2">
+      <nav class="mt-5" aria-label="Page navigation example">
+        <div class="bg-light border-0 rounded-pill">
+          <ul class="pagination justify-content-center">
+            <li class="page-item">
+              <a class="page-link text-dark bg-transparent border-0 shadow-none" href="#" aria-label="Previous">
+                <i class="bi bi-caret-left-fill"></i>
+              </a>
+            </li>
+            <li class="page-item"><a class="page-link text-secondary bg-transparent border-0" href="#">1</a></li>
+            <li class="page-item"><a class="page-link text-secondary bg-transparent border-0" href="#">2</a></li>
+            <li class="page-item"><a class="page-link text-secondary bg-transparent border-0" href="#">3</a></li>
+            <li class="page-item">
+              <a class="page-link text-dark bg-transparent border-0 shadow-none text-decoration-none" href="#" aria-label="Next">
+                <i class="bi bi-caret-right-fill"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <div class="col-5">
+    </div>
+  </div>
+
+
+  <!-- List of Festival -->
+  <div class="container mt-2">
+    <!-- Bootstrap Card -->
+    <div class="card rounded-5 bg-transparent border-0">
+      <div class="row g-0 bg-light rounded-5">
+        <!-- Left: Image Thumbnails -->
+        <div class="col-3">
+          <img src="../assets/img/img-festival.jpg" class="card-img rounded-start-5 rounded-end-0" alt="Thumbnail Image">
+        </div>
+        <!-- Middle: Title, Description, Properties -->
+        <div class="col-7">
+          <div class="card-body">
+            <h5 class="card-title">Nom festival</h5>
+            <span class="badge me-2 color-regular-jade">Style 1</span>
+            <span class="badge color-regular-green">Style 2</span>
+            <p class="card-text mt-3">
+              Le lorem ipsum est, en imprimerie, une suite de mots sans signification
+              utilisée à titre provisoire pour calibrer une mise en page, le texte définitif
+              venant remplacer le faux-texte dès qu'il est prêt ou que la mise en page est achevée.
+            </p>
+
+            <!-- Properties with Icons -->
+            <ul class="list-unstyled list-inline">
+              <li class="list-inline-item me-4"><i class="bi bi-calendar-check-fill icon-small-grey"></i> January 1, 2023</li>
+              <li class="list-inline-item me-4"><i class="bi bi-calendar-x-fill icon-small-grey"></i> January 1, 2023</li>
+              <li class="list-inline-item me-4"><i class="bi bi-geo-alt-fill icon-small-grey"></i> City, Country</li>
+              <li class="list-inline-item me-4"><i class="bi bi-currency-exchange icon-small-grey"></i> €99.99</li>
+            </ul>
+          </div>
+        </div>
+        <!-- Right: Remaining Seats and Add to Cart Button -->
+        <div class="col-2 d-flex justify-content-center align-item-center">
+          <div class="card-body d-flex flex-column justify-content-center">
+            <label class="badge color-regular-green">10 seats remaining</label>
+            <button class="btn btn-success mt-3 disabled">
+              Ajouter 2 pass au panier
+            </button>
+            <button class="btn btn-success mt-3" data-bs-toggle="collapse" data-bs-target="#collapseDetails1" aria-expanded="false" aria-controls="collapseDetails1">
+              Choisir des covoitureurs
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- Collapsible Content -->
+      <div class="collapse" id="collapseDetails1">
+        <!-- Additional details or content when the card is clicked -->
+
+        <div class="container mt-2">
+          <table class="table" id="example">
+            <thead>
+              <tr>
+                <th>Selectionner</th>
+                <th>Nom covoitureur</th>
+                <th>Départ</th>
+                <th>Véhicule</th>
+                <th>Pass / Places</th>
+                <th>Prix trajet
+                  <span>
+                    <button class="btn bg-transparent border-0 shadow-none">
+                      <i class="bi bi-arrow-down-up icon-small-dark"></i>
+                    </button>
+                  </span>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><input type="checkbox"></td>
+                <td>Item 1</td>
+                <td>
+                  <select class="form-control">
+                    <option value="option1">Option 1</option>
+                    <option value="option2">Option 2</option>
+                    <!-- Add more options as needed -->
+                  </select>
+                </td>
+                <td>Car</td>
+                <td>
+                  <div class="input-group">
+                    <input type="number" class="form-control" value="1" min="1" max="5">
+                    <div class="input-group-append">
+                      <span class="input-group-text">/ 5</span>
+                    </div>
+                  </div>
+                </td>
+                <td>€100</td>
+              </tr>
+              <!-- Add more rows as needed -->
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <!-- Pagination bottom -->
+  <div class="row">
+    <div class="col-5">
+    </div>
+    <div class="col-2">
+      <nav class="mt-4" aria-label="Page navigation example">
+        <div class="bg-light border-0 rounded-pill">
+          <ul class="pagination justify-content-center">
+            <li class="page-item">
+              <a class="page-link text-dark bg-transparent border-0 shadow-none" href="#" aria-label="Previous">
+                <i class="bi bi-caret-left-fill"></i>
+              </a>
+            </li>
+            <li class="page-item"><a class="page-link text-secondary bg-transparent border-0" href="#">1</a></li>
+            <li class="page-item"><a class="page-link text-secondary bg-transparent border-0" href="#">2</a></li>
+            <li class="page-item"><a class="page-link text-secondary bg-transparent border-0" href="#">3</a></li>
+            <li class="page-item">
+              <a class="page-link text-dark bg-transparent border-0 shadow-none text-decoration-none" href="#" aria-label="Next">
+                <i class="bi bi-caret-right-fill"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <div class="col-5">
+    </div>
+  </div>
+
+</section>
