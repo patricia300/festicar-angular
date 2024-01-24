@@ -1,9 +1,69 @@
 /* You can add global styles to this file, and also import other style files */
+
+$primary-dark: #222;
+$secondary-grey: #888;
+$light-white: #fff;
+$regular-jade: #008080;
+$lighter-jade: #00e6e6;
+$regular-green: #00b368;
+$lighter-green: #00ff55;
+
+$icon-large: 40px;
+$icon-regular: 30px;
+$icon-small: 20px;
+
 body {
 //   background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
 //     url("./assets/img/annecy-france-europe-fireworks-event-festival.jpg");
-  background-image: linear-gradient(rgba(0, 80, 64, 0.8), rgba(0, 0, 0, 0.8));
+  background-image: linear-gradient($regular-jade, $regular-green);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
+.color-regular-jade {
+    background-color: $regular-jade;
+}
+
+.color-lighter-jade {
+    background-color: $lighter-jade;
+}
+
+.color-regular-green {
+    background-color: $regular-green;
+}
+
+.color-lighter-green {
+    background-color: $lighter-green;
+}
+
+.icon-regular {
+    color: $light-white;
+    font-size: $icon-regular;
+}
+
+.icon-regular-grey {
+    color: $secondary-grey;
+    font-size: $icon-regular;
+}
+
+.icon-regular-dark {
+    color: $primary-dark;
+    font-size: $icon-regular;
+}
+
+.icon-small {
+    color: $light-white;
+    font-size: $icon-small;
+}
+
+.icon-small-grey {
+    color: $secondary-grey;
+    font-size: $icon-small;
+}
+
+.icon-small-dark {
+    color: $primary-dark;
+    font-size: $icon-small;
 }
