@@ -1,9 +1,16 @@
+import { OffreCovoiturage } from "./offre-covoiturage"
+
 export interface Festival {
   id: number,
   nom: string,
+  dateDebut: Date,
   dateFin: Date,
   tarifPass: number,
-  dateDebut: Date,
   nombrePass: number,
-  siteWeb: String
+  siteWeb: string,
+  nomCommune: string,
+  nomSousDomaine: string,
+  nomDomainePrincipal: string,
+  nomOrganisateur: string,
+  offreCovoiturages: OffreCovoiturage[]
 }
