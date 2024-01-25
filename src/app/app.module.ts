@@ -13,6 +13,7 @@ import { FestivalComponent } from './components/festival/festival.component';
 import { PanierPageComponent } from './components/panier-page/panier-page.component';
 import { PanierModifierComponent } from './components/panier-modifier/panier-modifier.component';
 import { ListArticlesComponent } from './components/list-articles/list-articles.component';
+import { ArticleComponent } from './components/article/article.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { ListArticlesComponent } from './components/list-articles/list-articles.
     PanierPageComponent,
     PanierModifierComponent,
     ListArticlesComponent,
+    ArticleComponent,
   ],
   imports: [
     BrowserModule,
