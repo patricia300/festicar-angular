@@ -9,7 +9,6 @@ import { Pageable } from './interfaces/pageable';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit{
-  title = 'my-app';
   festivals: Festival[] = [];
 
   constructor(private festivalsService: FestivalsService) {}
