@@ -8,7 +8,6 @@ import { Pageable } from '../interfaces/pageable';
   providedIn: 'root'
 })
 export class FestivalsService {
-
   constructor(private http: HttpClient) { }
 
   getAll(numeroPage = 0, taillePage = 10, tri = 'asc'): Observable<Pageable<Festival>> {

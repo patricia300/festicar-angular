@@ -9,9 +9,9 @@
       <!-- Middle: Title, Description, Properties -->
       <div class="col-7">
         <div class="card-body">
-          <h5 class="card-title">Nom festival</h5>
-          <span class="badge me-2 color-regular-jade">Style 1</span>
-          <span class="badge color-regular-green">Style 2</span>
+          <h5 class="card-title">{{festival.nom}}</h5>
+          <span class="badge me-2 color-regular-jade">{{festival.nomDomainePrincipal}}</span>
+          <span class="badge color-regular-green">{{festival.nomSousDomaine}}</span>
           <p class="card-text mt-3">
             Le lorem ipsum est, en imprimerie, une suite de mots sans signification
             utilisée à titre provisoire pour calibrer une mise en page, le texte définitif
@@ -20,10 +20,10 @@
 
           <!-- Properties with Icons -->
           <ul class="list-unstyled list-inline">
-            <li class="list-inline-item me-4"><i class="bi bi-calendar-check-fill icon-small-grey"></i> January 1, 2023</li>
-            <li class="list-inline-item me-4"><i class="bi bi-calendar-x-fill icon-small-grey"></i> January 1, 2023</li>
-            <li class="list-inline-item me-4"><i class="bi bi-geo-alt-fill icon-small-grey"></i> City, Country</li>
-            <li class="list-inline-item me-4"><i class="bi bi-currency-exchange icon-small-grey"></i> €99.99</li>
+            <li class="list-inline-item me-4"><i class="bi bi-calendar-check-fill icon-small-grey"></i> {{festival.dateDebut | date}}</li>
+            <li class="list-inline-item me-4"><i class="bi bi-calendar-x-fill icon-small-grey"></i> {{festival.dateFin | date}}</li>
+            <li class="list-inline-item me-4"><i class="bi bi-geo-alt-fill icon-small-grey"></i> {{festival.nomCommune}}</li>
+            <li class="list-inline-item me-4"><i class="bi bi-currency-exchange icon-small-grey"></i> {{festival.tarifPass | currency}}</li>
           </ul>
         </div>
       </div>
@@ -63,17 +63,18 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
+            <tr *ngFor="let offreCovoiturage of festival.offreCovoiturages">
               <td><input type="checkbox"></td>
-              <td>Item 1</td>
+              <td>{{offreCovoiturage.covoitureur.prenom}} {{offreCovoiturage.covoitureur.nom}}</td>
               <td>
                 <select class="form-control">
-                  <option value="option1">Option 1</option>
-                  <option value="option2">Option 2</option>
+                  <option *ngFor="let pointPassage of offreCovoiturage.pointPassageCovoiturages" value="option1">
+                    {{ pointPassage.lieuCovoiturage.commune.nom }} {{ pointPassage.lieuCovoiturage.commune.codePostal }}
+                  </option>
                   <!-- Add more options as needed -->
                 </select>
               </td>
-              <td>Car</td>
+              <td>{{offreCovoiturage.modeleVoiture}}</td>
               <td>
                 <div class="input-group">
                   <input type="number" class="form-control" value="1" min="1" max="5">

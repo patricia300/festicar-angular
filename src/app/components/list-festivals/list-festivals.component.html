@@ -1,3 +1,31 @@
+<!-- Pagination top -->
+<div class="row">
+  <div class="col-5">
+  </div>
+  <div class="col-2">
+    <nav class="mt-5" aria-label="Page navigation example">
+      <div class="bg-light border-0 rounded-pill">
+        <ul class="pagination justify-content-center">
+          <li class="page-item">
+            <a class="page-link text-dark bg-transparent border-0 shadow-none" href="#" aria-label="Previous">
+              <i class="bi bi-caret-left-fill"></i>
+            </a>
+          </li>
+          <li class="page-item"><a class="page-link text-secondary bg-transparent border-0" href="#">1</a></li>
+          <li class="page-item"><a class="page-link text-secondary bg-transparent border-0" href="#">2</a></li>
+          <li class="page-item"><a class="page-link text-secondary bg-transparent border-0" href="#">3</a></li>
+          <li class="page-item">
+            <a class="page-link text-dark bg-transparent border-0 shadow-none text-decoration-none" href="#" aria-label="Next">
+              <i class="bi bi-caret-right-fill"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <div class="col-5">
+  </div>
+</div>
+
 <!-- List of Festival -->
-<app-festival></app-festival>
-<app-festival></app-festival>
+<app-festival *ngFor="let festival of festivals" [festival]="festival"></app-festival>

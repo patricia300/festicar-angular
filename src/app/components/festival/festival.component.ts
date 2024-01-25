@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Festival } from 'src/app/interfaces/festival';
 
 @Component({
   selector: 'app-festival',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./festival.component.scss']
 })
 export class FestivalComponent {
-
+  @Input({required: true}) festival!: Festival;
 }
