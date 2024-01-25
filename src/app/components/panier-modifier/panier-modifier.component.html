@@ -1,26 +1,32 @@
-<p>panier-modifier works!</p>
-
 <!-- Modifiers -->
 <div class="container">
-  <div class="row mt-4">
-    <div class="col-2">
+  <div class="row mt-5">
+
+    <!-- Select All -->
+    <div class="col-2 d-flex justify-content-start">
       <input type="checkbox" class="btn-check" id="btn-check-outlined" autocomplete="off">
       <label class="btn btn-outline-light rounded-pill" for="btn-check-outlined">
         <i class="bi bi-check2-square"></i> Tout sélectionner
       </label><br>
     </div>
 
-    <div class="col-2">
+    <!-- Delete All -->
+    <div class="col-2 d-flex justify-content-start">
       <button type="button" class="btn btn-danger rounded-pill">
         <i class="bi bi-trash-fill"></i>
-        Tout supprimer
+        Supprimer sélection
       </button>
     </div>
 
     <div class="col">
     </div>
 
-    <div class="col-2">
+    <!-- Pay -->
+    <div class="col-2 d-flex justify-content-end">
+      <a class="btn btn-warning rounded-pill" href="#" role="button">
+        <i class="bi bi-currency-exchange"></i>
+        Payer
+      </a>
     </div>
 
   </div>
