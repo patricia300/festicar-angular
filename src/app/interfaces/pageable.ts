@@ -16,5 +16,6 @@ export interface Pageable<T> {
     offset: 0,
     paged: true,
     unpaged: false
-}
+  },
+  totalPages: number
 }
