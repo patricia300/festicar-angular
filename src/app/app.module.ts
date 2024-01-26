@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -14,6 +14,11 @@ import { PanierPageComponent } from './components/panier-page/panier-page.compon
 import { PanierModifierComponent } from './components/panier-modifier/panier-modifier.component';
 import { ListArticlesComponent } from './components/list-articles/list-articles.component';
 import { ArticleComponent } from './components/article/article.component';
+import { PaginationComponent } from './components/pagination/pagination.component';
+import { registerLocaleData } from '@angular/common';
+
+import * as fr from '@angular/common/locales/fr';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -27,15 +32,22 @@ import { ArticleComponent } from './components/article/article.component';
     PanierModifierComponent,
     ListArticlesComponent,
     ArticleComponent,
+    PaginationComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [
-    httpInterceptorProviders
+    httpInterceptorProviders,
+    { provide: LOCALE_ID, useValue: 'fr-FR'}
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor() {
+    registerLocaleData(fr.default);
+  }
+ }

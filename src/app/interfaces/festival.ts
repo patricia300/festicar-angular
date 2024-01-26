@@ -1,5 +1,4 @@
 import { OffreCovoiturage } from "./offre-covoiturage"
-import { Pageable } from "./pageable"
 
 export interface Festival {
   id: number,
