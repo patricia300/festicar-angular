@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FestivalsService } from './services/festivals.service';
+import { Festival } from './interfaces/festival';
+import { Pageable } from './interfaces/pageable';
 
 @Component({
   selector: 'app-root',
@@ -7,13 +9,14 @@ import { FestivalsService } from './services/festivals.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit{
-  title = 'my-app';
+  festivals: Festival[] = [];
 
   constructor(private festivalsService: FestivalsService) {}
 
   ngOnInit(): void {
-    this.festivalsService.getAll().subscribe(festivals => {
-      console.log("festivals : ", festivals);
+    this.festivalsService.getAll().subscribe((pageFestival: Pageable<Festival>) => {
+      this.festivals = pageFestival.content;
+      console.log("festivals : ", this.festivals);
     });
   }
 }
