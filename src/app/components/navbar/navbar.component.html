@@ -1,37 +1,31 @@
-<!-- NavBar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-transparent" aria-label="Navigation bar">
-  <div class="container-fluid">
+<nav class="navbar">
+  <div class="navbar-top">
+    <a class="navbar-brand">Festicar</a>
 
-    <!-- Logo -->
-    <a class="d-flex navbar-brand fs-1 fw-semi-bold text-light" href="" routerLink="/home">
-      <img class="" height="15%" width="15%" src="../assets/icon/icon-festicar.png" alt="Logo Festicar">
-      FESTICAR
-    </a>
+    <div class="navbar-end">
+      <p-menu #panierMenu [model]="panierItems" [popup]="true"></p-menu>
+      <i class="pi pi-shopping-cart mx-5" (click)="panierMenu.toggle($event)"></i>
 
-    <div class="d-flex justify-content-center align-item-center gap-4">
-      <!-- Cart Menu Button -->
-      <div class="dropdown">
-        <a class="dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="true">
-          <i class="bi bi-bag-fill icon-regular"></i>
-        </a>
-
-        <ul class="dropdown-menu dropdown-menu-end">
-          <li><a class="dropdown-item" href="" routerLink="/panier">3 articles pour €100</a></li>
-        </ul>
-      </div>
-
-      <!-- User Menu Button -->
-      <div class="dropdown">
-        <a class="dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="true">
-          <i class="bi bi-person-circle icon-regular"></i>
-        </a>
-
-        <ul class="dropdown-menu dropdown-menu-end">
-          <li><a class="dropdown-item" href="#">Se connecter</a></li>
-          <li><a class="dropdown-item" href="#">S'enregistrer</a></li>
-        </ul>
-      </div>
+      <p-menu #profilMenu [model]="profilItems" [popup]="true"></p-menu>
+      <i class="pi pi-user" (click)="profilMenu.toggle($event)" ></i>
     </div>
+  </div>
 
+  <div class="search-bar">
+    <div class="location-input">
+      <i class="pi pi-map-marker"></i>
+      <p-autoComplete
+        placeholder="Saisissez votre commune de départ ..."
+        [(ngModel)]="selectedCommune"
+        [suggestions]="communeSuggestions"
+        [minLength]="1"
+        (completeMethod)="filterCommune($event)"
+        field="nom"
+      >
+        <ng-template let-commune pTemplate="item">
+                <div>{{ commune.nom }} {{ commune.codePostal }}</div>
+        </ng-template>
+      </p-autoComplete>
+    </div>
   </div>
 </nav>
