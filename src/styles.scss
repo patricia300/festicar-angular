@@ -1,4 +1,83 @@
 /* You can add global styles to this file, and also import other style files */
+@import "primeicons/primeicons.css";
+
+/* You can add global styles to this file, and also import other style files */
+@import "primeicons/primeicons.css";
+
+body {
+  margin: 0;
+}
+
+/***********************
+* Commune search bar *
+************************/
+
+.location-input {
+  position: relative;
+
+  .p-inputtext {
+    width: 25rem;
+    padding-left: 3rem;
+  }
+
+  .pi.pi-map-marker {
+    z-index: 999;
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+/***********************
+* Covoiturage Card *
+************************/
+
+.ng-star-inserted {
+  max-width: 40rem;
+}
+
+.covoiturage-card {
+  .p-card {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+
+  .p-card-content {
+    padding: 0;
+  }
+
+  .p-timeline-event {
+    font-weight: bold;
+    font-size: .8;
+  }
+
+  .p-timeline-event-opposite {
+    //display: none;q
+    max-width: 5rem;
+    padding-left: 0;
+    text-align: center;
+  }
+
+  button.p-button {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  input.p-inputnumber-input  {
+    width: 3rem;
+    height: 2rem;
+
+    &.p-inputtext {
+      text-align: center;
+    }
+  }
+
+  .p-avatar.p-avatar-image {
+    border: #0375DA solid .2rem;
+  }
+}
+
+
 
 $primary-dark: #222;
 $secondary-grey: #888;
@@ -15,11 +94,11 @@ $icon-small: 20px;
 body {
 //   background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
 //     url("./assets/img/annecy-france-europe-fireworks-event-festival.jpg");
-  background-image: linear-gradient($regular-jade, $regular-green);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  min-height: 100vh;
+  // background-image: linear-gradient($regular-jade, $regular-green);
+  // background-position: center;
+  // background-size: cover;
+  // background-repeat: no-repeat;
+  // min-height: 100vh;
 }
 
 .color-regular-jade {
