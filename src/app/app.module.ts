@@ -25,6 +25,14 @@ import { AutoCompleteModule } from 'primeng/autocomplete';
 import { MenuModule } from 'primeng/menu';
 import { SortItemComponent } from './components/sort-item/sort-item.component';
 import { CovoiturageCardComponent } from './components/covoiturage-card/covoiturage-card.component';
+import { FestivalPageComponent } from './pages/festival-page/festival-page.component';
+import { FestivalCardComponent } from './components/festival-card/festival-card.component';
+import { InputNumberModule } from 'primeng/inputnumber';
+import { AvatarModule } from 'primeng/avatar';
+import { AvatarGroupModule } from 'primeng/avatargroup';
+import { CardModule } from 'primeng/card';
+import { TimelineModule } from 'primeng/timeline';
+import { ButtonModule } from 'primeng/button';
 
 @NgModule({
   declarations: [
@@ -42,6 +50,8 @@ import { CovoiturageCardComponent } from './components/covoiturage-card/covoitur
     CovoituragePageComponent,
     SortItemComponent,
     CovoiturageCardComponent,
+    FestivalPageComponent,
+    FestivalCardComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,7 +60,13 @@ import { CovoiturageCardComponent } from './components/covoiturage-card/covoitur
     FormsModule,
     BrowserAnimationsModule,
     AutoCompleteModule,
-    MenuModule
+    MenuModule,
+    InputNumberModule,
+    AvatarGroupModule,
+    AvatarModule,
+    CardModule,
+    TimelineModule,
+    ButtonModule
   ],
   providers: [
     httpInterceptorProviders,

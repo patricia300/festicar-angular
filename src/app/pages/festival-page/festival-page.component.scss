@@ -1,0 +1,19 @@
+.festival-page {
+  position: relative;
+  height: 200vh;
+
+  .sort-section {
+    position: sticky;
+    top: 8rem;
+    left: 0;
+    width: 30%;
+    min-width: 16rem;
+    max-width: 25rem;
+  }
+
+  .main-section {
+    padding-left: 25rem;
+    height: 100%;
+    width: 100%;
+  }
+}
