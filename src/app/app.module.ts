@@ -23,6 +23,12 @@ import { environment } from '../environments/environment';
 
 import * as fr from '@angular/common/locales/fr';
 import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CovoituragePageComponent } from './pages/covoiturage-page/covoiturage-page.component';
+import { AutoCompleteModule } from 'primeng/autocomplete';
+import { MenuModule } from 'primeng/menu';
+import { SortItemComponent } from './components/sort-item/sort-item.component';
+import { CovoiturageCardComponent } from './components/covoiturage-card/covoiturage-card.component';
 
 @NgModule({
   declarations: [
@@ -38,14 +44,23 @@ import { FormsModule } from '@angular/forms';
     ArticleComponent,
     PaginationComponent,
     AuthenticationComponent,
+    CovoituragePageComponent,
+    SortItemComponent,
+    CovoiturageCardComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+<<<<<<< HEAD
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule
+=======
+    BrowserAnimationsModule,
+    AutoCompleteModule,
+    MenuModule
+>>>>>>> origin/feature/primeng
   ],
   providers: [
     httpInterceptorProviders,

@@ -1,0 +1,11 @@
+<div class="covoiturage-page">
+  <div class="sort-section">
+    <app-sort-item iconClass="pi pi-calendar-times" label="Départ le plus tôt" />
+    <app-sort-item iconClass="pi pi-money-bill" label="Prix le plus bas" />
+    <app-sort-item iconClass="pi pi-angle-double-right" label="Le plus proche" />
+  </div>
+
+  <div class="main-section">
+      <app-covoiturage-card *ngFor="let offre of offreCovoiturages" [offreCovoiturage]="offre"/>
+  </div>
+</div>
