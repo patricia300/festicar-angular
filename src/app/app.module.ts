@@ -14,8 +14,12 @@ import { PanierPageComponent } from './components/panier-page/panier-page.compon
 import { PanierModifierComponent } from './components/panier-modifier/panier-modifier.component';
 import { ListArticlesComponent } from './components/list-articles/list-articles.component';
 import { ArticleComponent } from './components/article/article.component';
+import { AuthenticationComponent } from './components/authentication/authentication.component';
 import { PaginationComponent } from './components/pagination/pagination.component';
 import { registerLocaleData } from '@angular/common';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { environment } from '../environments/environment';
 
 import * as fr from '@angular/common/locales/fr';
 import { FormsModule } from '@angular/forms';
@@ -33,12 +37,15 @@ import { FormsModule } from '@angular/forms';
     ListArticlesComponent,
     ArticleComponent,
     PaginationComponent,
+    AuthenticationComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule
   ],
   providers: [
     httpInterceptorProviders,
