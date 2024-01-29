@@ -19,6 +19,27 @@ import { registerLocaleData } from '@angular/common';
 
 import * as fr from '@angular/common/locales/fr';
 import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CovoituragePageComponent } from './pages/covoiturage-page/covoiturage-page.component';
+import { AutoCompleteModule } from 'primeng/autocomplete';
+import { MenuModule } from 'primeng/menu';
+import { SortItemComponent } from './components/sort-item/sort-item.component';
+import { CovoiturageCardComponent } from './components/covoiturage-card/covoiturage-card.component';
+import { FestivalPageComponent } from './pages/festival-page/festival-page.component';
+import { FestivalCardComponent } from './components/festival-card/festival-card.component';
+import { InputNumberModule } from 'primeng/inputnumber';
+import { AvatarModule } from 'primeng/avatar';
+import { AvatarGroupModule } from 'primeng/avatargroup';
+import { CardModule } from 'primeng/card';
+import { TimelineModule } from 'primeng/timeline';
+import { ButtonModule } from 'primeng/button';
+import { AccordionModule } from 'primeng/accordion';
+import { DividerModule } from 'primeng/divider';
+import { CommuneInputComponent } from './components/commune-input/commune-input.component';
+import { CalendarModule } from 'primeng/calendar';
+import { InputTextModule } from 'primeng/inputtext';
+import { DropdownModule } from 'primeng/dropdown';
+
 
 @NgModule({
   declarations: [
@@ -33,12 +54,32 @@ import { FormsModule } from '@angular/forms';
     ListArticlesComponent,
     ArticleComponent,
     PaginationComponent,
+    CovoituragePageComponent,
+    SortItemComponent,
+    CovoiturageCardComponent,
+    FestivalPageComponent,
+    FestivalCardComponent,
+    CommuneInputComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    AutoCompleteModule,
+    MenuModule,
+    InputNumberModule,
+    AvatarGroupModule,
+    AvatarModule,
+    CardModule,
+    TimelineModule,
+    ButtonModule,
+    AccordionModule,
+    DividerModule,
+    CalendarModule,
+    InputTextModule,
+    DropdownModule
   ],
   providers: [
     httpInterceptorProviders,

@@ -1,0 +1,76 @@
+.festival-card {
+  position: relative;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+
+    .header-left {
+      .festival-nom {
+        font-weight: bold;
+      }
+
+      .festival-domaine {
+        display: flex;
+        margin-top: .5rem;
+
+        .domaine-principal, .sous-domaine {
+          padding: .2rem .5rem;
+          margin-right: .3rem;
+          border-radius: 4px;
+          font-size: small;
+          color: white;
+        }
+
+        .domaine-principal {
+          background-color: rgb(39, 162, 39);
+        }
+
+        .sous-domaine {
+          background-color: rgb(0, 195, 139);
+        }
+      }
+    }
+
+    .header-right {
+      .place-restante {
+        background-color: rgb(146, 195, 48);
+        padding: .2rem .5rem;
+        border-radius: 4px;
+        font-size: small;
+        color: white;
+      }
+    }
+  }
+
+  .festival-tarif {
+    width: 100%;
+    text-align: right;
+    margin-bottom: 1rem;
+  }
+
+  .footer {
+    display: flex;
+    justify-content: space-between;
+
+    .footer-left {
+      .festival-date {
+        display: flex;
+        gap: .8rem;
+      }
+
+      .footer-item {
+        display: flex;
+        align-items: center;
+
+        .pi {
+          margin-right: .3rem;
+        }
+
+        .item-value {
+          font-size: .85rem;
+        }
+      }
+    }
+  }
+}
