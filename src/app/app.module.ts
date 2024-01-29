@@ -33,6 +33,13 @@ import { AvatarGroupModule } from 'primeng/avatargroup';
 import { CardModule } from 'primeng/card';
 import { TimelineModule } from 'primeng/timeline';
 import { ButtonModule } from 'primeng/button';
+import { AccordionModule } from 'primeng/accordion';
+import { DividerModule } from 'primeng/divider';
+import { CommuneInputComponent } from './components/commune-input/commune-input.component';
+import { CalendarModule } from 'primeng/calendar';
+import { InputTextModule } from 'primeng/inputtext';
+import { DropdownModule } from 'primeng/dropdown';
+
 
 @NgModule({
   declarations: [
@@ -52,6 +59,7 @@ import { ButtonModule } from 'primeng/button';
     CovoiturageCardComponent,
     FestivalPageComponent,
     FestivalCardComponent,
+    CommuneInputComponent,
   ],
   imports: [
     BrowserModule,
@@ -66,7 +74,12 @@ import { ButtonModule } from 'primeng/button';
     AvatarModule,
     CardModule,
     TimelineModule,
-    ButtonModule
+    ButtonModule,
+    AccordionModule,
+    DividerModule,
+    CalendarModule,
+    InputTextModule,
+    DropdownModule
   ],
   providers: [
     httpInterceptorProviders,

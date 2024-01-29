@@ -1,8 +1,35 @@
 <div class="festival-page">
   <div class="sort-section">
-    <app-sort-item iconClass="pi pi-calendar-times" label="Départ le plus tôt" />
-    <app-sort-item iconClass="pi pi-money-bill" label="Prix le plus bas" />
-    <app-sort-item iconClass="pi pi-angle-double-right" label="Le plus proche" />
+    <div class="sticky-section">
+      <div class="section-filtrer">
+        <p-divider align="left" type="solid">
+          <div class="titre">Filtrer</div>
+        </p-divider>
+        <div class="filter-input">
+          <app-commune-input></app-commune-input>
+        </div>
+        <div class="filter-input">
+          <input type="date" placeholder="Date début" class="p-inputtext-sm" pInputText />
+        </div>
+        <div class="filter-input">
+          <p-dropdown
+            [options]="[]"
+            class="p-inputtext-sm"
+            placeholder="Domaine du festival"
+            [editable]="true"
+            optionLabel="name"/>
+        </div>
+      </div>
+
+      <div class="section-trier">
+        <p-divider align="left" type="solid">
+          <div class="titre">Trier</div>
+        </p-divider>
+        <app-sort-item iconClass="pi pi-calendar-times" label="Début le plus proche" />
+        <app-sort-item iconClass="pi pi-money-bill" label="Prix croissant" />
+        <app-sort-item iconClass="pi pi-angle-double-right" label="Le plus proche" />
+      </div>
+    </div>
   </div>
 
   <div class="main-section">
