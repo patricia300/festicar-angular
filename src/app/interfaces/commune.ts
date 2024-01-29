@@ -8,3 +8,9 @@ export interface Commune {
   longitude: number,
   departement: Departement
 }
+
+export interface CommuneSearchItem {
+  codeINSEE: string,
+  codePostal: string,
+  nom: string
+}
