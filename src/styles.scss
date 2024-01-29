@@ -8,6 +8,20 @@ body {
   margin: 0;
 }
 
+.sort-section {
+  .p-calendar {
+    width: 100%;
+  }
+
+  .p-inputtext, .p-dropdown {
+    width: 100%;
+  }
+
+  .p-datepicker {
+    // width: 100%;
+  }
+}
+
 /***********************
 * Commune search bar *
 ************************/
@@ -15,8 +29,12 @@ body {
 .location-input {
   position: relative;
 
+  .p-autocomplete {
+    width: 100%;
+  }
+
   .p-inputtext {
-    width: 25rem;
+    width: 100%;
     padding-left: 3rem;
   }
 

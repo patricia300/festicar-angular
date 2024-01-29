@@ -1,0 +1,16 @@
+<div class="location-input">
+  <i class="pi pi-map-marker"></i>
+  <p-autoComplete
+    class="p-inputtext-sm"
+    [placeholder]="placeholder"
+    [(ngModel)]="selectedCommune"
+    [suggestions]="communeSuggestions"
+    [minLength]="1"
+    (completeMethod)="filterCommune($event)"
+    field="nom"
+  >
+    <ng-template let-commune pTemplate="item">
+            <div>{{ commune.nom }} {{ commune.codePostal }}</div>
+    </ng-template>
+  </p-autoComplete>
+</div>
