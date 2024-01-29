@@ -11,3 +11,7 @@ export interface OffreCovoiturage {
   covoitureur: Covoitureur,
   pointPassageCovoiturages: PointPassageCovoiturages[]
 }
+
+export interface OffreCovoiturageCardData extends OffreCovoiturage {
+  pointPassagePlusProche?: PointPassageCovoiturages;
+}
