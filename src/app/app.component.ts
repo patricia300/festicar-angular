@@ -33,38 +33,38 @@ export class AppComponent implements OnInit {
       console.log("festivals : ", this.festivals);
     });
 
-    this.festivalsService.getAllFestivalsByCommune().subscribe((pageFestival: Pageable<Festival>) => {
-      this.festivalsByCommune = pageFestival.content;
-      console.log("festivalsByCommune : ", this.festivalsByCommune);
-    });
+    // this.festivalsService.getAllFestivalsByCommune().subscribe((pageFestival: Pageable<Festival>) => {
+    //   this.festivalsByCommune = pageFestival.content;
+    //   console.log("festivalsByCommune : ", this.festivalsByCommune);
+    // });
 
-    this.festivalsService.getAllFestivalsByDate().subscribe((pageFestival: Pageable<Festival>) => {
-      this.festivalsByDate = pageFestival.content;
-      console.log("festivalsByDate : ", this.festivalsByDate);
-    });
+    // this.festivalsService.getAllFestivalsByDate().subscribe((pageFestival: Pageable<Festival>) => {
+    //   this.festivalsByDate = pageFestival.content;
+    //   console.log("festivalsByDate : ", this.festivalsByDate);
+    // });
 
-    this.festivalsService.getAllFestivalByFiltre().subscribe((pageFestival: Pageable<Festival>) => {
-      this.festivalsByFilter = pageFestival.content;
-      console.log("festivalsByFilter : ", this.festivalsByFilter);
-    });
-
-
-
-    this.panierService.getAll().subscribe((pagePanier: Panier[]) => {
-      this.paniers = pagePanier;
-      console.log("paniers : ", this.paniers);
-    });
-
-    this.panierService.getCurrentPanier().subscribe((pagePanier: Panier) => {
-      this.currentPanier = pagePanier;
-      console.log("currentPanier : ", this.paniers);
-    });
+    // this.festivalsService.getAllFestivalByFiltre().subscribe((pageFestival: Pageable<Festival>) => {
+    //   this.festivalsByFilter = pageFestival.content;
+    //   console.log("festivalsByFilter : ", this.festivalsByFilter);
+    // });
 
 
 
-    this.domainService.getAll().subscribe((pageDomaine: DomainePrincipal[]) => {
-      this.domainePrincipals = pageDomaine;
-      console.log("domainePrincipals : ", this.domainePrincipals);
-    });
+    // this.panierService.getAll().subscribe((pagePanier: Panier[]) => {
+    //   this.paniers = pagePanier;
+    //   console.log("paniers : ", this.paniers);
+    // });
+
+    // this.panierService.getCurrentPanier().subscribe((pagePanier: Panier) => {
+    //   this.currentPanier = pagePanier;
+    //   console.log("currentPanier : ", this.paniers);
+    // });
+
+
+
+    // this.domainService.getAll().subscribe((pageDomaine: DomainePrincipal[]) => {
+    //   this.domainePrincipals = pageDomaine;
+    //   console.log("domainePrincipals : ", this.domainePrincipals);
+    // });
   }
 }

@@ -6,6 +6,17 @@
   </div>
 
   <div class="main-section">
-      <app-covoiturage-card *ngFor="let offre of offreCovoiturages" [offreCovoiturage]="offre"/>
+      <app-covoiturage-card
+        *ngFor="let offre of this.offreCovoiturageService.offreCovoiturages"
+        [offreCovoiturage]="offre"
+        [festival]="this.offreCovoiturageService.currentFestival"
+      />
+
+      <div class="flex justify-content-center mb-5" *ngIf="offreCovoiturageService.offreCovoituragesIsLoading">
+        <div class="loader text-center">
+          <p-progressSpinner styleClass="w-4rem h-4rem"/>
+          <div>Chargement ...</div>
+        </div>
+      </div>
   </div>
 </div>

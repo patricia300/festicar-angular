@@ -39,7 +39,10 @@ import { CommuneInputComponent } from './components/commune-input/commune-input.
 import { CalendarModule } from 'primeng/calendar';
 import { InputTextModule } from 'primeng/inputtext';
 import { DropdownModule } from 'primeng/dropdown';
-
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import { TruncatePipe } from './pipes/truncate.pipe';
+import { ScrollTopModule } from 'primeng/scrolltop';
+import { DialogModule } from 'primeng/dialog';
 
 @NgModule({
   declarations: [
@@ -60,6 +63,7 @@ import { DropdownModule } from 'primeng/dropdown';
     FestivalPageComponent,
     FestivalCardComponent,
     CommuneInputComponent,
+    TruncatePipe,
   ],
   imports: [
     BrowserModule,
@@ -79,7 +83,10 @@ import { DropdownModule } from 'primeng/dropdown';
     DividerModule,
     CalendarModule,
     InputTextModule,
-    DropdownModule
+    DropdownModule,
+    ProgressSpinnerModule,
+    ScrollTopModule,
+    DialogModule
   ],
   providers: [
     httpInterceptorProviders,

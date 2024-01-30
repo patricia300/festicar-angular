@@ -9,8 +9,9 @@ const routes: Routes = [
     { path: 'home', component: HomePageComponent },
     { path: 'festivals', component:  FestivalPageComponent },
     { path: 'panier', component: PanierPageComponent },
-    { path: 'covoiturages', component: CovoituragePageComponent },
+    { path: 'covoiturages/:qte/:idFestival', component: CovoituragePageComponent },
     { path: '', redirectTo: '/festivals', pathMatch: 'full' },
+    // { path: '**', component: PageNotFoundComponent } // Wildcard for 404
 ];
 
 @NgModule({

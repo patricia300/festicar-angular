@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { OffreCovoiturageCardData } from 'src/app/interfaces/offre-covoiturage';
+import { FestivalsService } from 'src/app/services/festivals.service';
 import { OffreCovoiturageService } from 'src/app/services/offre-covoiturage.service';
 @Component({
   selector: 'app-covoiturage-page',
@@ -7,20 +9,22 @@ import { OffreCovoiturageService } from 'src/app/services/offre-covoiturage.serv
   styleUrls: ['./covoiturage-page.component.scss']
 })
 export class CovoituragePageComponent implements OnInit {
-  offreCovoiturages: OffreCovoiturageCardData[] = [];
-
-  constructor(private offreCovoiturageService: OffreCovoiturageService) {}
+  constructor(
+    protected offreCovoiturageService: OffreCovoiturageService,
+    private festivalsService: FestivalsService,
+    private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    const JUST_FOR_EXAMPLE = 1019;
-    this.offreCovoiturageService.getOffreCovoiturageByFestival(JUST_FOR_EXAMPLE).subscribe(offres => {
-      this.offreCovoiturages = offres.map(o => {
-        return ({
-          ...o,
-          pointPassagePlusProche: o.pointPassageCovoiturages.length > 0 ? o.pointPassageCovoiturages[0] : undefined
-        });
-      })
-      console.log('offreCovoiturages :', this.offreCovoiturages);
-    })
+    this.initCurrentFestival();
+    this.initQtePass();
+  }
+
+  initQtePass() {
+    this.offreCovoiturageService.initQtePass(this.route.snapshot.params['qte']);
+  }
+
+  initCurrentFestival() {
+    const idFestival = this.route.snapshot.params['idFestival'];
+    this.offreCovoiturageService.initCurrentFestival(idFestival).subscribe();
   }
 }

@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Festival } from 'src/app/interfaces/festival';
 import { OffreCovoiturageCardData } from 'src/app/interfaces/offre-covoiturage';
 
 @Component({
@@ -8,6 +9,7 @@ import { OffreCovoiturageCardData } from 'src/app/interfaces/offre-covoiturage';
 })
 export class CovoiturageCardComponent {
   @Input({ required: true }) offreCovoiturage!: OffreCovoiturageCardData;
+  @Input({ required: true }) festival?: Festival;
 
   getTrajetInfo() {
     const lieuCovoiturage = this.offreCovoiturage.pointPassagePlusProche?.lieuCovoiturage;
@@ -18,7 +20,7 @@ export class CovoiturageCardComponent {
         date: '09:30'
       },
       {
-        adresse: 'Mulhouse',
+        adresse: this.festival?.nomCommune,
         date: '20:00'
       }
     ];
