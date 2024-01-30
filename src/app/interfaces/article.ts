@@ -7,3 +7,8 @@ export interface Article {
   pointPassageCovoiturage: PointPassageCovoiturages,
   quantite: number
 }
+
+export interface AjoutArcticle {
+  idPointPassage: number,
+  quantite: number
+}
