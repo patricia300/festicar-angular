@@ -12,6 +12,13 @@
   </div>
 
   <div class="search-bar">
-    <app-commune-input placeholder="Adresse commune"></app-commune-input>
+    <app-commune-input *ngIf="showCommuneSearchInput" placeholder="Saisissez votre commune de départ ... "></app-commune-input>
+    <span
+      *ngIf="showFestivalSearchInput"
+      class="p-input-icon-left w-full"
+    >
+      <i class="pi pi-search"></i>
+      <input class="w-full" type="text" placeholder="Rechercher votre festival ... " pInputText />
+    </span>
   </div>
 </nav>

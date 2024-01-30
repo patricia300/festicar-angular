@@ -6,6 +6,7 @@ import { PanierService } from './services/panier.service';
 import { Panier } from './interfaces/panier';
 import { DomaineService } from './services/domaine.service';
 import { DomainePrincipal } from './interfaces/domaine-principal';
+import { RouteService } from './services/route-service.service';
 
 @Component({
   selector: 'app-root',
@@ -13,25 +14,24 @@ import { DomainePrincipal } from './interfaces/domaine-principal';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  festivals: Festival[] = [];
-  festivalsByCommune: Festival[] = [];
-  festivalsByDate: Festival[] = [];
-  festivalsByFilter: Festival[] = [];
+  // festivals: Festival[] = [];
+  // festivalsByCommune: Festival[] = [];
+  // festivalsByDate: Festival[] = [];
+  // festivalsByFilter: Festival[] = [];
 
   paniers: Panier[] = [];
   currentPanier?: Panier;
 
   domainePrincipals?: DomainePrincipal[];
 
-  constructor(private festivalsService: FestivalsService,
-              private panierService: PanierService,
-              private domainService: DomaineService) { }
+  constructor(
+    private routeService: RouteService,
+    private festivalsService: FestivalsService,
+    private panierService: PanierService,
+    private domainService: DomaineService) { }
 
   ngOnInit(): void {
-    this.festivalsService.getAll().subscribe((pageFestival: Pageable<Festival>) => {
-      this.festivals = pageFestival.content;
-      console.log("festivals : ", this.festivals);
-    });
+    this.festivalsService.getAll().subscribe();
 
     // this.festivalsService.getAllFestivalsByCommune().subscribe((pageFestival: Pageable<Festival>) => {
     //   this.festivalsByCommune = pageFestival.content;
@@ -67,4 +67,13 @@ export class AppComponent implements OnInit {
     //   console.log("domainePrincipals : ", this.domainePrincipals);
     // });
   }
+
+  showFestivalSearchInput() {
+    return this.routeService.currentRoute.includes('/festivals');
+  }
+
+  showCommuneSearchInput() {
+    return this.routeService.currentRoute.includes('/covoiturages');
+  }
+
 }
