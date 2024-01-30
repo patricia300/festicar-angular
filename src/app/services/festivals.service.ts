@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 import { Festival } from '../interfaces/festival';
 import { Pageable } from '../interfaces/pageable';
 
@@ -8,10 +8,29 @@ import { Pageable } from '../interfaces/pageable';
   providedIn: 'root'
 })
 export class FestivalsService {
+  selectedFestival?: Festival;
+  festivals: Festival[] = [];
+  festivalsIsLoading: boolean = false;
+  currentPageable?: Pageable<Festival>;
+
   constructor(private http: HttpClient) { }
 
   getAll(numeroPage = 0, taillePage = 10, tri = 'asc'): Observable<Pageable<Festival>> {
-    return this.http.get<Pageable<Festival>>('festivals', { params: { numeroPage, taillePage, tri } });
+    this.festivalsIsLoading = true;
+
+    return this.http
+      .get<Pageable<Festival>>('festivals', { params: { numeroPage, taillePage, tri } })
+      .pipe(
+        tap((pageableFestival) => {
+          this.festivals = [...this.festivals, ...pageableFestival.content];
+          this.festivalsIsLoading = false;
+          this.currentPageable = pageableFestival;
+        })
+      )
+  }
+
+  getFestivalById(idFestival: number): Observable<Festival> {
+    return this.http.get<Festival>(`festivals/${idFestival}`);
   }
 
   getAllFestivalsByCommune(numeroPage = 0, taillePage = 10, commune = 'Mulhouse'): Observable<Pageable<Festival>> {
@@ -24,6 +43,7 @@ export class FestivalsService {
   getAllFestivalsByDate(dateDebut = '02/02/2024', dateFin = '27/04/2024'): Observable<Pageable<Festival>> {
     return this.http.get<Pageable<Festival>>('festivals/by-date', { params: { dateDebut, dateFin } });
   }
+
   getAllFestivalByFiltre(
     numeroPage = 0,
     taillePage = 10,
