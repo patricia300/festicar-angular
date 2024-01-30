@@ -11,11 +11,11 @@ export class PanierService {
 
   constructor(private http: HttpClient) { }
 
-  getAll(email = 'louna.charpentier@yahoo.fr'): Observable<Panier[]> {
+  getAll(email: string): Observable<Panier[]> {
     return this.http.get<Panier[]>('paniers', { params: { email } });
   }
 
-  getCurrentPanier(email = 'louna.charpentier@yahoo.fr'): Observable<Panier> {
+  getCurrentPanier(email: string): Observable<Panier> {
     return this.http.get<Panier>('panier', { params: { email } });
   }
 
@@ -23,7 +23,7 @@ export class PanierService {
     return this.http.post<Panier>('panier', panierRequestBodyDto);
   }
 
-  putPanier(id = 6609): Observable<Panier> {
+  putPanier(id: number): Observable<Panier> {
     return this.http.put<Panier>('panier/payer', { params: { id }});
-  } 
+  }
 }

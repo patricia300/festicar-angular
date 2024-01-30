@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { AjoutArcticle } from 'src/app/interfaces/article';
 import { Festival } from 'src/app/interfaces/festival';
 import { OffreCovoiturageCardData } from 'src/app/interfaces/offre-covoiturage';
 
@@ -10,6 +11,9 @@ import { OffreCovoiturageCardData } from 'src/app/interfaces/offre-covoiturage';
 export class CovoiturageCardComponent {
   @Input({ required: true }) offreCovoiturage!: OffreCovoiturageCardData;
   @Input({ required: true }) festival?: Festival;
+  @Output() reserverPlace = new EventEmitter<AjoutArcticle>();
+
+  nbPlacePrise: number = 0;
 
   getTrajetInfo() {
     const lieuCovoiturage = this.offreCovoiturage.pointPassagePlusProche?.lieuCovoiturage;
@@ -24,5 +28,16 @@ export class CovoiturageCardComponent {
         date: '20:00'
       }
     ];
+  }
+
+  onChangeNbPlacePrise() {
+    if(this.offreCovoiturage.pointPassagePlusProche) {
+      const article: AjoutArcticle = {
+        idPointPassage: this.offreCovoiturage.pointPassagePlusProche?.id,
+        quantite: this.nbPlacePrise
+      }
+
+      this.reserverPlace.emit(article);
+    }
   }
 }

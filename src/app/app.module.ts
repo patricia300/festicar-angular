@@ -43,6 +43,7 @@ import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { TruncatePipe } from './pipes/truncate.pipe';
 import { ScrollTopModule } from 'primeng/scrolltop';
 import { DialogModule } from 'primeng/dialog';
+import { FooterActionComponent } from './components/footer-action/footer-action.component';
 
 @NgModule({
   declarations: [
@@ -64,6 +65,7 @@ import { DialogModule } from 'primeng/dialog';
     FestivalCardComponent,
     CommuneInputComponent,
     TruncatePipe,
+    FooterActionComponent,
   ],
   imports: [
     BrowserModule,

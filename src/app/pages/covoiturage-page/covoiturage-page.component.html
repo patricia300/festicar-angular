@@ -1,15 +1,24 @@
 <div class="covoiturage-page">
   <div class="sort-section">
-    <app-sort-item iconClass="pi pi-calendar-times" label="Départ le plus tôt" />
-    <app-sort-item iconClass="pi pi-money-bill" label="Prix le plus bas" />
-    <app-sort-item iconClass="pi pi-angle-double-right" label="Le plus proche" />
+    <div class="sticky-section">
+      <div class="section-trier">
+        <p-divider align="left" type="solid">
+          <div class="titre">Trier</div>
+        </p-divider>
+        <app-sort-item iconClass="pi pi-calendar-times" label="Début le plus proche" />
+        <app-sort-item iconClass="pi pi-money-bill" label="Prix croissant" />
+        <app-sort-item iconClass="pi pi-angle-double-right" label="Le plus proche" />
+      </div>
+    </div>
   </div>
+
 
   <div class="main-section">
       <app-covoiturage-card
         *ngFor="let offre of this.offreCovoiturageService.offreCovoiturages"
         [offreCovoiturage]="offre"
         [festival]="this.offreCovoiturageService.currentFestival"
+        (reserverPlace)="reserverPlaceCovoiturage($event)"
       />
 
       <div class="flex justify-content-center mb-5" *ngIf="offreCovoiturageService.offreCovoituragesIsLoading">
@@ -20,3 +29,5 @@
       </div>
   </div>
 </div>
+
+<app-footer-action [disabled]="reservations.length < 1" (clickRightButton)="addArticlesAuPanier()"/>
