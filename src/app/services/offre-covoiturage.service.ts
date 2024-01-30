@@ -25,10 +25,15 @@ export class OffreCovoiturageService {
     return this.festivalsService.getFestivalById(idFestival).pipe(
       tap(festival => {
         this.currentFestival = festival;
-        this.offreCovoiturages = festival.offreCovoiturages.map((offre: OffreCovoiturage) => ({
-          ...offre,
-          pointPassagePlusProche: offre.pointPassageCovoiturages.length ? offre.pointPassageCovoiturages[0] : undefined
-        }));
+        this.offreCovoiturages = festival.offreCovoiturages.map((offre: OffreCovoiturage) => {
+          // get random image from lorempicsum
+          offre.covoitureur.urlPhoto = `https://picsum.photos/200?random=${Math.random()}`;
+
+          return ({
+            ...offre,
+            pointPassagePlusProche: offre.pointPassageCovoiturages.length ? offre.pointPassageCovoiturages[0] : undefined
+          });
+        });
 
         this.offreCovoituragesIsLoading = false;
       })
