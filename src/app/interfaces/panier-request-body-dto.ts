@@ -1,6 +1,6 @@
-import { Article } from "./article";
+import { AjoutArcticle } from "./article";
 
 export interface PanierRequestBodyDto {
   emailFestivalier: string;
-  articles: Article[];
+  articles: AjoutArcticle[];
 }
