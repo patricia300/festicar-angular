@@ -1,6 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
 @import "primeicons/primeicons.css";
 
+.navbar {
+  i {
+    cursor: pointer;
+  }
+
+  .p-badge {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 1rem;
+    min-width: 1rem;
+    font-size: .5rem;
+  }
+}
+
 .sort-section {
   .p-calendar {
     width: 100%;
@@ -8,10 +23,6 @@
 
   .p-inputtext, .p-dropdown {
     width: 100%;
-  }
-
-  .p-datepicker {
-    // width: 100%;
   }
 }
 
