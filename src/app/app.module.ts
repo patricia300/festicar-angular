@@ -10,7 +10,6 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { FestivalFinderComponent } from './components/festival-finder/festival-finder.component';
 import { ListFestivalsComponent } from './components/list-festivals/list-festivals.component';
 import { FestivalComponent } from './components/festival/festival.component';
-import { PanierPageComponent } from './components/panier-page/panier-page.component';
 import { PanierModifierComponent } from './components/panier-modifier/panier-modifier.component';
 import { ListArticlesComponent } from './components/list-articles/list-articles.component';
 import { ArticleComponent } from './components/article/article.component';
@@ -22,7 +21,6 @@ import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CovoituragePageComponent } from './pages/covoiturage-page/covoiturage-page.component';
 import { AutoCompleteModule } from 'primeng/autocomplete';
-import { MenuModule } from 'primeng/menu';
 import { SortItemComponent } from './components/sort-item/sort-item.component';
 import { CovoiturageCardComponent } from './components/covoiturage-card/covoiturage-card.component';
 import { FestivalPageComponent } from './pages/festival-page/festival-page.component';
@@ -44,6 +42,8 @@ import { TruncatePipe } from './pipes/truncate.pipe';
 import { ScrollTopModule } from 'primeng/scrolltop';
 import { DialogModule } from 'primeng/dialog';
 import { FooterActionComponent } from './components/footer-action/footer-action.component';
+import { MenuModule } from 'primeng/menu';
+import { BadgeModule } from 'primeng/badge';
 
 @NgModule({
   declarations: [
@@ -53,7 +53,6 @@ import { FooterActionComponent } from './components/footer-action/footer-action.
     FestivalFinderComponent,
     ListFestivalsComponent,
     FestivalComponent,
-    PanierPageComponent,
     PanierModifierComponent,
     ListArticlesComponent,
     ArticleComponent,
@@ -88,7 +87,8 @@ import { FooterActionComponent } from './components/footer-action/footer-action.
     DropdownModule,
     ProgressSpinnerModule,
     ScrollTopModule,
-    DialogModule
+    DialogModule,
+    BadgeModule
   ],
   providers: [
     httpInterceptorProviders,

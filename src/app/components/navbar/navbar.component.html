@@ -1,10 +1,21 @@
 <nav class="navbar">
   <div class="navbar-top">
-    <a class="navbar-brand">Festicar</a>
+    <a class="navbar-brand" [routerLink]="'/festivals'">Festicar</a>
 
     <div class="navbar-end">
-      <p-menu #panierMenu [model]="panierItems" [popup]="true"></p-menu>
-      <i class="pi pi-shopping-cart mx-5" (click)="panierMenu.toggle($event)"></i>
+      <i
+        class="pi pi-shopping-cart mx-5"
+        *ngIf="panierService.nbArticles < 1"
+        [routerLink]="'/panier'"
+      ></i>
+
+      <i
+        class="pi pi-shopping-cart mx-5"
+        *ngIf="panierService.nbArticles > 0"
+        [value]="panierService.nbArticles.toString()"
+        [routerLink]="'/panier'"
+        pBadge
+      ></i>
 
       <p-menu #profilMenu [model]="profilItems" [popup]="true"></p-menu>
       <i class="pi pi-user" (click)="profilMenu.toggle($event)" ></i>

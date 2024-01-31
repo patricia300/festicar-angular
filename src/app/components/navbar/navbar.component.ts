@@ -1,10 +1,10 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { MenuItem } from 'primeng/api';
 import { AutoCompleteCompleteEvent } from 'primeng/autocomplete';
 import { CommuneSearchItem } from 'src/app/interfaces/commune';
 import { CommuneService } from 'src/app/services/commune.service';
-import { RouteService } from 'src/app/services/route-service.service';
+import { PanierService } from 'src/app/services/panier.service';
 
 @Component({
   selector: 'app-navbar',
@@ -21,12 +21,16 @@ export class NavbarComponent implements OnInit {
   selectedCommune?: CommuneSearchItem;
   communeSuggestions: CommuneSearchItem[] = [];
 
-  constructor(private communeService: CommuneService) {}
+  constructor(
+    private communeService: CommuneService,
+    protected panierService: PanierService,
+    private router: Router) {}
 
   ngOnInit() {
     this.initProfilItems();
-    this.initPanierItems();
     this.communeService.initData();
+
+    this.panierService.getCurrentPanier('lucie.deschamps@gmail.com').subscribe();
   }
 
   filterCommune(event: AutoCompleteCompleteEvent) {
@@ -40,18 +44,5 @@ export class NavbarComponent implements OnInit {
         icon: 'pi pi-sign-in'
       }
     ];
-  }
-
-  initPanierItems() {
-    this.panierItems = [
-      {
-        label: '3 articles',
-        icon: 'pi pi-ticket'
-      },
-      {
-        label: 'Total: 63.00 €',
-        icon: 'pi pi-money-bill'
-      }
-    ]
   }
 }
