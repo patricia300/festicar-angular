@@ -3,8 +3,10 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { MenuItem } from 'primeng/api';
 import { AutoCompleteCompleteEvent } from 'primeng/autocomplete';
 import { CommuneSearchItem } from 'src/app/interfaces/commune';
+import { AuthService } from 'src/app/services/authService/auth.service';
 import { CommuneService } from 'src/app/services/commune.service';
 import { PanierService } from 'src/app/services/panier.service';
+import { UtilisateurService } from 'src/app/services/utilisateurService/utilisateur.service';
 
 @Component({
   selector: 'app-navbar',
@@ -24,13 +26,16 @@ export class NavbarComponent implements OnInit {
   constructor(
     private communeService: CommuneService,
     protected panierService: PanierService,
-    private router: Router) {}
+    protected authService: AuthService,
+    private utilisateurService: UtilisateurService) {}
 
   ngOnInit() {
     this.initProfilItems();
     this.communeService.initData();
 
-    this.panierService.getCurrentPanier('lucie.deschamps@gmail.com').subscribe();
+    if(this.utilisateurService.utilisateur && this.authService.isAuthenticated()) {
+      this.panierService.getCurrentPanier(this.utilisateurService.utilisateur.email).subscribe();
+    }
   }
 
   filterCommune(event: AutoCompleteCompleteEvent) {

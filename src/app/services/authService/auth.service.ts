@@ -23,7 +23,6 @@ export class AuthService {
           (utilisateur: Utilisateur) =>{
             this.utilisateurService.utilisateur=utilisateur;
             console.log(this.utilisateurService.utilisateur);
-
           }
         );
       }

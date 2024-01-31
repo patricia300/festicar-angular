@@ -1,5 +1,5 @@
 export interface Utilisateur {
-  email?: string,
+  email: string,
   nom?: string,
   prenom?: string,
   urlPhoto?: string,

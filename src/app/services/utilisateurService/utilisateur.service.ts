@@ -9,7 +9,7 @@ import { Observable, catchError, throwError } from 'rxjs';
 })
 export class UtilisateurService {
 
-  utilisateur: Utilisateur = {};
+  utilisateur?: Utilisateur;
 
   constructor( private http: HttpClient) { }
 

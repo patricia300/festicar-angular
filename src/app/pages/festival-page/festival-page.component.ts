@@ -1,6 +1,7 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Festival } from 'src/app/interfaces/festival';
+import { AuthService } from 'src/app/services/authService/auth.service';
 import { FestivalsService } from 'src/app/services/festivals.service';
 
 @Component({
@@ -10,9 +11,13 @@ import { FestivalsService } from 'src/app/services/festivals.service';
 })
 export class FestivalPageComponent implements OnInit {
   modalFestivalIsVisible: boolean = false;
+  modalConnexionIsVisible: boolean = false;
   qtePass: number = 1;
 
-  constructor(protected festivalsService: FestivalsService, private router: Router){}
+  constructor(
+    protected festivalsService: FestivalsService,
+    private authService: AuthService,
+    private router: Router){}
 
   ngOnInit(): void {
     this.festivalsService.getAll().subscribe();
@@ -22,14 +27,23 @@ export class FestivalPageComponent implements OnInit {
     this.modalFestivalIsVisible = true;
   }
 
+  showConnexionModal() {
+    this.modalConnexionIsVisible = true;
+  }
+
   onAcheterPassFestival(festival: Festival) {
-    this.festivalsService.selectedFestival = festival;
-    this.showFestivalDetails();
+    if(this.authService.isAuthenticated()) {
+      this.festivalsService.selectedFestival = festival;
+      this.showFestivalDetails();
+    } else {
+      this.showConnexionModal();
+    }
   }
 
   onAjouterAuPanier() {
-    console.log("qté de passe au panier : ", this.qtePass);
-    this.router.navigateByUrl(`covoiturages/${this.qtePass}/${this.festivalsService.selectedFestival?.id}`);
+
+      console.log("qté de passe au panier : ", this.qtePass);
+      this.router.navigateByUrl(`covoiturages/${this.qtePass}/${this.festivalsService.selectedFestival?.id}`);
   }
 
   @HostListener("window:scroll", ["$event"])

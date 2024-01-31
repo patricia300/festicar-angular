@@ -65,6 +65,16 @@
     </div>
   </p-dialog>
 
+  <p-dialog
+  [header]="festivalsService.selectedFestival?.nom"
+  [(visible)]="modalConnexionIsVisible"
+  [modal]="true"
+  [style]="{ width: '50vw', maxWidth: '40rem', minWidth: '23rem' }"
+>
+  <div class="m-0">
+    <app-authentication></app-authentication>
+  </div>
+</p-dialog>
 
   <div class="main-section">
     <app-festival-card

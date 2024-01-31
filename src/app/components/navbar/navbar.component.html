@@ -5,13 +5,13 @@
     <div class="navbar-end">
       <i
         class="pi pi-shopping-cart mx-5"
-        *ngIf="panierService.nbArticles < 1"
+        *ngIf="authService.isAuthenticated() && panierService.nbArticles < 1"
         [routerLink]="'/panier'"
       ></i>
 
       <i
         class="pi pi-shopping-cart mx-5"
-        *ngIf="panierService.nbArticles > 0"
+        *ngIf="authService.isAuthenticated() && panierService.nbArticles > 0"
         [value]="panierService.nbArticles.toString()"
         [routerLink]="'/panier'"
         pBadge
