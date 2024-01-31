@@ -36,10 +36,7 @@ export class AuthService {
     googleProvider.addScope("https://www.googleapis.com/auth/userinfo.profile");
 
     const credential = await this.afauth.signInWithPopup(new GoogleAuthProvider());
-
-    this.setToken(credential);
     this.setUtilisateur(credential);
-
   }
 
   async facebookSignin(){
@@ -48,8 +45,6 @@ export class AuthService {
     facebookProvider.addScope("public_profile");
     
     const credential = await this.afauth.signInWithPopup(new FacebookAuthProvider());
-
-    this.setToken(credential);
     this.setUtilisateur(credential);
   }
 
@@ -70,6 +65,7 @@ export class AuthService {
         (utilisateur: Utilisateur)=>{
           if(utilisateur){
             this.utilisateurService.utilisateur=utilisateur;
+            this.setToken(credential);
             console.log(this.utilisateurService.utilisateur);
           }else{
             const utilisateur: Utilisateur ={
@@ -82,6 +78,7 @@ export class AuthService {
             this.utilisateurService.createUtilisateur(utilisateur).subscribe(
               (utilisateur: Utilisateur) => {
                 this.utilisateurService.utilisateur=utilisateur;
+                this.setToken(credential);
                 console.log(this.utilisateurService.utilisateur);
               });
           }});
