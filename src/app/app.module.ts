@@ -14,8 +14,12 @@ import { PanierPageComponent } from './components/panier-page/panier-page.compon
 import { PanierModifierComponent } from './components/panier-modifier/panier-modifier.component';
 import { ListArticlesComponent } from './components/list-articles/list-articles.component';
 import { ArticleComponent } from './components/article/article.component';
+import { AuthenticationComponent } from './components/authentication/authentication.component';
 import { PaginationComponent } from './components/pagination/pagination.component';
 import { registerLocaleData } from '@angular/common';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { environment } from '../environments/environment';
 
 import * as fr from '@angular/common/locales/fr';
 import { FormsModule } from '@angular/forms';
@@ -54,6 +58,7 @@ import { DropdownModule } from 'primeng/dropdown';
     ListArticlesComponent,
     ArticleComponent,
     PaginationComponent,
+    AuthenticationComponent,
     CovoituragePageComponent,
     SortItemComponent,
     CovoiturageCardComponent,
@@ -66,9 +71,10 @@ import { DropdownModule } from 'primeng/dropdown';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule,
     BrowserAnimationsModule,
     AutoCompleteModule,
-    MenuModule,
     InputNumberModule,
     AvatarGroupModule,
     AvatarModule,
@@ -79,7 +85,8 @@ import { DropdownModule } from 'primeng/dropdown';
     DividerModule,
     CalendarModule,
     InputTextModule,
-    DropdownModule
+    DropdownModule,
+    MenuModule
   ],
   providers: [
     httpInterceptorProviders,
