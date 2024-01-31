@@ -1,8 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
 @import "primeicons/primeicons.css";
 
-body {
-  margin: 0;
+.navbar {
+  i {
+    cursor: pointer;
+  }
+
+  .p-badge {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 1rem;
+    min-width: 1rem;
+    font-size: .5rem;
+  }
 }
 
 .sort-section {
@@ -12,10 +23,6 @@ body {
 
   .p-inputtext, .p-dropdown {
     width: 100%;
-  }
-
-  .p-datepicker {
-    // width: 100%;
   }
 }
 
@@ -45,22 +52,44 @@ body {
 }
 
 /***********************
-* Covoiturage Card *
+* festival Page *
 ************************/
 
-.ng-star-inserted {
-  max-width: 40rem;
-}
+.festival-page {
+  .choix-quantite {
+    input.p-inputnumber-input  {
+      width: 3rem;
+      height: 2rem;
 
-.festival-card {
-  .p-card {
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      &.p-inputtext {
+        text-align: center;
+      }
+    }
+
+    button.p-button {
+      width: 2rem;
+      height: 2rem;
+    }
   }
 
-  .p-card-content {
-    padding: 0;
+  .festival-card {
+    .p-card {
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+
+    .p-card-content {
+      padding: 0;
+    }
+
+    .ng-star-inserted {
+      max-width: 40rem;
+    }
   }
 }
+
+/***********************
+* Covoiturage Card *
+************************/
 
 .covoiturage-card {
   .p-card {
@@ -169,4 +198,12 @@ body {
 .icon-small-dark {
     color: $primary-dark;
     font-size: $icon-small;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
 }

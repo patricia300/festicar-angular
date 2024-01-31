@@ -32,7 +32,52 @@
     </div>
   </div>
 
+  <p-dialog
+    [header]="festivalsService.selectedFestival?.nom"
+    [(visible)]="modalFestivalIsVisible"
+    [modal]="true"
+    [style]="{ width: '50vw', maxWidth: '40rem', minWidth: '23rem' }"
+  >
+    <div class="m-0">
+      <div class="choix-quantite mb-4">
+        <span class="mr-5">Quantité de pass:</span>
+        <p-inputNumber
+          [showButtons]="true"
+          [(ngModel)]="qtePass"
+          buttonLayout="horizontal"
+          spinnerMode="horizontal"
+          inputId="horizontal"
+          decrementButtonClass="p-button-secondary"
+          incrementButtonClass="p-button-secondary"
+          incrementButtonIcon="pi pi-plus"
+          decrementButtonIcon="pi pi-minus"
+          [min]="1"
+          [max]="festivalsService.selectedFestival?.nombrePass"
+        />
+      </div>
+      <p-button
+        label="Ajouter au panier"
+        size="small"
+        styleClass="w-full"
+        [disabled]="!(qtePass > 0)"
+        (click)="onAjouterAuPanier()"
+      />
+    </div>
+  </p-dialog>
+
+
   <div class="main-section">
-    <app-festival-card *ngFor="let festival of [].constructor(9)"/>
+    <app-festival-card
+      *ngFor="let festival of festivalsService.festivals"
+      [festival]="festival"
+      (acheterPass)="onAcheterPassFestival($event)"
+    />
+
+    <div class="flex justify-content-center mb-5" *ngIf="festivalsService.festivalsIsLoading">
+      <div class="loader text-center">
+        <p-progressSpinner styleClass="w-4rem h-4rem"/>
+        <div>Chargement ...</div>
+      </div>
+    </div>
   </div>
 </div>

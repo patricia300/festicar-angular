@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Festival } from 'src/app/interfaces/festival';
 
 @Component({
   selector: 'app-festival-card',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./festival-card.component.scss']
 })
 export class FestivalCardComponent {
+  @Input() festival!: Festival;
+  @Output() acheterPass = new EventEmitter<Festival>() ;
 
+  onAcheterPass() {
+    this.acheterPass.emit(this.festival);
+  }
 }

@@ -1,7 +1,14 @@
+<app-navbar
+  [showFestivalSearchInput]="showFestivalSearchInput()"
+  [showCommuneSearchInput]="showCommuneSearchInput()"
+  ></app-navbar>
 
-<!-- NavBar -->
-<app-navbar></app-navbar>
+<router-outlet></router-outlet>
 
-<div class="page">
-  <router-outlet></router-outlet>
-</div>
+<p-scrollTop
+  styleClass="custom-scrolltop"
+  [threshold]="100"
+  icon="pi pi-arrow-up"
+></p-scrollTop>
+
+
