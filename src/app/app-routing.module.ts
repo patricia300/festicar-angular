@@ -5,15 +5,15 @@ import { PanierPageComponent } from './components/panier-page/panier-page.compon
 import { AuthenticationComponent } from './components/authentication/authentication.component';
 import { CovoituragePageComponent } from './pages/covoiturage-page/covoiturage-page.component';
 import { FestivalPageComponent } from './pages/festival-page/festival-page.component';
+import { authGuard } from './services/authService/auth.guard';
 
 const routes: Routes = [
     { path: 'home', component: HomePageComponent },
     { path: 'festivals', component:  FestivalPageComponent },
-    { path: 'panier', component: PanierPageComponent },
+    { path: 'panier', component: PanierPageComponent, canActivate: [authGuard] },
     { path: 'authentication', component: AuthenticationComponent },
     { path: '', redirectTo: '/home', pathMatch: 'full' },
-    { path: 'covoiturages', component: CovoituragePageComponent },
-    { path: '', redirectTo: '/festivals', pathMatch: 'full' },
+    { path: 'covoiturages', component: CovoituragePageComponent, canActivate: [authGuard] },
 ];
 
 @NgModule({

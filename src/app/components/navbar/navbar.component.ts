@@ -32,7 +32,8 @@ export class NavbarComponent {
     this.profilItems = [
       {
         label: 'Se connecter',
-        icon: 'pi pi-sign-in'
+        icon: 'pi pi-sign-in',
+        routerLink: '/authentication'
       }
     ];
   }
