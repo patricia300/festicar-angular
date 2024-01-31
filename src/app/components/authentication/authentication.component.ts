@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/authService/auth.service';
 
@@ -8,6 +8,7 @@ import { AuthService } from 'src/app/services/authService/auth.service';
   styleUrls: ['./authentication.component.scss']
 })
 export class AuthenticationComponent {
+  @Output() connected = new EventEmitter<null>();
 
   errorMessage: string = '';
   successMessage: string = '';
@@ -16,10 +17,14 @@ export class AuthenticationComponent {
               private router: Router ){}
 
   authenticateWithGoogle(){
-    this.auth.googleSignin();
+    this.auth.googleSignin().then(
+      () => this.connected.emit(null)
+    );
   }
 
   authenticateWithFacebook(){
-    this.auth.facebookSignin;
+    this.auth.facebookSignin().then(
+      () => this.connected.emit(null)
+    );
   }
 }

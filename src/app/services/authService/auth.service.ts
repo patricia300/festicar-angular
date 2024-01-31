@@ -1,22 +1,23 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { GoogleAuthProvider, FacebookAuthProvider } from '@firebase/auth';
-import { Router } from '@angular/router';
+import { Route, Router } from '@angular/router';
 import { UtilisateurService } from '../utilisateurService/utilisateur.service';
 import { Utilisateur } from 'src/app/interfaces/utilisateur';
+import { ToastService } from '../toast.service';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-
   token: any = this.getToken();
 
   constructor(
     private afauth: AngularFireAuth,
     private router: Router,
-    private utilisateurService: UtilisateurService
+    private utilisateurService: UtilisateurService,
+    private toastService: ToastService,
     ) {
       if(this.token){
         this.utilisateurService.getUtilisateurByToken(this.token).subscribe(
@@ -47,9 +48,18 @@ export class AuthService {
     this.setUtilisateur(credential);
   }
 
-  async signOut() {
-    await this.afauth.signOut();
-    this.router.navigate(['/']);
+  signOut() {
+    this.afauth.signOut().then(
+      () => {
+        localStorage.removeItem('token');
+        this.token = '';
+        this.utilisateurService.utilisateur = undefined;
+        this.toastService.showSuccess('Compte déconnecté avec succès');
+        this.router.navigate(['/']);
+      },
+      () => this.toastService.showError('Echec de la déconnexion')
+    );
+
   }
 
   isAuthenticated(){
@@ -60,12 +70,13 @@ export class AuthService {
 
   private setUtilisateur(credential: any){
     this.utilisateurService.getUtilisateur(credential.user.email)
-      .subscribe(
-        (utilisateur: Utilisateur)=>{
+      .subscribe({
+        next: (utilisateur: Utilisateur) => {
           if(utilisateur){
             this.utilisateurService.utilisateur=utilisateur;
             this.setToken(credential);
             console.log(this.utilisateurService.utilisateur);
+            this.toastService.showSuccess('Connexion réussie');
           }else{
             const utilisateur: Utilisateur ={
               email:credential.user.email,
@@ -74,13 +85,22 @@ export class AuthService {
               urlPhoto:  credential.user.photoURL,
               token: credential.credential.accessToken
             };
-            this.utilisateurService.createUtilisateur(utilisateur).subscribe(
-              (utilisateur: Utilisateur) => {
+
+            this.utilisateurService.createUtilisateur(utilisateur).subscribe({
+              next: (utilisateur: Utilisateur) => {
                 this.utilisateurService.utilisateur=utilisateur;
                 this.setToken(credential);
                 console.log(this.utilisateurService.utilisateur);
-              });
-          }});
+                this.toastService.showSuccess('Compte créé et connecté')
+              },
+              error: () => this.toastService.showError('Compte utilisateur non créé')
+            });
+          }
+
+          this.router.navigateByUrl('/festivals');
+        },
+        error: () =>  this.toastService.showError("Echec de vérification de l'utilisateur")
+      });
   }
 
   private setToken(credential: any){

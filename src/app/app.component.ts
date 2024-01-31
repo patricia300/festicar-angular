@@ -1,12 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FestivalsService } from './services/festivals.service';
 import { PanierService } from './services/panier.service';
-import { Panier } from './interfaces/panier';
 import { DomaineService } from './services/domaine.service';
 import { DomainePrincipal } from './interfaces/domaine-principal';
 import { RouteService } from './services/route-service.service';
 import { HttpClient } from '@angular/common/http';
-import { Observable, catchError } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -29,19 +27,6 @@ export class AppComponent implements OnInit {
     private http: HttpClient) { }
 
   ngOnInit(): void {
-
-    this.festivalsService.getAll().subscribe();
-
-    try {
-      this.http.get<any>('festivalier', { params: { email: 'lahrouchi.pro@gmail.com' }})
-        .subscribe((res) => {
-          console.log('executed', res)
-        });
-    } catch(e: any) {
-      console.log("error : ", e);
-    }
-
-
     // this.festivalsService.getAllFestivalsByCommune().subscribe((pageFestival: Pageable<Festival>) => {
     //   this.festivalsByCommune = pageFestival.content;
     //   console.log("festivalsByCommune : ", this.festivalsByCommune);

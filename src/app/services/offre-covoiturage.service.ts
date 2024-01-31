@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { OffreCovoiturage, OffreCovoiturageCardData } from '../interfaces/offre-covoiturage';
-import { Observable, map, tap } from 'rxjs';
+import { Observable, finalize, map, tap } from 'rxjs';
 import { FestivalsService } from './festivals.service';
 import { Festival } from '../interfaces/festival';
 
@@ -34,9 +34,8 @@ export class OffreCovoiturageService {
             pointPassagePlusProche: offre.pointPassageCovoiturages.length ? offre.pointPassageCovoiturages[0] : undefined
           });
         });
-
-        this.offreCovoituragesIsLoading = false;
-      })
+      }),
+      finalize(() => this.offreCovoituragesIsLoading = false)
     )
   }
 

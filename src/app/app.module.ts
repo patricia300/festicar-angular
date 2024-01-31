@@ -20,6 +20,7 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { environment } from '../environments/environment';
 
+
 import * as fr from '@angular/common/locales/fr';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -48,6 +49,9 @@ import { DialogModule } from 'primeng/dialog';
 import { FooterActionComponent } from './components/footer-action/footer-action.component';
 import { MenuModule } from 'primeng/menu';
 import { BadgeModule } from 'primeng/badge';
+import { MessageService } from 'primeng/api';
+import { ToastrModule } from 'ngx-toastr';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -95,11 +99,14 @@ import { BadgeModule } from 'primeng/badge';
     ProgressSpinnerModule,
     ScrollTopModule,
     DialogModule,
-    BadgeModule
+    BadgeModule,
+    ToastrModule.forRoot(),
+    CommonModule
   ],
   providers: [
     httpInterceptorProviders,
-    { provide: LOCALE_ID, useValue: 'fr-FR'}
+    { provide: LOCALE_ID, useValue: 'fr-FR'},
+    MessageService
   ],
   bootstrap: [AppComponent]
 })

@@ -3,6 +3,9 @@ import { Router } from '@angular/router';
 import { Festival } from 'src/app/interfaces/festival';
 import { AuthService } from 'src/app/services/authService/auth.service';
 import { FestivalsService } from 'src/app/services/festivals.service';
+import { PanierService } from 'src/app/services/panier.service';
+import { ToastService } from 'src/app/services/toast.service';
+import { UtilisateurService } from 'src/app/services/utilisateurService/utilisateur.service';
 
 @Component({
   selector: 'app-festival-page',
@@ -17,10 +20,19 @@ export class FestivalPageComponent implements OnInit {
   constructor(
     protected festivalsService: FestivalsService,
     private authService: AuthService,
+    private toastService: ToastService,
+    private utilisateurService: UtilisateurService,
+    private panierService: PanierService,
     private router: Router){}
 
   ngOnInit(): void {
-    this.festivalsService.getAll().subscribe();
+    this.festivalsService.getAll().subscribe({
+      error: () => this.toastService.showError('récupération des festivals')
+    });
+
+    if(this.utilisateurService.utilisateur) {
+      this.panierService.getCurrentPanier(this.utilisateurService.utilisateur.email).subscribe();
+    }
   }
 
   showFestivalDetails() {
@@ -31,9 +43,14 @@ export class FestivalPageComponent implements OnInit {
     this.modalConnexionIsVisible = true;
   }
 
+  onConnected() {
+    this.modalConnexionIsVisible = false;
+    this.showFestivalDetails();
+  }
+
   onAcheterPassFestival(festival: Festival) {
+    this.festivalsService.selectedFestival = festival;
     if(this.authService.isAuthenticated()) {
-      this.festivalsService.selectedFestival = festival;
       this.showFestivalDetails();
     } else {
       this.showConnexionModal();
@@ -41,7 +58,6 @@ export class FestivalPageComponent implements OnInit {
   }
 
   onAjouterAuPanier() {
-
       console.log("qté de passe au panier : ", this.qtePass);
       this.router.navigateByUrl(`covoiturages/${this.qtePass}/${this.festivalsService.selectedFestival?.id}`);
   }

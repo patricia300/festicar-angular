@@ -1,8 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, tap } from 'rxjs';
+import { Observable, finalize, tap } from 'rxjs';
 import { Festival } from '../interfaces/festival';
 import { Pageable } from '../interfaces/pageable';
+import { MessageService } from 'primeng/api';
 
 @Injectable({
   providedIn: 'root'
@@ -23,9 +24,9 @@ export class FestivalsService {
       .pipe(
         tap((pageableFestival) => {
           this.festivals = [...this.festivals, ...pageableFestival.content];
-          this.festivalsIsLoading = false;
           this.currentPageable = pageableFestival;
-        })
+        }),
+        finalize(() => this.festivalsIsLoading = false)
       )
   }
 
@@ -37,9 +38,6 @@ export class FestivalsService {
     return this.http.get<Pageable<Festival>>('festivals/by-commune', { params: { numeroPage, taillePage, commune } });
   }
 
-  // getAllFestivalsByDate(numeroPage = 0, taillePage = 10, dateDebut = "24/04/2024", dateFin = "27/04/2024"): Observable<Pageable<Festival>> {
-  //   return this.http.get<Pageable<Festival>>('festivals/by-date', { params: { numeroPage, taillePage, dateDebut, dateFin } });
-  // }
   getAllFestivalsByDate(dateDebut = '02/02/2024', dateFin = '27/04/2024'): Observable<Pageable<Festival>> {
     return this.http.get<Pageable<Festival>>('festivals/by-date', { params: { dateDebut, dateFin } });
   }

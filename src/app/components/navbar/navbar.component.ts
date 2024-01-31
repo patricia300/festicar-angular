@@ -6,6 +6,7 @@ import { CommuneSearchItem } from 'src/app/interfaces/commune';
 import { AuthService } from 'src/app/services/authService/auth.service';
 import { CommuneService } from 'src/app/services/commune.service';
 import { PanierService } from 'src/app/services/panier.service';
+import { ToastService } from 'src/app/services/toast.service';
 import { UtilisateurService } from 'src/app/services/utilisateurService/utilisateur.service';
 
 @Component({
@@ -27,6 +28,7 @@ export class NavbarComponent implements OnInit {
     private communeService: CommuneService,
     protected panierService: PanierService,
     protected authService: AuthService,
+    private toastService: ToastService,
     private utilisateurService: UtilisateurService) {}
 
   ngOnInit() {
@@ -48,6 +50,13 @@ export class NavbarComponent implements OnInit {
         label: 'Se connecter',
         icon: 'pi pi-sign-in',
         routerLink: '/authentication'
+      },
+      {
+        label: 'Se déconnecter',
+        icon: 'pi pi-sign-out',
+        command: () => {
+          this.authService.signOut();
+        }
       }
     ];
   }
