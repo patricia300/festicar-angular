@@ -4,13 +4,14 @@ import { HomePageComponent } from './components/home-page/home-page.component';
 import { PanierPageComponent } from './components/panier-page/panier-page.component';
 import { AuthenticationComponent } from './components/authentication/authentication.component';
 import { CovoituragePageComponent } from './pages/covoiturage-page/covoiturage-page.component';
+import { authGuard } from './services/authService/auth.guard';
 
 const routes: Routes = [
     { path: 'home', component: HomePageComponent },
-    { path: 'panier', component: PanierPageComponent },
+    { path: 'panier', component: PanierPageComponent, canActivate: [authGuard] },
     { path: 'authentication', component: AuthenticationComponent },
     { path: '', redirectTo: '/home', pathMatch: 'full' },
-    { path: 'covoiturages', component: CovoituragePageComponent },
+    { path: 'covoiturages', component: CovoituragePageComponent, canActivate: [authGuard] },
     { path: '', redirectTo: '/covoiturages', pathMatch: 'full' },
 ];
 

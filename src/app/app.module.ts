@@ -53,14 +53,11 @@ import { CovoiturageCardComponent } from './components/covoiturage-card/covoitur
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-<<<<<<< HEAD
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFireAuthModule
-=======
+    AngularFireAuthModule,
     BrowserAnimationsModule,
     AutoCompleteModule,
     MenuModule
->>>>>>> origin/feature/primeng
   ],
   providers: [
     httpInterceptorProviders,
