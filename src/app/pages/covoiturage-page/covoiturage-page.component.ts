@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AjoutArcticle } from 'src/app/interfaces/article';
 import { PanierRequestBodyDto } from 'src/app/interfaces/panier-request-body-dto';
 import { AuthService } from 'src/app/services/authService/auth.service';
@@ -20,7 +20,8 @@ export class CovoituragePageComponent implements OnInit {
     private panierService: PanierService,
     private toastService: ToastService,
     private authService: AuthService,
-    private route: ActivatedRoute) {}
+    private route: ActivatedRoute,
+    private router: Router) {}
 
   ngOnInit(): void {
     this.initCurrentFestival();
@@ -32,6 +33,16 @@ export class CovoituragePageComponent implements OnInit {
 
   initQtePass() {
     this.offreCovoiturageService.initQtePass(this.route.snapshot.params['qte']);
+  }
+
+  getQteDisplay(): string {
+    let totalQte = 0;
+
+    this.reservations.forEach(r => {
+      totalQte += r.quantite;
+    });
+
+    return `${totalQte}/${totalQte < this.offreCovoiturageService.qtePass ? this.offreCovoiturageService.qtePass : totalQte}`;
   }
 
   initCurrentFestival() {
@@ -50,8 +61,9 @@ export class CovoituragePageComponent implements OnInit {
       }
       this.panierService.postPanier(data).subscribe({
         next: () => {
-          this.toastService.showInfo('Articles bien ajoutés au panier')
+          this.toastService.showInfo('Articles bien ajoutés au panier');
           this.panierService.getCurrentPanier(data.emailFestivalier).subscribe();
+          this.router.navigateByUrl('/festivals');
         },
         error: () => this.toastService.showError('Echec ajout au panier')
       });
@@ -68,7 +80,5 @@ export class CovoituragePageComponent implements OnInit {
       // if not, add it to the reservation list
       this.reservations.push(reservationInfos);
     }
-
-    console.log('reservations : ', this.reservations);
   }
 }

@@ -2,6 +2,41 @@
   <div class="sort-section">
     <div class="sticky-section">
       <div class="section-trier">
+        <div class="filter-input font-bold">
+          <p-card>
+            <div class="m-0">
+              <div class="font-bold mb-2">{{ this.offreCovoiturageService.currentFestival?.nom }}</div>
+
+              <div class="footer-item mb-2">
+                <i class="pi pi-map-marker"></i>
+                <div class="item-value">
+                  {{ this.offreCovoiturageService.currentFestival?.nomCommune }}, {{ this.offreCovoiturageService.currentFestival?.codePostalCommune }}
+                </div>
+              </div>
+
+              <div class="festival-date flex align-items-center gap-3 mb-2">
+                <div class="footer-item">
+                  <i class="pi pi-calendar"></i>
+                  <div class="item-value">{{ this.offreCovoiturageService.currentFestival?.dateDebut | date }}</div>
+                </div>
+
+                <div class="footer-item">
+                  <i class="pi pi-calendar-times"></i>
+                  <div class="item-value">{{ this.offreCovoiturageService.currentFestival?.dateFin | date }}</div>
+                </div>
+              </div>
+              <p-avatar [label]="getQteDisplay()" styleClass="qte-indicator" size="large"></p-avatar>
+            </div>
+          </p-card>
+        </div>
+
+        <p-divider align="left" type="solid">
+          <div class="titre">Rechercher au alentour</div>
+        </p-divider>
+        <div class="filter-input">
+          <app-commune-input></app-commune-input>
+        </div>
+
         <p-divider align="left" type="solid">
           <div class="titre">Trier</div>
         </p-divider>

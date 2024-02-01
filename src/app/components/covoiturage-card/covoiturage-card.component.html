@@ -1,7 +1,7 @@
 <div class="covoiturage-card mb-5">
   <p-card>
     <div class="m-0">
-      <div class="departure-date">{{ offreCovoiturage.dateOffre| date }}</div>
+      <div class="departure-date">{{ offreCovoiturage.dateOffre | date }}</div>
       <div class="header">
         <div class="flex align-items-center">
           <div class="mr-3">
@@ -27,12 +27,12 @@
               {{ event.adresse }}
           </ng-template>
           <ng-template pTemplate="opposite" let-event>
-            {{ event.date }}
+            {{ event.date | date: 'dd/MM/yyyy hh:mm' }}
         </ng-template>
         </p-timeline>
 
 
-          <div class="flex flex-column align-items-end w-4">
+          <div class="flex flex-column align-items-end w-4" *ngIf="offreCovoiturage.nombrePlaces > 0">
             <div class="mb-2 text-left w-7rem" for="">Places : </div>
             <p-inputNumber
               [showButtons]="true"
@@ -48,6 +48,10 @@
               [min]="0"
               [max]="offreCovoiturage.nombrePlaces"
             />
+          </div>
+
+          <div *ngIf="offreCovoiturage.nombrePlaces < 1" class="flex flex-column align-items-end w-4">
+            <span style="color: red">Voiture pleine</span>
           </div>
 
       </div>
