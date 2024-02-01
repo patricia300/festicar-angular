@@ -1,9 +1,65 @@
 <div class="panier-page">
-  <app-article-card
-    *ngFor="let article of articles"
-    [article]="article"
-    (supprimer)="supprimerArticle($event)"
-  />
+  <p-tabView>
+    <p-tabPanel header="En cours">
+      <div class="flex justify-content-center mb-5" *ngIf="panierService.currentPanierIsLoading">
+        <div class="loader text-center">
+          <p-progressSpinner styleClass="w-4rem h-4rem"/>
+          <div>Chargement ...</div>
+        </div>
+      </div>
+
+      <app-article-card
+        *ngFor="let article of articles"
+        [article]="article"
+        (supprimer)="supprimerArticle($event)"
+      />
+
+      <div class="panier-vide" *ngIf="articles.length < 1 && !panierService.currentPanierIsLoading">
+        <div>
+          <div class="message">
+            Votre panier est vide, vous pouvez le remplir en choisissant vos pass festival.
+          </div>
+          <div class="w-full flex justify-content-center">
+            <p-button label="Voir la liste des festivals" [routerLink]="'/festivals'"></p-button>
+          </div>
+        </div>
+      </div>
+    </p-tabPanel>
+
+    <p-tabPanel header="Historique des réservations">
+      <div class="flex justify-content-center mb-5" *ngIf="panierService.paymentHistoryIsLoading">
+        <div class="loader text-center">
+          <p-progressSpinner styleClass="w-4rem h-4rem"/>
+          <div>Chargement ...</div>
+        </div>
+      </div>
+
+      <div *ngFor="let panier of paniersPayes">
+        <div *ngIf="panier.articles.length > 0">
+          <!-- <p-divider align="left" type="solid">
+            <div class="titre">{{ panier.panier.dateModification | date }}</div>
+          </p-divider> -->
+
+          <app-article-card
+            *ngFor="let article of panier.articles"
+            [article]="article"
+            [paid]="true"
+          />
+        </div>
+      </div>
+
+      <div class="panier-vide" *ngIf="paniersPayes.length < 1 && !panierService.paymentHistoryIsLoading">
+        <div>
+          <div class="message">
+            Votre historique est vide, vous pouvez le remplir en achetant vos pass festival.
+          </div>
+          <div class="w-full flex justify-content-center">
+            <p-button label="Voir la liste des festivals" [routerLink]="'/festivals'"></p-button>
+          </div>
+        </div>
+      </div>
+    </p-tabPanel>
+  </p-tabView>
 </div>
 
 <app-footer-action
