@@ -17,8 +17,11 @@
         </div>
 
         <div class="header-right">
-          <div class="place-restante">
-            {{ festival.nombrePass }} places restantes
+          <div class="place-restante" *ngIf="(festival.nombrePlaceOffreCovoiturage || 0) > 0">
+            {{ festival.nombrePlaceOffreCovoiturage }} places restantes
+          </div>
+          <div class="place-non-disponible" *ngIf="(festival.nombrePlaceOffreCovoiturage || 0) < 1">
+            Aucune place disponible
           </div>
         </div>
       </div>

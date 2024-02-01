@@ -15,20 +15,33 @@
         <p-divider align="left" type="solid">
           <div class="titre">Filtrer</div>
         </p-divider>
-        <div class="filter-input">
-          <app-commune-input></app-commune-input>
-        </div>
-        <div class="filter-input">
-          <input type="date" placeholder="Date début" class="p-inputtext-sm" pInputText />
-        </div>
+
         <div class="filter-input">
           <p-dropdown
-            [options]="[]"
+            [options]="filterOptions"
+            [(ngModel)]="selectedFilterOption"
+            [showClear]="true"
+            placeholder="Choisir l'option de filtre"
+            class="p-inputtext-sm"
+          ></p-dropdown>
+        </div>
+
+        <div class="filter-input" *ngIf="showCommuneFilter()">
+          <app-commune-input (selectCommune)="onSelectCommune($event)"></app-commune-input>
+          <p-button styleClass="w-full mt-3" label="Filtrer" size="small" (click)="filterByCommune()"/>
+        </div>
+        <div class="filter-input" *ngIf="showDateDebutFilter()">
+          <input [(ngModel)]="dateDebutFilterValue" type="date" placeholder="Date début" class="p-inputtext-sm" pInputText />
+          <p-button styleClass="w-full mt-3" label="Filtrer" size="small" (click)="filterByDateDebut()"/>
+        </div>
+        <div class="filter-input" *ngIf="showDomaineFilter()">
+          <p-dropdown
+            [options]="domaineService.domainePrincipalsString"
+            [(ngModel)]="domaineFilterValue"
             class="p-inputtext-sm"
             placeholder="Domaine du festival"
-            [editable]="true"
-            optionLabel="name"/>
-          <p-button styleClass="w-full mt-3" label="Filtrer" size="small"/>
+            [editable]="true"/>
+            <p-button styleClass="w-full mt-3" label="Filtrer" size="small" (click)="filterByDomaine()"/>
         </div>
       </div>
 

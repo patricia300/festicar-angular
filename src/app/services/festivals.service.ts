@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable, finalize, tap } from 'rxjs';
 import { Festival } from '../interfaces/festival';
 import { Pageable } from '../interfaces/pageable';
+import { formatDate } from '../utils/date.util';
 
 @Injectable({
   providedIn: 'root'
@@ -43,12 +44,37 @@ export class FestivalsService {
     return this.http.get<Festival>(`festivals/${idFestival}`);
   }
 
-  getAllFestivalsByCommune(numeroPage = 0, taillePage = 10, commune = 'Mulhouse'): Observable<Pageable<Festival>> {
-    return this.http.get<Pageable<Festival>>('festivals/by-commune', { params: { numeroPage, taillePage, commune } });
+  getAllFestivalsByCommune(codeInsee: string): Observable<Festival[]> {
+    this.festivals = [];
+    this.festivalsIsLoading = true;
+    return this.http.get<Festival[]>('festivals/by-commune', { params: { communeCodeInsee: codeInsee } }).pipe(
+      tap((festivals) => {
+        this.festivals = festivals;
+      }),
+      finalize(() => this.festivalsIsLoading = false)
+    );
   }
 
-  getAllFestivalsByDate(dateDebut = '02/02/2024', dateFin = '27/04/2024'): Observable<Pageable<Festival>> {
-    return this.http.get<Pageable<Festival>>('festivals/by-date', { params: { dateDebut, dateFin } });
+  getAllFestivalsByDate(dateDebut: string): Observable<Festival[]> {
+    this.festivals = [];
+    this.festivalsIsLoading = true;
+    return this.http.get<Festival[]>('festivals/by-date', { params: { dateDebut: formatDate(dateDebut) } }).pipe(
+      tap((festivals) => {
+        this.festivals = festivals;
+      }),
+      finalize(() => this.festivalsIsLoading = false)
+    );
+  }
+
+  getAllFestivalsByDomaine(nomDomaine: string): Observable<Festival[]> {
+    this.festivals = [];
+    this.festivalsIsLoading = true;
+    return this.http.get<Festival[]>('festivals/by-domaine', { params: { domaine: nomDomaine } }).pipe(
+      tap((festivals) => {
+        this.festivals = festivals;
+      }),
+      finalize(() => this.festivalsIsLoading = false)
+    );
   }
 
   getAllFestivalByFiltre(
