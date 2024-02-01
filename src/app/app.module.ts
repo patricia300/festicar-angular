@@ -49,9 +49,13 @@ import { DialogModule } from 'primeng/dialog';
 import { FooterActionComponent } from './components/footer-action/footer-action.component';
 import { MenuModule } from 'primeng/menu';
 import { BadgeModule } from 'primeng/badge';
-import { MessageService } from 'primeng/api';
+import { ConfirmationService } from 'primeng/api';
 import { ToastrModule } from 'ngx-toastr';
 import { CommonModule } from '@angular/common';
+import { PanierPageComponent } from './pages/panier-page/panier-page.component';
+import { ArticleCardComponent } from './components/article-card/article-card.component';
+import { CheckboxModule } from 'primeng/checkbox';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
 
 @NgModule({
   declarations: [
@@ -74,6 +78,8 @@ import { CommonModule } from '@angular/common';
     CommuneInputComponent,
     TruncatePipe,
     FooterActionComponent,
+    PanierPageComponent,
+    ArticleCardComponent,
   ],
   imports: [
     BrowserModule,
@@ -101,12 +107,14 @@ import { CommonModule } from '@angular/common';
     DialogModule,
     BadgeModule,
     ToastrModule.forRoot(),
-    CommonModule
+    CommonModule,
+    CheckboxModule,
+    ConfirmDialogModule
   ],
   providers: [
     httpInterceptorProviders,
     { provide: LOCALE_ID, useValue: 'fr-FR'},
-    MessageService
+    ConfirmationService
   ],
   bootstrap: [AppComponent]
 })
