@@ -89,6 +89,36 @@
 }
 
 /***********************
+* Article Card *
+************************/
+
+.article-card {
+
+  .p-card-content {
+    padding: 0;
+  }
+
+  .p-divider.p-divider-vertical:before {
+    border-left: solid 2px #ebebeb;
+  }
+
+  .p-avatar.p-avatar-image {
+    border: #0375DA solid .2rem;
+  }
+
+  .p-timeline-event {
+    font-weight: bold;
+    font-size: .8;
+  }
+
+  .p-timeline-event-opposite {
+    max-width: 5rem;
+    padding-left: 0;
+    text-align: center;
+  }
+}
+
+/***********************
 * Covoiturage Card *
 ************************/
 

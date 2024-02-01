@@ -1,3 +1,13 @@
 <div class="panier-page">
-  <p>panier-page works!</p>
+  <app-article-card
+    *ngFor="let article of articles"
+    [article]="article"
+    (supprimer)="supprimerArticle($event)"
+  />
 </div>
+
+<app-footer-action
+  [disabled]="false"
+  [buttonText]="getButtonText()"
+  (clickRightButton)="validerPanier()"
+/>
