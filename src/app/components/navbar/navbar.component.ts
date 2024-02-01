@@ -1,13 +1,11 @@
-import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Component, Input, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 import { AutoCompleteCompleteEvent } from 'primeng/autocomplete';
 import { CommuneSearchItem } from 'src/app/interfaces/commune';
 import { AuthService } from 'src/app/services/authService/auth.service';
 import { CommuneService } from 'src/app/services/commune.service';
+import { ConfirmDialogService } from 'src/app/services/confirm-dialog.service';
 import { PanierService } from 'src/app/services/panier.service';
-import { ToastService } from 'src/app/services/toast.service';
-import { UtilisateurService } from 'src/app/services/utilisateurService/utilisateur.service';
 
 @Component({
   selector: 'app-navbar',
@@ -28,15 +26,13 @@ export class NavbarComponent implements OnInit {
     private communeService: CommuneService,
     protected panierService: PanierService,
     protected authService: AuthService,
-    private toastService: ToastService,
-    private utilisateurService: UtilisateurService) {}
+    private confirmDialogService: ConfirmDialogService) {}
 
   ngOnInit() {
-    this.initProfilItems();
     this.communeService.initData();
 
-    if(this.utilisateurService.utilisateur && this.authService.isAuthenticated()) {
-      this.panierService.getCurrentPanier(this.utilisateurService.utilisateur.email).subscribe();
+    if(this.authService.isAuthenticated() && this.authService.userEmail) {
+      this.panierService.getCurrentPanier(this.authService.userEmail).subscribe();
     }
   }
 
@@ -44,20 +40,15 @@ export class NavbarComponent implements OnInit {
     this.communeSuggestions = this.communeService.communes.filter(c => c.nom.toLowerCase().includes(event.query.toLowerCase()));
   }
 
-  initProfilItems() {
-    this.profilItems = [
-      {
-        label: 'Se connecter',
-        icon: 'pi pi-sign-in',
-        routerLink: '/authentication'
-      },
-      {
-        label: 'Se déconnecter',
-        icon: 'pi pi-sign-out',
-        command: () => {
-          this.authService.signOut();
-        }
-      }
-    ];
+  authenticateWithGoogle(){
+    this.authService.googleSignin();
+  }
+
+  seDeconnecter() {
+    this.confirmDialogService.confirm(
+      'Se déconnecter',
+      'Voulez-vous vraiment vous déconnecter?',
+      () => this.authService.signOut()
+    );
   }
 }

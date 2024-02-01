@@ -1,28 +1,51 @@
 <nav class="navbar">
   <div class="navbar-top">
-    <a class="navbar-brand" [routerLink]="'/festivals'">Festicar</a>
+
+    <div class="flex align-items-center" [routerLink]="'/festivals'">
+      <img
+        src="../../../assets/icon/icon-festicar.png"
+        alt="festicar icon"
+        width="40"/>
+      <span class="navbar-brand ml-2"> Festicar </span>
+    </div>
 
     <div class="navbar-end">
-      <i
-        class="pi pi-shopping-cart mx-5"
-        *ngIf="authService.isAuthenticated() && panierService.nbArticles < 1"
+      <p-button
+        class="mx-5"
+        label="Mon Panier"
+        icon="pi pi-shopping-cart"
+        size="small"
+        [outlined]="true"
+        [badge]="panierService.nbArticles.toString()"
+        badgeClass="p-badge-info"
         [routerLink]="'/panier'"
-      ></i>
+        [text]="true"
+        routerLinkActive="''"
+        *ngIf="authService.isAuthenticated()"
+      ></p-button>
 
-      <i
-        class="pi pi-shopping-cart mx-5"
-        *ngIf="authService.isAuthenticated() && panierService.nbArticles > 0"
-        [value]="panierService.nbArticles.toString()"
-        [routerLink]="'/panier'"
-        pBadge
-      ></i>
+      <p-button
+        *ngIf="!authService.isAuthenticated()"
+        label="Se connecter"
+        icon="pi pi-google"
+        size="small"
+        [outlined]="true"
+        (click)="authenticateWithGoogle()"
+      ></p-button>
 
-      <p-menu #profilMenu [model]="profilItems" [popup]="true"></p-menu>
-      <i class="pi pi-user" (click)="profilMenu.toggle($event)" ></i>
+      <p-button
+        *ngIf="authService.isAuthenticated()"
+        label="Se déconnecter"
+        icon="pi pi-sign-out"
+        size="small"
+        [outlined]="true"
+        [text]="true"
+        (click)="seDeconnecter()"
+      ></p-button>
     </div>
   </div>
 
-  <div class="search-bar">
+  <!-- <div class="search-bar">
     <app-commune-input *ngIf="showCommuneSearchInput" placeholder="Saisissez votre commune de départ ... "></app-commune-input>
     <span
       *ngIf="showFestivalSearchInput"
@@ -31,5 +54,5 @@
       <i class="pi pi-search"></i>
       <input class="w-full" type="text" placeholder="Rechercher votre festival ... " pInputText />
     </span>
-  </div>
+  </div> -->
 </nav>
