@@ -27,6 +27,24 @@
   }
 }
 
+.covoiturage-page {
+  .p-card {
+    position: relative;
+
+    .qte-indicator {
+      position: absolute;
+      right: 0%;
+      top: 50%;
+      transform: translate(50%, -50%);
+    }
+  }
+
+  .p-card-content {
+    margin: 0;
+    padding: 0;
+  }
+}
+
 /***********************
 * Commune search bar *
 ************************/
@@ -74,6 +92,7 @@
   }
 
   .festival-card {
+
     .p-card {
       box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     }
@@ -115,7 +134,7 @@
   }
 
   .p-timeline-event-opposite {
-    max-width: 5rem;
+    max-width: 8rem;
     padding-left: 0;
     text-align: center;
   }
@@ -140,7 +159,7 @@
   }
 
   .p-timeline-event-opposite {
-    max-width: 5rem;
+    max-width: 8rem;
     padding-left: 0;
     text-align: center;
   }
