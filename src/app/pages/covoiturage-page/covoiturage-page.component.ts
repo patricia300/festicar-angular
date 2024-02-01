@@ -2,10 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AjoutArcticle } from 'src/app/interfaces/article';
 import { PanierRequestBodyDto } from 'src/app/interfaces/panier-request-body-dto';
+import { AuthService } from 'src/app/services/authService/auth.service';
 import { OffreCovoiturageService } from 'src/app/services/offre-covoiturage.service';
 import { PanierService } from 'src/app/services/panier.service';
 import { ToastService } from 'src/app/services/toast.service';
-import { UtilisateurService } from 'src/app/services/utilisateurService/utilisateur.service';
+
 @Component({
   selector: 'app-covoiturage-page',
   templateUrl: './covoiturage-page.component.html',
@@ -17,15 +18,15 @@ export class CovoituragePageComponent implements OnInit {
   constructor(
     protected offreCovoiturageService: OffreCovoiturageService,
     private panierService: PanierService,
-    private utilisateurService: UtilisateurService,
     private toastService: ToastService,
+    private authService: AuthService,
     private route: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.initCurrentFestival();
     this.initQtePass();
-    if(this.utilisateurService.utilisateur) {
-      this.panierService.getCurrentPanier(this.utilisateurService.utilisateur.email).subscribe();
+    if(this.authService.userEmail) {
+      this.panierService.getCurrentPanier(this.authService.userEmail).subscribe();
     }
   }
 
@@ -41,10 +42,10 @@ export class CovoituragePageComponent implements OnInit {
   }
 
   addArticlesAuPanier() {
-    if(!this.utilisateurService.utilisateur) this.toastService.showError('Utilisateur courant non défini');
+    if(!this.authService.userEmail) this.toastService.showError('Email de utilisateur courant non défini');
     else {
       const data: PanierRequestBodyDto = {
-        emailFestivalier: this.utilisateurService.utilisateur.email,
+        emailFestivalier: this.authService.userEmail,
         articles: this.reservations
       }
       this.panierService.postPanier(data).subscribe({
