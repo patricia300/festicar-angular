@@ -20,7 +20,7 @@ export class CovoiturageCardComponent {
 
     return [
       {
-        adresse: `${lieuCovoiturage?.adresse} ${lieuCovoiturage?.commune.nom} ${lieuCovoiturage?.commune.codePostal}`,
+        adresse: `${lieuCovoiturage?.adresse} ${lieuCovoiturage?.commune.nom}, ${lieuCovoiturage?.commune.codePostal}`,
         date: '09:30'
       },
       {
