@@ -1,23 +1,26 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { GoogleAuthProvider, FacebookAuthProvider } from '@firebase/auth';
-import { Route, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { UtilisateurService } from '../utilisateurService/utilisateur.service';
 import { Utilisateur } from 'src/app/interfaces/utilisateur';
 import { ToastService } from '../toast.service';
+import { PanierService } from '../panier.service';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  token: any = this.getToken();
+  token: string | null = this.getToken();
+  userEmail: string | null = this.getUserEmail();
 
   constructor(
     private afauth: AngularFireAuth,
     private router: Router,
     private utilisateurService: UtilisateurService,
     private toastService: ToastService,
+    private panierService: PanierService
     ) {
       if(this.token){
         this.utilisateurService.getUtilisateurByToken(this.token).subscribe(
@@ -52,14 +55,15 @@ export class AuthService {
     this.afauth.signOut().then(
       () => {
         localStorage.removeItem('token');
+        localStorage.removeItem('userEmail');
         this.token = '';
+        this.userEmail = '';
         this.utilisateurService.utilisateur = undefined;
         this.toastService.showSuccess('Compte déconnecté avec succès');
         this.router.navigate(['/']);
       },
       () => this.toastService.showError('Echec de la déconnexion')
     );
-
   }
 
   isAuthenticated(){
@@ -75,8 +79,9 @@ export class AuthService {
           if(utilisateur){
             this.utilisateurService.utilisateur=utilisateur;
             this.setToken(credential);
-            console.log(this.utilisateurService.utilisateur);
+            localStorage.setItem('userEmail', utilisateur.email);
             this.toastService.showSuccess('Connexion réussie');
+            this.panierService.getCurrentPanier(utilisateur.email).subscribe();
           }else{
             const utilisateur: Utilisateur ={
               email:credential.user.email,
@@ -90,7 +95,7 @@ export class AuthService {
               next: (utilisateur: Utilisateur) => {
                 this.utilisateurService.utilisateur=utilisateur;
                 this.setToken(credential);
-                console.log(this.utilisateurService.utilisateur);
+                localStorage.setItem('userEmail', utilisateur.email);
                 this.toastService.showSuccess('Compte créé et connecté')
               },
               error: () => this.toastService.showError('Compte utilisateur non créé')
@@ -104,11 +109,15 @@ export class AuthService {
   }
 
   private setToken(credential: any){
-    this.token = credential.credential.accessToken;
-    localStorage.setItem("token", this.token);
+    localStorage.setItem('token', credential.credential.accessToken);
+    this.token = this.getToken();
   }
 
   private getToken() {
-    return localStorage.getItem("token") ? localStorage.getItem("token") : "";
+    return localStorage.getItem('token') ? localStorage.getItem('token') : '';
+  }
+
+  private getUserEmail() {
+    return localStorage.getItem('userEmail') ? localStorage.getItem('userEmail') : '';
   }
 }
