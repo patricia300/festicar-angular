@@ -8,6 +8,7 @@ import { ArticleCard } from 'src/app/interfaces/article';
 })
 export class ArticleCardComponent {
   @Input({required: true}) article!: ArticleCard;
+  @Input() paid: boolean = false;
   @Output() supprimer = new EventEmitter<number>();
 
 
@@ -21,15 +22,17 @@ export class ArticleCardComponent {
 
   getTrajetInfo() {
     const lieuCovoiturage = this.article.pointPassageCovoiturage?.lieuCovoiturage;
+    const dateDepart: Date = new Date(this.article.offreCovoiturage?.heureDepart || 0);
+    const differenceHeurePassage: number = this.article.pointPassageCovoiturage?.differenceHeurePassage || 0;
 
     return [
       {
         adresse: `${lieuCovoiturage?.adresse} ${lieuCovoiturage?.commune.nom}, ${lieuCovoiturage?.commune.codePostal}`,
-        date: '09:30'
+        date: dateDepart.setHours(dateDepart.getHours() + differenceHeurePassage)
       },
       {
         adresse: this.article.festival.nomCommune,
-        date: '20:00'
+        date: this.article.offreCovoiturage?.heureArrive
       }
     ];
   }

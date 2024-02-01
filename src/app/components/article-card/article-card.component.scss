@@ -71,11 +71,20 @@
     position: relative;
     width: 45%;
 
-    .supprimer-button {
-      display: none;
+    .supprimer-button, .paid-mention {
       position: absolute;
       bottom: 0;
       right: 0;
+    }
+
+    .supprimer-button {
+      display: none;
+    }
+
+    .paid-mention {
+      font-weight: bold;
+      font-size: larger;
+      color: rgb(0, 187, 0);
     }
 
     .header {
