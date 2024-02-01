@@ -3,11 +3,13 @@
   <p-autoComplete
     [placeholder]="placeholder"
     [(ngModel)]="selectedCommune"
+    (ngModelChange)="onSelectCommune()"
     [suggestions]="communeSuggestions"
     [minLength]="1"
     (completeMethod)="filterCommune($event)"
     field="nom"
     class="p-inputtext-sm"
+    type="search"
   >
     <ng-template let-commune pTemplate="item">
       <div>{{ commune.nom }} {{ commune.codePostal }}</div>
