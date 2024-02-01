@@ -32,7 +32,11 @@ export class PanierService {
     return this.http.post<Panier>('panier', panierRequestBodyDto);
   }
 
-  putPanier(id: number): Observable<Panier> {
+  payerPanier(id: number): Observable<Panier> {
     return this.http.put<Panier>('panier/payer', { params: { id }});
+  }
+
+  supprimerArticle(idArticle: number) {
+    return this.http.delete<any>(`article/${idArticle}`);
   }
 }

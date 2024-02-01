@@ -15,7 +15,7 @@ import { ListArticlesComponent } from './components/list-articles/list-articles.
 import { ArticleComponent } from './components/article/article.component';
 import { AuthenticationComponent } from './components/authentication/authentication.component';
 import { PaginationComponent } from './components/pagination/pagination.component';
-import { registerLocaleData } from '@angular/common';
+import { CurrencyPipe, registerLocaleData } from '@angular/common';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { environment } from '../environments/environment';
@@ -114,7 +114,8 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
   providers: [
     httpInterceptorProviders,
     { provide: LOCALE_ID, useValue: 'fr-FR'},
-    ConfirmationService
+    ConfirmationService,
+    CurrencyPipe
   ],
   bootstrap: [AppComponent]
 })

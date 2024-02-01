@@ -17,6 +17,8 @@ export class FestivalPageComponent implements OnInit {
   modalConnexionIsVisible: boolean = false;
   qtePass: number = 1;
 
+  festivalSearchValue: string = '';
+
   constructor(
     protected festivalsService: FestivalsService,
     private authService: AuthService,
@@ -27,11 +29,27 @@ export class FestivalPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.festivalsService.getAll().subscribe({
-      error: () => this.toastService.showError('récupération des festivals')
+      error: () => this.toastService.showError('Echec lors de la récupération des festivals')
     });
 
     if(this.utilisateurService.utilisateur) {
       this.panierService.getCurrentPanier(this.utilisateurService.utilisateur.email).subscribe();
+    }
+  }
+
+  getFestivalByName() {
+    if(this.festivalSearchValue) {
+      this.festivalsService.getAllByName(this.festivalSearchValue).subscribe({
+        next: (festivals) => {
+          if(festivals.length < 1) this.toastService.showInfo('Aucun festival ne correspond à votre recherche');
+        },
+        error: () => this.toastService.showError('Echec lors de la récupération des festivals')
+      });
+    } else {
+      this.festivalsService.festivals = [];
+      this.festivalsService.getAll().subscribe({
+        error: () => this.toastService.showError('Echec lors de la récupération des festivals')
+      });
     }
   }
 

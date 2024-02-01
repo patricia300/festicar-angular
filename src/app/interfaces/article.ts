@@ -22,5 +22,6 @@ export interface ArticleCard {
   quantite: number,
   offreCovoiturage?: OffreCovoiturage,
   pointPassageCovoiturage?: PointPassageCovoiturages,
-  checked?: boolean
+  checked?: boolean,
+  totalPrix: number
 }

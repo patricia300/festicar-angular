@@ -1,8 +1,10 @@
+import { CurrencyPipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { ArticleCard } from 'src/app/interfaces/article';
-import { Festival } from 'src/app/interfaces/festival';
 import { AuthService } from 'src/app/services/authService/auth.service';
+import { ConfirmDialogService } from 'src/app/services/confirm-dialog.service';
 import { PanierService } from 'src/app/services/panier.service';
+import { ToastService } from 'src/app/services/toast.service';
 
 @Component({
   selector: 'app-panier-page',
@@ -13,8 +15,11 @@ export class PanierPageComponent {
   articles: ArticleCard[] = [];
 
   constructor(
-    protected panierService: PanierService,
-    private authService: AuthService) {}
+    private panierService: PanierService,
+    private toastService: ToastService,
+    private confirmDialogService: ConfirmDialogService,
+    private authService: AuthService,
+    private currencyPipe: CurrencyPipe) {}
 
   ngOnInit(): void {
     this.populateArticles();
@@ -22,6 +27,15 @@ export class PanierPageComponent {
 
   supprimerArticle(idArticle: number) {
     console.log('suppression article : ', idArticle);
+    const selectedArticle = this.articles.find(a => a.id === idArticle);
+
+    this.confirmDialogService.confirm(
+      "Suppression d'un article",
+      ` Voulez-vous vraiment procédez à la suppression de <b>${selectedArticle?.quantite} ticket(s)</b>
+        pour le festival <b>${selectedArticle?.festival.nom}</b> ?
+      `,
+      () => this.panierService.supprimerArticle(idArticle).subscribe()
+    );
   }
 
   validerPanier() {
@@ -29,16 +43,53 @@ export class PanierPageComponent {
 
     if(selectedArticles.length < 1) {
       // payer tout le panier
-      console.log('Payer tout le panier : ', this.articles);
+      this.confirmDialogService.confirm(
+        'Paiement du panier',
+        `Vous allez payer un montant de ${this.currencyPipe.transform(this.getTotalAmount(), 'EUR')}`,
+        () => {
+          this.panierService.payerPanier(this.articles[0].festival.id).subscribe({
+            next: () => this.toastService.showSuccess('Tout les articles ont été payés'),
+            error: () => this.toastService.showError('Paiement du panier')
+          });
+        }
+      );
     } else {
       // payer les articles sélectionnés
-      console.log('Payer les articles sélectionnés :', selectedArticles);
+      this.confirmDialogService.confirm(
+        'Paiement partiel du panier',
+        `Vous allez payer un montant de ${this.currencyPipe.transform(this.getTotalAmount(), 'EUR')}`,
+        () => console.log('Payer les articles sélectionnés :', selectedArticles)
+      );
     }
+  }
+
+  getTotalAmount(): number {
+    let amount = 0;
+    const selectedArticles = this.articles.filter(a => a.checked);
+
+    if(selectedArticles.length > 0) {
+      selectedArticles.forEach(article => {
+        amount += article.totalPrix;
+      });
+    } else {
+      this.articles.forEach(article => {
+        amount += article.totalPrix;
+      });
+    }
+
+    return amount;
   }
 
   getButtonText(): string {
     const selectedArticleCount = this.articles.filter(a => a.checked).length;
-    return this.articles.filter(a => a.checked).length > 0 ? `Payer ${selectedArticleCount} article(s) selectionné(s)` : 'Payer tout le panier'
+
+    return selectedArticleCount > 0 ?
+       `Payer ${selectedArticleCount} article(s) selectionné(s) : ${this.currencyPipe.transform(this.getTotalAmount(), 'EUR')}` :
+       `Payer tout le panier : ${this.currencyPipe.transform(this.getTotalAmount(), 'EUR')}`
+  }
+
+  footerIsHidden(): boolean {
+    return this.articles.length < 1;
   }
 
   populateArticles() {
@@ -64,7 +115,9 @@ export class PanierPageComponent {
             quantite,
             festival,
             pointPassageCovoiturage,
-            offreCovoiturage
+            offreCovoiturage,
+            totalPrix: quantite * (festival.tarifPass + (pointPassageCovoiturage?.prix || 0))
+
           });
         })
       });

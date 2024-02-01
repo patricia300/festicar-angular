@@ -3,7 +3,6 @@ import { Injectable } from '@angular/core';
 import { Observable, finalize, tap } from 'rxjs';
 import { Festival } from '../interfaces/festival';
 import { Pageable } from '../interfaces/pageable';
-import { MessageService } from 'primeng/api';
 
 @Injectable({
   providedIn: 'root'
@@ -28,6 +27,16 @@ export class FestivalsService {
         }),
         finalize(() => this.festivalsIsLoading = false)
       )
+  }
+
+  getAllByName(nomFestival: string): Observable<Festival[]> {
+    this.festivalsIsLoading = true;
+    return this.http.get<Festival[]>('festivals/by-nom', { params: { nom: nomFestival }}).pipe(
+      tap((festivals) => {
+        this.festivals = festivals;
+      }),
+      finalize(() => this.festivalsIsLoading = false)
+    );
   }
 
   getFestivalById(idFestival: number): Observable<Festival> {

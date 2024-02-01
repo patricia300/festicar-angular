@@ -12,6 +12,10 @@
             <div class="covoitureur-vehicle">
               <i class="pi pi-car mr-2"></i> {{ offreCovoiturage.modeleVoiture }}
             </div>
+            <div class="covoitureur-contact">
+              <i class="pi pi-phone mr-2"></i>
+              {{ offreCovoiturage.covoitureur.numeroTelephone }}
+            </div>
           </div>
         </div>
         <div class="covoiturage-price">{{ offreCovoiturage.pointPassagePlusProche?.prix | currency: 'EUR' }}</div>
