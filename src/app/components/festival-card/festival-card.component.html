@@ -32,11 +32,11 @@
           <div class="footer-item mb-2">
             <i class="pi pi-map-marker"></i>
             <div class="item-value">
-              {{ festival.nomCommune }}
+              {{ festival.nomCommune }}, {{ festival.codePostalCommune }}
             </div>
           </div>
 
-          <div class="festival-date">
+          <div class="festival-date mb-2">
             <div class="footer-item">
               <i class="pi pi-calendar"></i>
               <div class="item-value">{{ festival.dateDebut | date }}</div>
