@@ -1,0 +1,43 @@
+// IMPORTANT : certaines style sont dans le src/styles.css pour un raison de scope
+
+.covoiturage-card {
+  position: relative;
+  width: 100%;
+  min-width: 30rem;
+
+  .departure-date {
+    position: absolute;
+    padding: 0.5rem 2rem;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+    background-color: white;
+    border-radius: 5px;
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+
+    .covoiturage-price {
+      font-weight: bold;
+    }
+
+    .covoitureur-description {
+      .covoitureur-name {
+        font-weight: bold;
+        margin-bottom: .3rem;
+      }
+
+      .covoitureur-vehicle {
+        margin-bottom: .3rem;
+      }
+
+      .covoitureur-vehicle, .covoitureur-contact {
+        font-size: .8rem;
+      }
+    }
+  }
+}

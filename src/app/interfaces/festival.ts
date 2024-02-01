@@ -9,6 +9,7 @@ export interface Festival {
   nombrePass: number,
   siteWeb: string,
   nomCommune: string,
+  codePostalCommune: string,
   nomSousDomaine: string,
   nomDomainePrincipal: string,
   nomOrganisateur: string,

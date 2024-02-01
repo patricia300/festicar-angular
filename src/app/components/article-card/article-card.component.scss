@@ -1,0 +1,106 @@
+.article-card {
+  width: 100%;
+
+  &:hover {
+    .covoiturage-section {
+      .supprimer-button {
+        display: block;
+      }
+    }
+  }
+
+  .festival-section {
+    width: 38%;
+
+    a {
+      color: #495057;
+    }
+
+    .nom-festival {
+      font-weight: bold;
+    }
+
+    .festival-domaine {
+      display: flex;
+      margin-top: .5rem;
+
+      .domaine-principal, .sous-domaine {
+        padding: .2rem .5rem;
+        margin-right: .3rem;
+        border-radius: 4px;
+        font-size: small;
+        color: white;
+      }
+
+      .domaine-principal {
+        background-color: rgb(39, 162, 39);
+      }
+
+      .sous-domaine {
+        background-color: rgb(0, 195, 139);
+      }
+    }
+
+    .festival-tarif {
+      width: 100%;
+      text-align: right;
+      margin-top: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .festival-date {
+      display: flex;
+      gap: .8rem;
+    }
+
+    .footer-item {
+      display: flex;
+      align-items: center;
+
+      .pi {
+        margin-right: .3rem;
+      }
+
+      .item-value {
+        font-size: .85rem;
+      }
+    }
+  }
+
+  .covoiturage-section {
+    position: relative;
+    width: 45%;
+
+    .supprimer-button {
+      display: none;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+
+      .covoiturage-price {
+        font-weight: normal;
+      }
+
+      .covoitureur-description {
+        .covoitureur-name {
+          font-weight: bold;
+          margin-bottom: .3rem;
+        }
+
+        .covoitureur-vehicle {
+          margin-bottom: .3rem;
+        }
+
+        .covoitureur-vehicle, .covoitureur-contact {
+          font-size: .8rem;
+        }
+      }
+    }
+  }
+}

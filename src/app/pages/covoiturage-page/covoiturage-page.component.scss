@@ -1,19 +1,34 @@
 .covoiturage-page {
-  position: relative;
-  height: 200vh;
+  padding: 0 10%;
+  padding-top: 7rem;
+  padding-bottom: 4rem;
 
   .sort-section {
-    position: sticky;
-    top: 8rem;
-    left: 0;
-    width: 30%;
-    min-width: 16rem;
-    max-width: 25rem;
+    position: relative;
+
+    .sticky-section {
+      position: fixed;
+      top: 8rem;
+      width: 30%;
+      min-width: 16rem;
+      max-width: 25rem;
+    }
+
+    .titre {
+      font-weight: bold;
+    }
+
+    .filter-input {
+      padding: .7rem 1.5rem;
+    }
+
+    .date-input {
+      width: 5rem;
+      height: 10rem;
+    }
   }
 
   .main-section {
-    padding-left: 25rem;
-    height: 100%;
-    width: 100%;
+    padding-left: 40%;
   }
 }

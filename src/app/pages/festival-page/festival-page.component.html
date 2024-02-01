@@ -3,6 +3,16 @@
     <div class="sticky-section">
       <div class="section-filtrer">
         <p-divider align="left" type="solid">
+          <div class="titre">Recherche de festival</div>
+        </p-divider>
+        <div class="filter-input">
+          <span class="p-input-icon-left w-full">
+            <i class="pi pi-search"></i>
+            <input class="w-full p-inputtext-sm" [(ngModel)]="festivalSearchValue" type="search" placeholder="Rechercher votre festival ... " pInputText />
+          </span>
+          <p-button styleClass="w-full mt-3" label="Rechercher" size="small" (click)="getFestivalByName()"/>
+        </div>
+        <p-divider align="left" type="solid">
           <div class="titre">Filtrer</div>
         </p-divider>
         <div class="filter-input">
@@ -18,6 +28,7 @@
             placeholder="Domaine du festival"
             [editable]="true"
             optionLabel="name"/>
+          <p-button styleClass="w-full mt-3" label="Filtrer" size="small"/>
         </div>
       </div>
 
@@ -32,7 +43,61 @@
     </div>
   </div>
 
+  <p-dialog
+    [header]="festivalsService.selectedFestival?.nom"
+    [(visible)]="modalFestivalIsVisible"
+    [modal]="true"
+    [style]="{ width: '50vw', maxWidth: '40rem', minWidth: '23rem' }"
+  >
+    <div class="m-0">
+      <div class="choix-quantite mb-4">
+        <span class="mr-5">Quantité de pass:</span>
+        <p-inputNumber
+          [showButtons]="true"
+          [(ngModel)]="qtePass"
+          buttonLayout="horizontal"
+          spinnerMode="horizontal"
+          inputId="horizontal"
+          decrementButtonClass="p-button-secondary"
+          incrementButtonClass="p-button-secondary"
+          incrementButtonIcon="pi pi-plus"
+          decrementButtonIcon="pi pi-minus"
+          [min]="1"
+          [max]="festivalsService.selectedFestival?.nombrePass"
+        />
+      </div>
+      <p-button
+        label="Ajouter au panier"
+        size="small"
+        styleClass="w-full"
+        [disabled]="!(qtePass > 0)"
+        (click)="onAjouterAuPanier()"
+      />
+    </div>
+  </p-dialog>
+
+  <p-dialog
+    [(visible)]="modalConnexionIsVisible"
+    [modal]="true"
+    [style]="{ width: '50vw', maxWidth: '40rem', minWidth: '23rem' }"
+  >
+    <div class="m-0">
+      <app-authentication (connected)="onConnected()"></app-authentication>
+    </div>
+  </p-dialog>
+
   <div class="main-section">
-    <app-festival-card *ngFor="let festival of [].constructor(9)"/>
+    <app-festival-card
+      *ngFor="let festival of festivalsService.festivals"
+      [festival]="festival"
+      (acheterPass)="onAcheterPassFestival($event)"
+    />
+
+    <div class="flex justify-content-center mb-5" *ngIf="festivalsService.festivalsIsLoading">
+      <div class="loader text-center">
+        <p-progressSpinner styleClass="w-4rem h-4rem"/>
+        <div>Chargement ...</div>
+      </div>
+    </div>
   </div>
 </div>

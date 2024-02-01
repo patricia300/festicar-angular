@@ -1,22 +1,38 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { FestivalsService } from './services/festivals.service';
-import { Festival } from './interfaces/festival';
-import { Pageable } from './interfaces/pageable';
+import { PanierService } from './services/panier.service';
+import { DomaineService } from './services/domaine.service';
+import { DomainePrincipal } from './interfaces/domaine-principal';
+import { RouteService } from './services/route-service.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit{
-  festivals: Festival[] = [];
+export class AppComponent implements OnInit, OnChanges  {
+  showFestivalSearchInput: boolean = false;
+  showCommuneSearchInput: boolean = false;
 
-  constructor(private festivalsService: FestivalsService) {}
+  constructor(private routeService: RouteService) { }
 
   ngOnInit(): void {
-    this.festivalsService.getAll().subscribe((pageFestival: Pageable<Festival>) => {
-      this.festivals = pageFestival.content;
-      console.log("festivals : ", this.festivals);
-    });
+    this.updateShowCommuneSearchInput();
+    this.updateShowFestivalSearchInput();
   }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    this.updateShowCommuneSearchInput();
+    this.updateShowFestivalSearchInput();
+  }
+
+  updateShowFestivalSearchInput() {
+    this.showFestivalSearchInput = this.routeService.currentRoute.includes('/festivals');
+  }
+
+  updateShowCommuneSearchInput() {
+    this.showCommuneSearchInput = this.routeService.currentRoute.includes('/covoiturages');
+  }
+
 }

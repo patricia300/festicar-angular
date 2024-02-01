@@ -1,0 +1,107 @@
+<div class="article-card mb-5">
+  <p-card>
+    <div class="m-0 flex">
+      <p-checkbox
+        styleClass="mr-5"
+        [binary]="true"
+        [(ngModel)]="article.checked"
+      />
+
+      <div class="festival-section flex-grow-1">
+        <div class="header">
+          <div class="nom-festival">{{ article.festival.nom }}</div>
+          <div class="festival-domaine">
+            <div class="domaine-principal">{{ article.festival.nomDomainePrincipal }}</div>
+            <div class="sous-domaine">{{ article.festival.nomSousDomaine }}</div>
+          </div>
+        </div>
+
+        <div class="festival-tarif">
+          {{ article.festival.tarifPass | currency: 'EUR' }}
+        </div>
+
+        <div class="footer">
+          <div class="footer-item mb-2">
+            <i class="pi pi-map-marker"></i>
+            <div class="item-value">
+              {{ article.festival.nomCommune }}, {{ article.festival.codePostalCommune }}
+            </div>
+          </div>
+
+          <div class="festival-date mb-2">
+            <div class="footer-item">
+              <i class="pi pi-calendar"></i>
+              <div class="item-value">{{ article.festival.dateDebut| date }}</div>
+            </div>
+
+            <div class="footer-item">
+              <i class="pi pi-calendar-times"></i>
+              <div class="item-value">{{ article.festival.dateFin| date }}</div>
+            </div>
+          </div>
+
+          <div class="footer-item">
+            <i class="pi pi-link"></i>
+            <a class="item-value" [href]="'https://' + article.festival.siteWeb" target="_blank">
+              {{ article.festival.siteWeb }}
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <p-divider layout="vertical" styleClass="p-divider-dashed"></p-divider>
+
+      <div class="covoiturage-section flex-grow-1">
+        <div class="header">
+          <div class="flex align-items-center">
+            <div class="mr-3">
+              <p-avatar [image]="article.offreCovoiturage?.covoitureur?.urlPhoto" size="xlarge" shape="circle"/>
+            </div>
+            <div class="covoitureur-description">
+              <div class="covoitureur-name">
+                {{ article.offreCovoiturage?.covoitureur?.prenom }}
+                {{ article.offreCovoiturage?.covoitureur?.nom }}
+              </div>
+              <div class="covoitureur-vehicle">
+                <i class="pi pi-car mr-2"></i>
+                {{ article.offreCovoiturage?.modeleVoiture }}
+              </div>
+              <div class="covoitureur-contact">
+                <i class="pi pi-phone mr-2"></i>
+                {{ article.offreCovoiturage?.covoitureur?.numeroTelephone }}
+              </div>
+            </div>
+          </div>
+          <div class="covoiturage-price">
+            {{ article.pointPassageCovoiturage?.prix| currency: 'EUR' }}
+          </div>
+        </div>
+
+        <div class="flex justify-content-start">
+          <p-timeline [value]="getTrajetInfo()">
+            <ng-template pTemplate="content" let-event>
+                {{ event.adresse }}
+            </ng-template>
+            <ng-template pTemplate="opposite" let-event>
+              {{ event.date }}
+            </ng-template>
+          </p-timeline>
+        </div>
+
+        <p-button
+          class="supprimer-button"
+          label="Supprimer"
+          size="small"
+          aria-label="supprimerbtn"
+          (click)="supprimerArticle()"
+        />
+      </div>
+    </div>
+
+    <p-divider></p-divider>
+
+    <div class="flex justify-content-end font-bold">
+      {{ article.quantite }} ticket(s) : <span class="text-normal ml-2">{{ calcTotalArticlePrice() | currency: 'EUR' }}</span>
+    </div>
+  </p-card>
+</div>

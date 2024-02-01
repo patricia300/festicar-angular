@@ -5,16 +5,20 @@
       <div class="header">
         <div class="flex align-items-center">
           <div class="mr-3">
-            <p-avatar image="https://thispersondoesnotexist.com/" size="xlarge" shape="circle"/>
+            <p-avatar [image]="offreCovoiturage.covoitureur.urlPhoto" size="xlarge" shape="circle"/>
           </div>
           <div class="covoitureur-description">
             <div class="covoitureur-name">{{ offreCovoiturage.covoitureur.prenom }} {{ offreCovoiturage.covoitureur.nom }}</div>
             <div class="covoitureur-vehicle">
               <i class="pi pi-car mr-2"></i> {{ offreCovoiturage.modeleVoiture }}
             </div>
+            <div class="covoitureur-contact">
+              <i class="pi pi-phone mr-2"></i>
+              {{ offreCovoiturage.covoitureur.numeroTelephone }}
+            </div>
           </div>
         </div>
-        <div class="covoiturage-price">{{ offreCovoiturage.pointPassagePlusProche?.prix | currency }}</div>
+        <div class="covoiturage-price">{{ offreCovoiturage.pointPassagePlusProche?.prix | currency: 'EUR' }}</div>
       </div>
 
       <div class="flex justify-content-between align-items-end">
@@ -31,14 +35,19 @@
           <div class="flex flex-column align-items-end w-4">
             <div class="mb-2 text-left w-7rem" for="">Places : </div>
             <p-inputNumber
-                [showButtons]="true"
-                buttonLayout="horizontal"
-                spinnerMode="horizontal"
-                inputId="horizontal"
-                decrementButtonClass="p-button-secondary"
-                incrementButtonClass="p-button-secondary"
-                incrementButtonIcon="pi pi-plus"
-                decrementButtonIcon="pi pi-minus"/>
+              [showButtons]="true"
+              [(ngModel)]="nbPlacePrise"
+              (ngModelChange)="onChangeNbPlacePrise()"
+              buttonLayout="horizontal"
+              spinnerMode="horizontal"
+              inputId="horizontal"
+              decrementButtonClass="p-button-secondary"
+              incrementButtonClass="p-button-secondary"
+              incrementButtonIcon="pi pi-plus"
+              decrementButtonIcon="pi pi-minus"
+              [min]="0"
+              [max]="offreCovoiturage.nombrePlaces"
+            />
           </div>
 
       </div>
