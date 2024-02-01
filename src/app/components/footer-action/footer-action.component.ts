@@ -7,6 +7,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class FooterActionComponent {
   @Input({required: true}) disabled: boolean = true;
+  @Input() buttonText: string = 'ajouter au panier';
   @Output() clickRightButton = new EventEmitter<null>();
 
   onClickButton() {
