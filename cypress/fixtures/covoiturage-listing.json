@@ -1,0 +1,2888 @@
+{
+  "id": 215,
+  "nom": "FESTIVAL DIVERSCENES",
+  "dateDebut": 1704582000000,
+  "siteWeb": "http://diverscene.jimdo.com",
+  "tarifPass": 21.0,
+  "dateFin": 1706914800000,
+  "nombrePass": 86,
+  "codePostalCommune": "53810",
+  "nomCommune": "Changé",
+  "nomSousDomaine": "Musiques traditionnelles et du monde",
+  "nomDomainePrincipal": "Musiques actuelles",
+  "nomOrganisateur": "Bernard Mathéo",
+  "offreCovoiturages": [
+      {
+          "id": 2573,
+          "dateOffre": 1704495600000,
+          "nombrePlaces": 0,
+          "modeleVoiture": "2019,Porsche,Macan",
+          "heureDepart": 1704546000000,
+          "heureArrive": 1704686400000,
+          "covoitureur": {
+              "email": "alicia.prevost@hotmail.fr",
+              "nom": "Rémy",
+              "prenom": "Maeva",
+              "dateNaissance": 271151402510,
+              "urlPhoto": "https://s3.amazonaws.com/uifaces/faces/twitter/andresdjasso/128.jpg",
+              "token": null,
+              "dateCreation": 1706473210.402852000,
+              "numeroTelephone": "0603521228"
+          },
+          "pointPassageCovoiturages": [
+              {
+                  "id": 9414,
+                  "differenceHeurePassage": 6,
+                  "prix": 36.0,
+                  "lieuCovoiturage": {
+                      "id": 878,
+                      "nom": "Chemin du Vieux Chêne",
+                      "adresse": "Chemin du Vieux Chêne",
+                      "latitude": 45.208237,
+                      "longitude": 5.790341,
+                      "type": "AUTO_STOP",
+                      "commune": {
+                          "codeInsee": "38229",
+                          "codePostal": "38240",
+                          "nom": "Meylan",
+                          "latitude": 45.212357,
+                          "longitude": 5.7835493,
+                          "departement": {
+                              "numero": "38",
+                              "nom": "Isère",
+                              "region": {
+                                  "nom": "Auvergne-Rhône-Alpes"
+                              }
+                          }
+                      }
+                  }
+              },
+              {
+                  "id": 9416,
+                  "differenceHeurePassage": 10,
+                  "prix": 33.0,
+                  "lieuCovoiturage": {
+                      "id": 7273,
+                      "nom": "Marchandise 1",
+                      "adresse": "Avenue d'Uriage",
+                      "latitude": 45.115578,
+                      "longitude": 5.808391,
+                      "type": "AUTO_STOP",
+                      "commune": {
+                          "codeInsee": "38529",
+                          "codePostal": "38410",
+                          "nom": "Vaulnaveys-le-Haut",
+                          "latitude": 45.1154,
+                          "longitude": 5.8400226,
+                          "departement": {
+                              "numero": "38",
+                              "nom": "Isère",
+                              "region": {
+                                  "nom": "Auvergne-Rhône-Alpes"
+                              }
+                          }
+                      }
+                  }
+              },
+              {
+                  "id": 9415,
+                  "differenceHeurePassage": 7,
+                  "prix": 36.0,
+                  "lieuCovoiturage": {
+                      "id": 734,
+                      "nom": "Parking Relais Mériller",
+                      "adresse": "6065 Avenue du Général de Gaulle",
+                      "latitude": 45.192734,
+                      "longitude": 0.6837187,
+                      "type": "PARKING_RELAIS",
+                      "commune": {
+                          "codeInsee": "24138",
+                          "codePostal": "24660",
+                          "nom": "Coulounieix-Chamiers",
+                          "latitude": 45.16508,
+                          "longitude": 0.6875925,
+                          "departement": {
+                              "numero": "24",
+                              "nom": "Dordogne",
+                              "region": {
+                                  "nom": "Nouvelle-Aquitaine"
+                              }
+                          }
+                      }
+                  }
+              },
+              {
+                  "id": 9413,
+                  "differenceHeurePassage": 2,
+                  "prix": 37.0,
+                  "lieuCovoiturage": {
+                      "id": 1432,
+                      "nom": "Bois des Crânes",
+                      "adresse": "Lieu dit Bois des Crânes",
+                      "latitude": 48.02438,
+                      "longitude": 2.9074836,
+                      "type": "AUTO_STOP",
+                      "commune": {
+                          "codeInsee": "45322",
+                          "codePostal": "45210",
+                          "nom": "Thorailles",
+                          "latitude": 48.02587,
+                          "longitude": 2.8955908,
+                          "departement": {
+                              "numero": "45",
+                              "nom": "Loiret",
+                              "region": {
+                                  "nom": "Centre-Val de Loire"
+                              }
+                          }
+                      }
+                  }
+              }
+          ]
+      },
+      {
+          "id": 4479,
+          "dateOffre": 1704495600000,
+          "nombrePlaces": 0,
+          "modeleVoiture": "2021,Mazda,CX-30",
+          "heureDepart": 1704542400000,
+          "heureArrive": 1704715200000,
+          "covoitureur": {
+              "email": "baptiste.bertrand@gmail.com",
+              "nom": "Joly",
+              "prenom": "Alicia",
+              "dateNaissance": 925968144004,
+              "urlPhoto": "https://s3.amazonaws.com/uifaces/faces/twitter/lisovsky/128.jpg",
+              "token": null,
+              "dateCreation": 1706473212.510655000,
+              "numeroTelephone": "+33 7 38 07 84 17"
+          },
+          "pointPassageCovoiturages": [
+              {
+                  "id": 20092,
+                  "differenceHeurePassage": 9,
+                  "prix": 10.0,
+                  "lieuCovoiturage": {
+                      "id": 208,
+                      "nom": "Cessieu",
+                      "adresse": "Champs de mars",
+                      "latitude": 45.56655,
+                      "longitude": 5.3748,
+                      "type": "PARKING",
+                      "commune": {
+                          "codeInsee": "38064",
+                          "codePostal": "38110",
+                          "nom": "Cessieu",
+                          "latitude": 45.56891,
+                          "longitude": 5.376168,
+                          "departement": {
+                              "numero": "38",
+                              "nom": "Isère",
+                              "region": {
+                                  "nom": "Auvergne-Rhône-Alpes"
+                              }
+                          }
+                      }
+                  }
+              },
+              {
+                  "id": 20088,
+                  "differenceHeurePassage": 0,
+                  "prix": 76.0,
+                  "lieuCovoiturage": {
+                      "id": 3123,
+                      "nom": "Aire de covoiturage de Chevaigné",
+                      "adresse": "Les Vergers",
+                      "latitude": 48.209576,
+                      "longitude": -1.6244577,
+                      "type": "AIRE_COVOITURAGE",
+                      "commune": {
+                          "codeInsee": "35197",
+                          "codePostal": "35250",
+                          "nom": "Mouazé",
+                          "latitude": 48.21851,
+                          "longitude": -1.6082035,
+                          "departement": {
+                              "numero": "35",
+                              "nom": "Ille-et-Vilaine",
+                              "region": {
+                                  "nom": "Bretagne"
+                              }
+                          }
+                      }
+                  }
+              },
+              {
+                  "id": 20091,
+                  "differenceHeurePassage": 5,
+                  "prix": 10.0,
+                  "lieuCovoiturage": {
+                      "id": 3947,
+                      "nom": "Aire de covoiturage Sens-De-Bretagne",
+                      "adresse": "Stade Emile Logeais",
+                      "latitude": 48.33123,
+                      "longitude": -1.5274018,
+                      "type": "AIRE_COVOITURAGE",
+                      "commune": {
+                          "codeInsee": "35326",
+                          "codePostal": "35490",
+                          "nom": "Sens-de-Bretagne",
+                          "latitude": 48.33673,
+                          "longitude": -1.5539272,
+                          "departement": {
+                              "numero": "35",
+                              "nom": "Ille-et-Vilaine",
+                              "region": {
+                                  "nom": "Bretagne"
+                              }
+                          }
+                      }
+                  }
+              },
+              {
+                  "id": 20093,
+                  "differenceHeurePassage": 13,
+                  "prix": 10.0,
+                  "lieuCovoiturage": {
+                      "id": 7352,
+                      "nom": "Centre-bourg",
+                      "adresse": "19 rue de l'église",
+                      "latitude": 48.286076,
+                      "longitude": 2.42897,
+                      "type": "AUTO_STOP",
+                      "commune": {
+                          "codeInsee": "77060",
+                          "codePostal": "77760",
+                          "nom": "Buthiers",
+                          "latitude": 48.286915,
+                          "longitude": 2.453667,
+                          "departement": {
+                              "numero": "77",
+                              "nom": "Seine-et-Marne",
+                              "region": {
+                                  "nom": "Île-de-France"
+                              }
+                          }
+                      }
+                  }
+              },
+              {
+                  "id": 20090,
+                  "differenceHeurePassage": 5,
+                  "prix": 10.0,
+                  "lieuCovoiturage": {
+                      "id": 2985,
+                      "nom": "Centre bourg",
+                      "adresse": "Boulevard de la Méditerranée",
+                      "latitude": 43.5162,
+                      "longitude": 1.32597,
+                      "type": "AUTO_STOP",
+                      "commune": {
+                          "codeInsee": "31203",
+                          "codePostal": "31270",
+                          "nom": "Frouzins",
+                          "latitude": 43.521324,
+                          "longitude": 1.3130815,
+                          "departement": {
+                              "numero": "31",
+                              "nom": "Haute-Garonne",
+                              "region": {
+                                  "nom": "Occitanie"
+                              }
+                          }
+                      }
+                  }
+              },
+              {
+                  "id": 20089,
+                  "differenceHeurePassage": 1,
+                  "prix": 16.0,
+                  "lieuCovoiturage": {
+                      "id": 3488,
+                      "nom": "CC Auchan",
+                      "adresse": "112 Avenue de l'Europe",
+                      "latitude": 49.270157,
+                      "longitude": 2.4821434,
+                      "type": "AUTO_STOP",
+                      "commune": {
+                          "codeInsee": "60463",
+                          "codePostal": "60180",
+                          "nom": "Nogent-sur-Oise",
+                          "latitude": 49.27615,
+                          "longitude": 2.464172,
+                          "departement": {
+                              "numero": "60",
+                              "nom": "Oise",
+                              "region": {
+                                  "nom": "Hauts-de-France"
+                              }
+                          }
+                      }
+                  }
+              }
+          ]
+      },
+      {
+          "id": 5644,
+          "dateOffre": 1704495600000,
+          "nombrePlaces": 2,
+          "modeleVoiture": "2019,Acura,RDX",
+          "heureDepart": 1704567600000,
+          "heureArrive": 1704819600000,
+          "covoitureur": {
+              "email": "benjamin.schneider@yahoo.fr",
+              "nom": "Leroux",
+              "prenom": "Marie",
+              "dateNaissance": 1126221191490,
+              "urlPhoto": "https://s3.amazonaws.com/uifaces/faces/twitter/serefka/128.jpg",
+              "token": null,
+              "dateCreation": null,
+              "numeroTelephone": "0613739983"
+          },
+          "pointPassageCovoiturages": [
+              {
+                  "id": 24887,
+                  "differenceHeurePassage": 4,
+                  "prix": 20.0,
+                  "lieuCovoiturage": {
+                      "id": 3024,
+                      "nom": "Parking de L'Eglise",
+                      "adresse": "Le Bourg. route des rivoires",
+                      "latitude": 45.554688,
+                      "longitude": 5.4820585,
+                      "type": "PARKING",
+                      "commune": {
+                          "codeInsee": "38381",
+                          "codePostal": "38110",
+                          "nom": "Saint-Didier-de-la-Tour",
+                          "latitude": 45.54795,
+                          "longitude": 5.487342,
+                          "departement": {
+                              "numero": "38",
+                              "nom": "Isère",
+                              "region": {
+                                  "nom": "Auvergne-Rhône-Alpes"
+                              }
+                          }
+                      }
+                  }
+              },
+              {
+                  "id": 24892,
+                  "differenceHeurePassage": 15,
+                  "prix": 11.0,
+                  "lieuCovoiturage": {
+                      "id": 4833,
+                      "nom": "Llar",
+                      "adresse": "C1",
+                      "latitude": 42.529926,
+                      "longitude": 2.2114892,
+                      "type": "AUTO_STOP",
+                      "commune": {
+                          "codeInsee": "66036",
+                          "codePostal": "66360",
+                          "nom": "Canaveilles",
+                          "latitude": 42.53442,
+                          "longitude": 2.2238421,
+                          "departement": {
+                              "numero": "66",
+                              "nom": "Pyrénées-Orientales",
+                              "region": {
+                                  "nom": "Occitanie"
+                              }
+                          }
+                      }
+                  }
+              },
+              {
+                  "id": 24888,
+                  "differenceHeurePassage": 7,
+                  "prix": 16.0,
+                  "lieuCovoiturage": {
+                      "id": 4018,
+                      "nom": "Gendarmerie",
+                      "adresse": null,
+                      "latitude": 44.150566,
+                      "longitude": 1.758184,
+                      "type": "AUTO_STOP",
+                      "commune": {
+                          "codeInsee": "82155",
+                          "codePostal": "82140",
+                          "nom": "Saint-Antonin-Noble-Val",
+                          "latitude": 44.156094,
+                          "longitude": 1.7364054,
+                          "departement": {
+                              "numero": "82",
+                              "nom": "Tarn-et-Garonne",
+                              "region": {
+                                  "nom": "Occitanie"
+                              }
+                          }
+                      }
+                  }
+              },
+              {
+                  "id": 24891,
+                  "differenceHeurePassage": 12,
+                  "prix": 11.0,
+                  "lieuCovoiturage": {
+                      "id": 1386,
+                      "nom": "Saintonge peinture",
+                      "adresse": null,
+                      "latitude": 45.58592,
+                      "longitude": -0.54629,
+                      "type": "AUTO_STOP",
+                      "commune": {
+                          "codeInsee": "17283",
+                          "codePostal": "17800",
+                          "nom": "Pons",
+                          "latitude": 45.57705,
+                          "longitude": -0.5574492,
+                          "departement": {
+                              "numero": "17",
+                              "nom": "Charente-Maritime",
+                              "region": {
+                                  "nom": "Nouvelle-Aquitaine"
+                              }
+                          }
+                      }
+                  }
+              },
+              {
+                  "id": 24890,
+                  "differenceHeurePassage": 9,
+                  "prix": 11.0,
+                  "lieuCovoiturage": {
+                      "id": 5159,
+                      "nom": "Parking Les Perties",
+                      "adresse": "Les Perties. 63950 Saint-Sauves-d'Auvergne",
+                      "latitude": 45.608196,
+                      "longitude": 2.6854658,
+                      "type": "PARKING",
+                      "commune": {
+                          "codeInsee": "63397",
+                          "codePostal": "63950",
+                          "nom": "Saint-Sauves-d'Auvergne",
+                          "latitude": 45.611565,
+                          "longitude": 2.6930158,
+                          "departement": {
+                              "numero": "63",
+                              "nom": "Puy-de-Dôme",
+                              "region": {
+                                  "nom": "Auvergne-Rhône-Alpes"
+                              }
+                          }
+                      }
+                  }
+              },
+              {
+                  "id": 24889,
+                  "differenceHeurePassage": 8,
+                  "prix": 11.0,
+                  "lieuCovoiturage": {
+                      "id": 6391,
+                      "nom": "Place de la liberté",
+                      "adresse": "Place de la Liberté",
+                      "latitude": 43.506397,
+                      "longitude": 1.617668,
+                      "type": "AUTO_STOP",
+                      "commune": {
+                          "codeInsee": "31192",
+                          "codePostal": "31450",
+                          "nom": "Fourquevaux",
+                          "latitude": 43.49812,
+                          "longitude": 1.6217505,
+                          "departement": {
+                              "numero": "31",
+                              "nom": "Haute-Garonne",
+                              "region": {
+                                  "nom": "Occitanie"
+                              }
+                          }
+                      }
+                  }
+              }
+          ]
+      },
+      {
+          "id": 29260,
+          "dateOffre": 1704495600000,
+          "nombrePlaces": 1,
+          "modeleVoiture": "2015,Jaguar,E-Pace",
+          "heureDepart": 1704567600000,
+          "heureArrive": 1704639600000,
+          "covoitureur": {
+              "email": "gabriel.renard@hotmail.fr",
+              "nom": "Perrot",
+              "prenom": "Lina",
+              "dateNaissance": 1172606509328,
+              "urlPhoto": "https://s3.amazonaws.com/uifaces/faces/twitter/shanehudson/128.jpg",
+              "token": null,
+              "dateCreation": 1706473211.533671000,
+              "numeroTelephone": "+33 772112181"
+          },
+          "pointPassageCovoiturages": [
+              {
+                  "id": 108148,
+                  "differenceHeurePassage": 2,
+                  "prix": 19.0,
+                  "lieuCovoiturage": {
+                      "id": 6134,
+                      "nom": "Mairie",
+                      "adresse": "44 Rue Principale",
+                      "latitude": 48.903667,
+                      "longitude": 7.200524,
+                      "type": "AUTO_STOP",
+                      "commune": {
+                          "codeInsee": "67002",
+                          "codePostal": "67320",
+                          "nom": "Adamswiller",
+                          "latitude": 48.906208,
+                          "longitude": 7.2017674,
+                          "departement": {
+                              "numero": "67",
+                              "nom": "Bas-Rhin",
+                              "region": {
+                                  "nom": "Grand Est"
+                              }
+                          }
+                      }
+                  }
+              },
+              {
+                  "id": 108147,
+                  "differenceHeurePassage": 2,
+                  "prix": 30.0,
+                  "lieuCovoiturage": {
+                      "id": 7998,
+                      "nom": "Aire de covoiturage Louis Bancel",
+                      "adresse": "Place Louis Bancel",
+                      "latitude": 45.322815,
+                      "longitude": 4.614716,
+                      "type": "AIRE_COVOITURAGE",
+                      "commune": {
+                          "codeInsee": "42246",
+                          "codePostal": "42220",
+                          "nom": "Saint-Julien-Molin-Molette",
+                          "latitude": 45.321594,
+                          "longitude": 4.618028,
+                          "departement": {
+                              "numero": "42",
+                              "nom": "Loire",
+                              "region": {
+                                  "nom": "Auvergne-Rhône-Alpes"
+                              }
+                          }
+                      }
+                  }
+              },
+              {
+                  "id": 108149,
+                  "differenceHeurePassage": 3,
+                  "prix": 17.0,
+                  "lieuCovoiturage": {
+                      "id": 1339,
+                      "nom": "Aire de Thuit Anger",
+                      "adresse": "2 route de la Saussaye",
+                      "latitude": 49.260967,
+                      "longitude": 0.975595,
+                      "type": "AIRE_COVOITURAGE",
+                      "commune": {
+                          "codeInsee": "27638",
+                          "codePostal": "27370",
+                          "nom": "Le Thuit de l'Oison",
+                          "latitude": 49.256897,
+                          "longitude": 0.93918324,
+                          "departement": {
+                              "numero": "27",
+                              "nom": "Eure",
+                              "region": {
+                                  "nom": "Normandie"
+                              }
+                          }
+                      }
+                  }
+              },
+              {
+                  "id": 108150,
+                  "differenceHeurePassage": 6,
+                  "prix": 11.0,
+                  "lieuCovoiturage": {
+                      "id": 5673,
+                      "nom": "CIMETIERE",
+                      "adresse": "ROUTE DE VERNON",
+                      "latitude": 49.2737,
+                      "longitude": 1.72308,
+                      "type": "AUTO_STOP",
+                      "commune": {
+                          "codeInsee": "27426",
+                          "codePostal": "27830",
+                          "nom": "Neaufles-Saint-Martin",
+                          "latitude": 49.27733,
+                          "longitude": 1.7263513,
+                          "departement": {
+                              "numero": "27",
+                              "nom": "Eure",
+                              "region": {
+                                  "nom": "Normandie"
+                              }
+                          }
+                      }
+                  }
+              }
+          ]
+      },
+      {
+          "id": 33997,
+          "dateOffre": 1704495600000,
+          "nombrePlaces": 1,
+          "modeleVoiture": "2016,Volvo,XC60",
+          "heureDepart": 1704556800000,
+          "heureArrive": 1704711600000,
+          "covoitureur": {
+              "email": "romain.poirier@yahoo.fr",
+              "nom": "Boyer",
+              "prenom": "Clara",
+              "dateNaissance": 789907088734,
+              "urlPhoto": "https://s3.amazonaws.com/uifaces/faces/twitter/illyzoren/128.jpg",
+              "token": null,
+              "dateCreation": null,
+              "numeroTelephone": "06 49 06 99 18"
+          },
+          "pointPassageCovoiturages": [
+              {
+                  "id": 128158,
+                  "differenceHeurePassage": 6,
+                  "prix": 10.0,
+                  "lieuCovoiturage": {
+                      "id": 1509,
+                      "nom": "Parking Frontonas",
+                      "adresse": "Hall des sports",
+                      "latitude": 45.644,
+                      "longitude": 5.187,
+                      "type": "PARKING",
+                      "commune": {
+                          "codeInsee": "38176",
+                          "codePostal": "38290",
+                          "nom": "Frontonas",
+                          "latitude": 45.65116,
+                          "longitude": 5.1858206,
+                          "departement": {
+                              "numero": "38",
+                              "nom": "Isère",
+                              "region": {
+                                  "nom": "Auvergne-Rhône-Alpes"
+                              }
+                          }
+                      }
+                  }
+              },
+              {
+                  "id": 128159,
+                  "differenceHeurePassage": 6,
+                  "prix": 10.0,
+                  "lieuCovoiturage": {
+                      "id": 3664,
+                      "nom": "Perrinière vers Autrans",
+                      "adresse": null,
+                      "latitude": 45.156002,
+                      "longitude": 5.554059,
+                      "type": "AUTO_STOP",
+                      "commune": {
+                          "codeInsee": "38225",
+                          "codePostal": "38880",
+                          "nom": "Autrans-Méaudre en Vercors",
+                          "latitude": 45.132175,
+                          "longitude": 5.528693,
+                          "departement": {
+                              "numero": "38",
+                              "nom": "Isère",
+                              "region": {
+                                  "nom": "Auvergne-Rhône-Alpes"
+                              }
+                          }
+                      }
+                  }
+              },
+              {
+                  "id": 128155,
+                  "differenceHeurePassage": 3,
+                  "prix": 39.0,
+                  "lieuCovoiturage": {
+                      "id": 5100,
+                      "nom": "Geant",
+                      "adresse": "Route de Mezzavia",
+                      "latitude": 41.950268,
+                      "longitude": 8.774718,
+                      "type": "SUPERMARCHE",
+                      "commune": {
+                          "codeInsee": "2A004",
+                          "codePostal": "20167",
+                          "nom": "Ajaccio",
+                          "latitude": 41.93479,
+                          "longitude": 8.701323,
+                          "departement": {
+                              "numero": "2A",
+                              "nom": "Corse-du-Sud",
+                              "region": {
+                                  "nom": "Corse"
+                              }
+                          }
+                      }
+                  }
+              },
+              {
+                  "id": 128157,
+                  "differenceHeurePassage": 4,
+                  "prix": 12.0,
+                  "lieuCovoiturage": {
+                      "id": 6117,
+                      "nom": "Les Bouiges",
+                      "adresse": null,
+                      "latitude": 45.8451,
+                      "longitude": 1.1513853,
+                      "type": "AIRE_COVOITURAGE",
+                      "commune": {
+                          "codeInsee": "87201",
+                          "codePostal": "87430",
+                          "nom": "Verneuil-sur-Vienne",
+                          "latitude": 45.850464,
+                          "longitude": 1.1294777,
+                          "departement": {
+                              "numero": "87",
+                              "nom": "Haute-Vienne",
+                              "region": {
+                                  "nom": "Nouvelle-Aquitaine"
+                              }
+                          }
+                      }
+                  }
+              },
+              {
+                  "id": 128156,
+                  "differenceHeurePassage": 3,
+                  "prix": 12.0,
+                  "lieuCovoiturage": {
+                      "id": 1762,
+                      "nom": "Boulevard Billiet",
+                      "adresse": "boulevard Billiet",
+                      "latitude": 50.51281,
+                      "longitude": 1.637076,
+                      "type": "AUTO_STOP",
+                      "commune": {
+                          "codeInsee": "62318",
+                          "codePostal": "62630",
+                          "nom": "Étaples",
+                          "latitude": 50.523582,
+                          "longitude": 1.6519998,
+                          "departement": {
+                              "numero": "62",
+                              "nom": "Pas-de-Calais",
+                              "region": {
+                                  "nom": "Hauts-de-France"
+                              }
+                          }
+                      }
+                  }
+              },
+              {
+                  "id": 128160,
+                  "differenceHeurePassage": 10,
+                  "prix": 10.0,
+                  "lieuCovoiturage": {
+                      "id": 6661,
+                      "nom": "Église - MARLHES",
+                      "adresse": "Rue du 19 mars 1962 42660 MARLHES",
+                      "latitude": 45.2834,
+                      "longitude": 4.3964515,
+                      "type": "AIRE_COVOITURAGE",
+                      "commune": {
+                          "codeInsee": "42139",
+                          "codePostal": "42660",
+                          "nom": "Marlhes",
+                          "latitude": 45.29305,
+                          "longitude": 4.396785,
+                          "departement": {
+                              "numero": "42",
+                              "nom": "Loire",
+                              "region": {
+                                  "nom": "Auvergne-Rhône-Alpes"
+                              }
+                          }
+                      }
+                  }
+              }
+          ]
+      },
+      {
+          "id": 28073,
+          "dateOffre": 1704495600000,
+          "nombrePlaces": 2,
+          "modeleVoiture": "2018,Tesla,Model Y",
+          "heureDepart": 1704553200000,
+          "heureArrive": 1704607200000,
+          "covoitureur": {
+              "email": "zoe.marchand@gmail.com",
+              "nom": "Leclerc",
+              "prenom": "Axel",
+              "dateNaissance": 1161881716817,
+              "urlPhoto": "https://s3.amazonaws.com/uifaces/faces/twitter/amanruzaini/128.jpg",
+              "token": null,
+              "dateCreation": 1706473206.645586000,
+              "numeroTelephone": "+33 7 66 87 93 94"
+          },
+          "pointPassageCovoiturages": [
+              {
+                  "id": 136021,
+                  "differenceHeurePassage": 2,
+                  "prix": 96.0,
+                  "lieuCovoiturage": {
+                      "id": 603,
+                      "nom": "Ferrette - D432",
+                      "adresse": "Rue de Lucette",
+                      "latitude": 47.49322,
+                      "longitude": 7.314972,
+                      "type": "AIRE_COVOITURAGE",
+                      "commune": {
+                          "codeInsee": "68090",
+                          "codePostal": "68480",
+                          "nom": "Ferrette",
+                          "latitude": 47.49356,
+                          "longitude": 7.315834,
+                          "departement": {
+                              "numero": "68",
+                              "nom": "Haut-Rhin",
+                              "region": {
+                                  "nom": "Grand Est"
+                              }
+                          }
+                      }
+                  }
+              },
+              {
+                  "id": 136022,
+                  "differenceHeurePassage": 4,
+                  "prix": 19.0,
+                  "lieuCovoiturage": {
+                      "id": 519,
+                      "nom": "Aire de covoiturage multimodale départementale de Port-Vendres",
+                      "adresse": "Echangeur n°15 de la RD914",
+                      "latitude": 42.511936,
+                      "longitude": 3.104218,
+                      "type": "AIRE_COVOITURAGE",
+                      "commune": {
+                          "codeInsee": "66148",
+                          "codePostal": "66660",
+                          "nom": "Port-Vendres",
+                          "latitude": 42.502583,
+                          "longitude": 3.104559,
+                          "departement": {
+                              "numero": "66",
+                              "nom": "Pyrénées-Orientales",
+                              "region": {
+                                  "nom": "Occitanie"
+                              }
+                          }
+                      }
+                  }
+              },
+              {
+                  "id": 136023,
+                  "differenceHeurePassage": 4,
+                  "prix": 14.0,
+                  "lieuCovoiturage": {
+                      "id": 7984,
+                      "nom": "Parking du cimetière",
+                      "adresse": "Rue de l'Eglise, 59551 Attiches",
+                      "latitude": 50.518986,
+                      "longitude": 3.060244,
+                      "type": "PARKING",
+                      "commune": {
+                          "codeInsee": "59551",
+                          "codePostal": "59310",
+                          "nom": "Saméon",
+                          "latitude": 50.477253,
+                          "longitude": 3.3324816,
+                          "departement": {
+                              "numero": "59",
+                              "nom": "Nord",
+                              "region": {
+                                  "nom": "Hauts-de-France"
+                              }
+                          }
+                      }
+                  }
+              }
+          ]
+      },
+      {
+          "id": 28844,
+          "dateOffre": 1704495600000,
+          "nombrePlaces": 2,
+          "modeleVoiture": "2019,Mitsubishi,Eclipse Cross",
+          "heureDepart": 1704538800000,
+          "heureArrive": 1704708000000,
+          "covoitureur": {
+              "email": "lucie.vidal@yahoo.fr",
+              "nom": "Deschamps",
+              "prenom": "Adrien",
+              "dateNaissance": 425654324477,
+              "urlPhoto": "https://s3.amazonaws.com/uifaces/faces/twitter/jefffis/128.jpg",
+              "token": null,
+              "dateCreation": 1706473212.005493000,
+              "numeroTelephone": "+33 703016193"
+          },
+          "pointPassageCovoiturages": [
+              {
+                  "id": 144652,
+                  "differenceHeurePassage": 11,
+                  "prix": 11.0,
+                  "lieuCovoiturage": {
+                      "id": 5892,
+                      "nom": "Aire de covoiturage Allée Pierre de Coubertin",
+                      "adresse": "D106",
+                      "latitude": 44.80625,
+                      "longitude": -0.807431,
+                      "type": "AIRE_COVOITURAGE",
+                      "commune": {
+                          "codeInsee": "33422",
+                          "codePostal": "33127",
+                          "nom": "Saint-Jean-d'Illac",
+                          "latitude": 44.7934,
+                          "longitude": -0.8191939,
+                          "departement": {
+                              "numero": "33",
+                              "nom": "Gironde",
+                              "region": {
+                                  "nom": "Nouvelle-Aquitaine"
+                              }
+                          }
+                      }
+                  }
+              },
+              {
+                  "id": 144648,
+                  "differenceHeurePassage": 0,
+                  "prix": 35.0,
+                  "lieuCovoiturage": {
+                      "id": 6492,
+                      "nom": "Lauras",
+                      "adresse": "Avenue de Moussac",
+                      "latitude": 43.974667,
+                      "longitude": 2.9613268,
+                      "type": "AUTO_STOP",
+                      "commune": {
+                          "codeInsee": "12203",
+                          "codePostal": "12250",
+                          "nom": "Roquefort-sur-Soulzon",
+                          "latitude": 43.97069,
+                          "longitude": 2.9817612,
+                          "departement": {
+                              "numero": "12",
+                              "nom": "Aveyron",
+                              "region": {
+                                  "nom": "Occitanie"
+                              }
+                          }
+                      }
+                  }
+              },
+              {
+                  "id": 144651,
+                  "differenceHeurePassage": 7,
+                  "prix": 12.0,
+                  "lieuCovoiturage": {
+                      "id": 2051,
+                      "nom": "Rue de Fresnoy",
+                      "adresse": "Rue de Fresnoy",
+                      "latitude": 50.349182,
+                      "longitude": 2.128324,
+                      "type": "AUTO_STOP",
+                      "commune": {
+                          "codeInsee": "62868",
+                          "codePostal": "62770",
+                          "nom": "Wail",
+                          "latitude": 50.337772,
+                          "longitude": 2.119152,
+                          "departement": {
+                              "numero": "62",
+                              "nom": "Pas-de-Calais",
+                              "region": {
+                                  "nom": "Hauts-de-France"
+                              }
+                          }
+                      }
+                  }
+              },
+              {
+                  "id": 144649,
+                  "differenceHeurePassage": 2,
+                  "prix": 20.0,
+                  "lieuCovoiturage": {
+                      "id": 5823,
+                      "nom": "Ecole, gare routière",
+                      "adresse": "Avenue Marcel Loubens",
+                      "latitude": 43.096474,
+                      "longitude": -0.7168626,
+                      "type": "AUTO_STOP",
+                      "commune": {
+                          "codeInsee": "64040",
+                          "codePostal": "64570",
+                          "nom": "Arette",
+                          "latitude": 43.03987,
+                          "longitude": -0.7356937,
+                          "departement": {
+                              "numero": "64",
+                              "nom": "Pyrénées-Atlantiques",
+                              "region": {
+                                  "nom": "Nouvelle-Aquitaine"
+                              }
+                          }
+                      }
+                  }
+              },
+              {
+                  "id": 144650,
+                  "differenceHeurePassage": 3,
+                  "prix": 14.0,
+                  "lieuCovoiturage": {
+                      "id": 6533,
+                      "nom": "Mairie",
+                      "adresse": "31 rue Aristide Briand",
+                      "latitude": 49.2883,
+                      "longitude": 2.4866014,
+                      "type": "AUTO_STOP",
+                      "commune": {
+                          "codeInsee": "60684",
+                          "codePostal": "60870",
+                          "nom": "Villers-Saint-Paul",
+                          "latitude": 49.288177,
+                          "longitude": 2.493342,
+                          "departement": {
+                              "numero": "60",
+                              "nom": "Oise",
+                              "region": {
+                                  "nom": "Hauts-de-France"
+                              }
+                          }
+                      }
+                  }
+              },
+              {
+                  "id": 144653,
+                  "differenceHeurePassage": 11,
+                  "prix": 10.0,
+                  "lieuCovoiturage": {
+                      "id": 4390,
+                      "nom": "8 Mai",
+                      "adresse": "54 Avenue du 8 Mai",
+                      "latitude": 49.277954,
+                      "longitude": 2.4622953,
+                      "type": "AUTO_STOP",
+                      "commune": {
+                          "codeInsee": "60463",
+                          "codePostal": "60180",
+                          "nom": "Nogent-sur-Oise",
+                          "latitude": 49.27615,
+                          "longitude": 2.464172,
+                          "departement": {
+                              "numero": "60",
+                              "nom": "Oise",
+                              "region": {
+                                  "nom": "Hauts-de-France"
+                              }
+                          }
+                      }
+                  }
+              }
+          ]
+      },
+      {
+          "id": 28412,
+          "dateOffre": 1704495600000,
+          "nombrePlaces": 2,
+          "modeleVoiture": "2019,Nissan,Murano",
+          "heureDepart": 1704560400000,
+          "heureArrive": 1704772800000,
+          "covoitureur": {
+              "email": "lena.dupuis@yahoo.fr",
+              "nom": "Marchand",
+              "prenom": "Louise",
+              "dateNaissance": 507541541723,
+              "urlPhoto": "https://s3.amazonaws.com/uifaces/faces/twitter/eddiechen/128.jpg",
+              "token": null,
+              "dateCreation": 1706473213.663011000,
+              "numeroTelephone": "+33 6 74 85 03 27"
+          },
+          "pointPassageCovoiturages": [
+              {
+                  "id": 147745,
+                  "differenceHeurePassage": 9,
+                  "prix": 10.0,
+                  "lieuCovoiturage": {
+                      "id": 4225,
+                      "nom": "Super U 1  - Direction Sud - Vernou",
+                      "adresse": "28 Rue du Professeur Debré",
+                      "latitude": 47.413918,
+                      "longitude": 0.849806,
+                      "type": "AUTO_STOP",
+                      "commune": {
+                          "codeInsee": "37270",
+                          "codePostal": "37210",
+                          "nom": "Vernou-sur-Brenne",
+                          "latitude": 47.43647,
+                          "longitude": 0.84052294,
+                          "departement": {
+                              "numero": "37",
+                              "nom": "Indre-et-Loire",
+                              "region": {
+                                  "nom": "Centre-Val de Loire"
+                              }
+                          }
+                      }
+                  }
+              },
+              {
+                  "id": 147744,
+                  "differenceHeurePassage": 6,
+                  "prix": 10.0,
+                  "lieuCovoiturage": {
+                      "id": 5215,
+                      "nom": "Aire de covoiturage Flandre Lys",
+                      "adresse": "giratoire D945/D845, 59253 La Gorgue",
+                      "latitude": 50.62905,
+                      "longitude": 2.700476,
+                      "type": "AIRE_COVOITURAGE",
+                      "commune": {
+                          "codeInsee": "59253",
+                          "codePostal": "59970",
+                          "nom": "Fresnes-sur-Escaut",
+                          "latitude": 50.43249,
+                          "longitude": 3.5793104,
+                          "departement": {
+                              "numero": "59",
+                              "nom": "Nord",
+                              "region": {
+                                  "nom": "Hauts-de-France"
+                              }
+                          }
+                      }
+                  }
+              },
+              {
+                  "id": 147746,
+                  "differenceHeurePassage": 13,
+                  "prix": 10.0,
+                  "lieuCovoiturage": {
+                      "id": 187,
+                      "nom": "Mairie",
+                      "adresse": "50 route de Cognac",
+                      "latitude": 45.596542,
+                      "longitude": -0.513922,
+                      "type": "AUTO_STOP",
+                      "commune": {
+                          "codeInsee": "17056",
+                          "codePostal": "17800",
+                          "nom": "Bougneau",
+                          "latitude": 45.600075,
+                          "longitude": -0.50595576,
+                          "departement": {
+                              "numero": "17",
+                              "nom": "Charente-Maritime",
+                              "region": {
+                                  "nom": "Nouvelle-Aquitaine"
+                              }
+                          }
+                      }
+                  }
+              },
+              {
+                  "id": 147747,
+                  "differenceHeurePassage": 13,
+                  "prix": 10.0,
+                  "lieuCovoiturage": {
+                      "id": 6605,
+                      "nom": "Zone de Chaleine",
+                      "adresse": null,
+                      "latitude": 48.59488,
+                      "longitude": 1.7165014,
+                      "type": "AUTO_STOP",
+                      "commune": {
+                          "codeInsee": "78209",
+                          "codePostal": "78125",
+                          "nom": "Émancé",
+                          "latitude": 48.591244,
+                          "longitude": 1.7339017,
+                          "departement": {
+                              "numero": "78",
+                              "nom": "Yvelines",
+                              "region": {
+                                  "nom": "Île-de-France"
+                              }
+                          }
+                      }
+                  }
+              },
+              {
+                  "id": 147743,
+                  "differenceHeurePassage": 3,
+                  "prix": 19.0,
+                  "lieuCovoiturage": {
+                      "id": 6844,
+                      "nom": "Croisement Rue de Clermont / Chemin du Moulin",
+                      "adresse": "Rue de Clermont",
+                      "latitude": 49.48208,
+                      "longitude": 2.435719,
+                      "type": "AUTO_STOP",
+                      "commune": {
+                          "codeInsee": "60653",
+                          "codePostal": "60130",
+                          "nom": "Valescourt",
+                          "latitude": 49.485207,
+                          "longitude": 2.4365523,
+                          "departement": {
+                              "numero": "60",
+                              "nom": "Oise",
+                              "region": {
+                                  "nom": "Hauts-de-France"
+                              }
+                          }
+                      }
+                  }
+              }
+          ]
+      },
+      {
+          "id": 17798,
+          "dateOffre": 1704495600000,
+          "nombrePlaces": 2,
+          "modeleVoiture": "2018,Jeep,Grand Cherokee",
+          "heureDepart": 1704528000000,
+          "heureArrive": 1704621600000,
+          "covoitureur": {
+              "email": "tom.dupont@yahoo.fr",
+              "nom": "Rousseau",
+              "prenom": "Valentin",
+              "dateNaissance": 471345836203,
+              "urlPhoto": "https://s3.amazonaws.com/uifaces/faces/twitter/darylws/128.jpg",
+              "token": null,
+              "dateCreation": 1706473203.209638000,
+              "numeroTelephone": "+33 6 64 18 11 34"
+          },
+          "pointPassageCovoiturages": [
+              {
+                  "id": 61819,
+                  "differenceHeurePassage": 5,
+                  "prix": 14.0,
+                  "lieuCovoiturage": {
+                      "id": 950,
+                      "nom": "Rue du bas",
+                      "adresse": "23 rue du bas",
+                      "latitude": 50.41163,
+                      "longitude": 2.056811,
+                      "type": "AUTO_STOP",
+                      "commune": {
+                          "codeInsee": "62872",
+                          "codePostal": "62770",
+                          "nom": "Wamin",
+                          "latitude": 50.415318,
+                          "longitude": 2.0620546,
+                          "departement": {
+                              "numero": "62",
+                              "nom": "Pas-de-Calais",
+                              "region": {
+                                  "nom": "Hauts-de-France"
+                              }
+                          }
+                      }
+                  }
+              },
+              {
+                  "id": 61820,
+                  "differenceHeurePassage": 7,
+                  "prix": 12.0,
+                  "lieuCovoiturage": {
+                      "id": 5699,
+                      "nom": "Garage Burgaud",
+                      "adresse": "Avenue de la République",
+                      "latitude": 45.42265,
+                      "longitude": -0.63827,
+                      "type": "AUTO_STOP",
+                      "commune": {
+                          "codeInsee": "17317",
+                          "codePostal": "17240",
+                          "nom": "Saint-Ciers-du-Taillon",
+                          "latitude": 45.431454,
+                          "longitude": -0.63307697,
+                          "departement": {
+                              "numero": "17",
+                              "nom": "Charente-Maritime",
+                              "region": {
+                                  "nom": "Nouvelle-Aquitaine"
+                              }
+                          }
+                      }
+                  }
+              },
+              {
+                  "id": 61818,
+                  "differenceHeurePassage": 4,
+                  "prix": 49.0,
+                  "lieuCovoiturage": {
+                      "id": 6817,
+                      "nom": "Lycée en Forêt - direction Montargis",
+                      "adresse": "Avenue Louis Maurice Chautemps",
+                      "latitude": 48.01002,
+                      "longitude": 2.753953,
+                      "type": "AUTO_STOP",
+                      "commune": {
+                          "codeInsee": "45208",
+                          "codePostal": "45200",
+                          "nom": "Montargis",
+                          "latitude": 47.998844,
+                          "longitude": 2.7358892,
+                          "departement": {
+                              "numero": "45",
+                              "nom": "Loiret",
+                              "region": {
+                                  "nom": "Centre-Val de Loire"
+                              }
+                          }
+                      }
+                  }
+              }
+          ]
+      },
+      {
+          "id": 21925,
+          "dateOffre": 1704495600000,
+          "nombrePlaces": 0,
+          "modeleVoiture": "2017,Ford,Edge",
+          "heureDepart": 1704560400000,
+          "heureArrive": 1704747600000,
+          "covoitureur": {
+              "email": "louise.lopez@gmail.com",
+              "nom": "Dubois",
+              "prenom": "Maxime",
+              "dateNaissance": 548161369584,
+              "urlPhoto": "https://s3.amazonaws.com/uifaces/faces/twitter/joreira/128.jpg",
+              "token": null,
+              "dateCreation": null,
+              "numeroTelephone": "+33 657263270"
+          },
+          "pointPassageCovoiturages": [
+              {
+                  "id": 64708,
+                  "differenceHeurePassage": 10,
+                  "prix": 12.0,
+                  "lieuCovoiturage": {
+                      "id": 1060,
+                      "nom": "Le Village",
+                      "adresse": null,
+                      "latitude": 45.432243,
+                      "longitude": 6.088806,
+                      "type": "AUTO_STOP",
+                      "commune": {
+                          "codeInsee": "38268",
+                          "codePostal": "38580",
+                          "nom": "Le Moutaret",
+                          "latitude": 45.429092,
+                          "longitude": 6.081687,
+                          "departement": {
+                              "numero": "38",
+                              "nom": "Isère",
+                              "region": {
+                                  "nom": "Auvergne-Rhône-Alpes"
+                              }
+                          }
+                      }
+                  }
+              },
+              {
+                  "id": 64707,
+                  "differenceHeurePassage": 9,
+                  "prix": 12.0,
+                  "lieuCovoiturage": {
+                      "id": 5137,
+                      "nom": "Aire de La Pierre Plantée",
+                      "adresse": "RD 621 St Affrique les Montagnés (RD 621 X RD 85)",
+                      "latitude": 43.5534,
+                      "longitude": 2.2104,
+                      "type": "AIRE_COVOITURAGE",
+                      "commune": {
+                          "codeInsee": "81235",
+                          "codePostal": "81290",
+                          "nom": "Saint-Affrique-les-Montagnes",
+                          "latitude": 43.528122,
+                          "longitude": 2.2013507,
+                          "departement": {
+                              "numero": "81",
+                              "nom": "Tarn",
+                              "region": {
+                                  "nom": "Occitanie"
+                              }
+                          }
+                      }
+                  }
+              },
+              {
+                  "id": 64704,
+                  "differenceHeurePassage": 1,
+                  "prix": 45.0,
+                  "lieuCovoiturage": {
+                      "id": 4011,
+                      "nom": "Route de Montreuil",
+                      "adresse": "530 Route de Montreuil",
+                      "latitude": 50.410194,
+                      "longitude": 1.925239,
+                      "type": "AUTO_STOP",
+                      "commune": {
+                          "codeInsee": "62552",
+                          "codePostal": "62990",
+                          "nom": "Maresquel-Ecquemicourt",
+                          "latitude": 50.39994,
+                          "longitude": 1.9348929,
+                          "departement": {
+                              "numero": "62",
+                              "nom": "Pas-de-Calais",
+                              "region": {
+                                  "nom": "Hauts-de-France"
+                              }
+                          }
+                      }
+                  }
+              },
+              {
+                  "id": 64705,
+                  "differenceHeurePassage": 3,
+                  "prix": 26.0,
+                  "lieuCovoiturage": {
+                      "id": 2642,
+                      "nom": "Mairie",
+                      "adresse": "38 rue du Bras de Brosne",
+                      "latitude": 50.466583,
+                      "longitude": 1.845448,
+                      "type": "AUTO_STOP",
+                      "commune": {
+                          "codeInsee": "62547",
+                          "codePostal": "62170",
+                          "nom": "Marant",
+                          "latitude": 50.47092,
+                          "longitude": 1.8403401,
+                          "departement": {
+                              "numero": "62",
+                              "nom": "Pas-de-Calais",
+                              "region": {
+                                  "nom": "Hauts-de-France"
+                              }
+                          }
+                      }
+                  }
+              },
+              {
+                  "id": 64709,
+                  "differenceHeurePassage": 10,
+                  "prix": 11.0,
+                  "lieuCovoiturage": {
+                      "id": 2984,
+                      "nom": "Aire de covoiturage de L'Atlantique",
+                      "adresse": "31 Rue de l'Atlantique. 85000 La Roche-sur-Yon",
+                      "latitude": 46.6847,
+                      "longitude": -1.4475,
+                      "type": "AIRE_COVOITURAGE",
+                      "commune": {
+                          "codeInsee": "85191",
+                          "codePostal": "85000",
+                          "nom": "La Roche-sur-Yon",
+                          "latitude": 46.667526,
+                          "longitude": -1.4077954,
+                          "departement": {
+                              "numero": "85",
+                              "nom": "Vendée",
+                              "region": {
+                                  "nom": "Pays de la Loire"
+                              }
+                          }
+                      }
+                  }
+              },
+              {
+                  "id": 64706,
+                  "differenceHeurePassage": 7,
+                  "prix": 15.0,
+                  "lieuCovoiturage": {
+                      "id": 5680,
+                      "nom": "Porte",
+                      "adresse": null,
+                      "latitude": 44.197906,
+                      "longitude": 0.319918,
+                      "type": "AUTO_STOP",
+                      "commune": {
+                          "codeInsee": "47318",
+                          "codePostal": "47230",
+                          "nom": "Vianne",
+                          "latitude": 44.2122,
+                          "longitude": 0.32278386,
+                          "departement": {
+                              "numero": "47",
+                              "nom": "Lot-et-Garonne",
+                              "region": {
+                                  "nom": "Nouvelle-Aquitaine"
+                              }
+                          }
+                      }
+                  }
+              }
+          ]
+      },
+      {
+          "id": 13155,
+          "dateOffre": 1704495600000,
+          "nombrePlaces": 2,
+          "modeleVoiture": "2018,Chevrolet,Blazer",
+          "heureDepart": 1704560400000,
+          "heureArrive": 1704693600000,
+          "covoitureur": {
+              "email": "leo.dupuy@yahoo.fr",
+              "nom": "Dupuy",
+              "prenom": "Antoine",
+              "dateNaissance": 13402565617,
+              "urlPhoto": "https://s3.amazonaws.com/uifaces/faces/twitter/murrayswift/128.jpg",
+              "token": null,
+              "dateCreation": null,
+              "numeroTelephone": "07 70 34 89 09"
+          },
+          "pointPassageCovoiturages": [
+              {
+                  "id": 80573,
+                  "differenceHeurePassage": 6,
+                  "prix": 10.0,
+                  "lieuCovoiturage": {
+                      "id": 1640,
+                      "nom": "Parking la Cavalerie",
+                      "adresse": "ZA Millau Larzac",
+                      "latitude": 44.016655,
+                      "longitude": 3.142061,
+                      "type": "PARKING",
+                      "commune": {
+                          "codeInsee": "12063",
+                          "codePostal": "12230",
+                          "nom": "La Cavalerie",
+                          "latitude": 44.011917,
+                          "longitude": 3.1838932,
+                          "departement": {
+                              "numero": "12",
+                              "nom": "Aveyron",
+                              "region": {
+                                  "nom": "Occitanie"
+                              }
+                          }
+                      }
+                  }
+              },
+              {
+                  "id": 80571,
+                  "differenceHeurePassage": 6,
+                  "prix": 11.0,
+                  "lieuCovoiturage": {
+                      "id": 3455,
+                      "nom": "Fort liberia \"EST\",",
+                      "adresse": "Route Nationale 116",
+                      "latitude": 42.587494,
+                      "longitude": 2.3699975,
+                      "type": "AUTO_STOP",
+                      "commune": {
+                          "codeInsee": "66223",
+                          "codePostal": "66500",
+                          "nom": "Villefranche-de-Conflent",
+                          "latitude": 42.596478,
+                          "longitude": 2.3599348,
+                          "departement": {
+                              "numero": "66",
+                              "nom": "Pyrénées-Orientales",
+                              "region": {
+                                  "nom": "Occitanie"
+                              }
+                          }
+                      }
+                  }
+              },
+              {
+                  "id": 80572,
+                  "differenceHeurePassage": 6,
+                  "prix": 10.0,
+                  "lieuCovoiturage": {
+                      "id": 3890,
+                      "nom": "Vovray",
+                      "adresse": "60 chemin de la Croisette",
+                      "latitude": 46.12906,
+                      "longitude": 6.151069,
+                      "type": "AUTO_STOP",
+                      "commune": {
+                          "codeInsee": "74016",
+                          "codePostal": "74160",
+                          "nom": "Archamps",
+                          "latitude": 46.122227,
+                          "longitude": 6.139714,
+                          "departement": {
+                              "numero": "74",
+                              "nom": "Haute-Savoie",
+                              "region": {
+                                  "nom": "Auvergne-Rhône-Alpes"
+                              }
+                          }
+                      }
+                  }
+              },
+              {
+                  "id": 80569,
+                  "differenceHeurePassage": 5,
+                  "prix": 18.0,
+                  "lieuCovoiturage": {
+                      "id": 518,
+                      "nom": "Aire de covoiturage de Pons Bonnerme",
+                      "adresse": "46 Rue de Chantegeay. 17260 Jazennes",
+                      "latitude": 45.57334,
+                      "longitude": -0.593109,
+                      "type": "AIRE_COVOITURAGE",
+                      "commune": {
+                          "codeInsee": "17196",
+                          "codePostal": "17260",
+                          "nom": "Jazennes",
+                          "latitude": 45.582882,
+                          "longitude": -0.61588925,
+                          "departement": {
+                              "numero": "17",
+                              "nom": "Charente-Maritime",
+                              "region": {
+                                  "nom": "Nouvelle-Aquitaine"
+                              }
+                          }
+                      }
+                  }
+              },
+              {
+                  "id": 80570,
+                  "differenceHeurePassage": 6,
+                  "prix": 11.0,
+                  "lieuCovoiturage": {
+                      "id": 4537,
+                      "nom": "Aire de covoiturage de la piscine",
+                      "adresse": "Parking de la piscine - Zone des Rivets - RD 1082",
+                      "latitude": 45.29873,
+                      "longitude": 4.57381,
+                      "type": "AIRE_COVOITURAGE",
+                      "commune": {
+                          "codeInsee": "42023",
+                          "codePostal": "42220",
+                          "nom": "Bourg-Argental",
+                          "latitude": 45.303734,
+                          "longitude": 4.566531,
+                          "departement": {
+                              "numero": "42",
+                              "nom": "Loire",
+                              "region": {
+                                  "nom": "Auvergne-Rhône-Alpes"
+                              }
+                          }
+                      }
+                  }
+              },
+              {
+                  "id": 80568,
+                  "differenceHeurePassage": 2,
+                  "prix": 93.0,
+                  "lieuCovoiturage": {
+                      "id": 916,
+                      "nom": "Mairie de La Forêt-Sainte-Croix",
+                      "adresse": "Angle du 1 grande roue et Route d'Etampes",
+                      "latitude": 48.383327,
+                      "longitude": 2.228974,
+                      "type": "AUTO_STOP",
+                      "commune": {
+                          "codeInsee": "91248",
+                          "codePostal": "91150",
+                          "nom": "La Forêt-Sainte-Croix",
+                          "latitude": 48.38408,
+                          "longitude": 2.2305346,
+                          "departement": {
+                              "numero": "91",
+                              "nom": "Essonne",
+                              "region": {
+                                  "nom": "Île-de-France"
+                              }
+                          }
+                      }
+                  }
+              }
+          ]
+      },
+      {
+          "id": 12318,
+          "dateOffre": 1704495600000,
+          "nombrePlaces": 0,
+          "modeleVoiture": "2019,Mitsubishi,Eclipse Cross",
+          "heureDepart": 1704546000000,
+          "heureArrive": 1704758400000,
+          "covoitureur": {
+              "email": "lisa.leroux@yahoo.fr",
+              "nom": "Renault",
+              "prenom": "Mattéo",
+              "dateNaissance": 1037732687022,
+              "urlPhoto": "https://s3.amazonaws.com/uifaces/faces/twitter/jayrobinson/128.jpg",
+              "token": null,
+              "dateCreation": null,
+              "numeroTelephone": "+33 640825603"
+          },
+          "pointPassageCovoiturages": [
+              {
+                  "id": 91959,
+                  "differenceHeurePassage": 4,
+                  "prix": 24.0,
+                  "lieuCovoiturage": {
+                      "id": 4555,
+                      "nom": "Le chevalier",
+                      "adresse": "Route de Miribel",
+                      "latitude": 45.405544,
+                      "longitude": 5.669411,
+                      "type": "AUTO_STOP",
+                      "commune": {
+                          "codeInsee": "38362",
+                          "codePostal": "38960",
+                          "nom": "Saint-Aupre",
+                          "latitude": 45.406063,
+                          "longitude": 5.6617527,
+                          "departement": {
+                              "numero": "38",
+                              "nom": "Isère",
+                              "region": {
+                                  "nom": "Auvergne-Rhône-Alpes"
+                              }
+                          }
+                      }
+                  }
+              },
+              {
+                  "id": 91960,
+                  "differenceHeurePassage": 8,
+                  "prix": 14.0,
+                  "lieuCovoiturage": {
+                      "id": 7680,
+                      "nom": "Fures Centre",
+                      "adresse": "Boulevard Michel Perret",
+                      "latitude": 45.30871,
+                      "longitude": 5.495605,
+                      "type": "AUTO_STOP",
+                      "commune": {
+                          "codeInsee": "38517",
+                          "codePostal": "38210",
+                          "nom": "Tullins",
+                          "latitude": 45.29388,
+                          "longitude": 5.4900618,
+                          "departement": {
+                              "numero": "38",
+                              "nom": "Isère",
+                              "region": {
+                                  "nom": "Auvergne-Rhône-Alpes"
+                              }
+                          }
+                      }
+                  }
+              },
+              {
+                  "id": 91962,
+                  "differenceHeurePassage": 14,
+                  "prix": 10.0,
+                  "lieuCovoiturage": {
+                      "id": 1881,
+                      "nom": "Pont de Combe",
+                      "adresse": "336 route du Lémans",
+                      "latitude": 46.13802,
+                      "longitude": 6.128937,
+                      "type": "AUTO_STOP",
+                      "commune": {
+                          "codeInsee": "74016",
+                          "codePostal": "74160",
+                          "nom": "Archamps",
+                          "latitude": 46.122227,
+                          "longitude": 6.139714,
+                          "departement": {
+                              "numero": "74",
+                              "nom": "Haute-Savoie",
+                              "region": {
+                                  "nom": "Auvergne-Rhône-Alpes"
+                              }
+                          }
+                      }
+                  }
+              },
+              {
+                  "id": 91961,
+                  "differenceHeurePassage": 10,
+                  "prix": 10.0,
+                  "lieuCovoiturage": {
+                      "id": 4300,
+                      "nom": "ECOLE-MAIRIE",
+                      "adresse": "PLACE DE LA MAIRIE",
+                      "latitude": 49.289486,
+                      "longitude": 1.693682,
+                      "type": "AUTO_STOP",
+                      "commune": {
+                          "codeInsee": "27059",
+                          "codePostal": "27660",
+                          "nom": "Bernouville",
+                          "latitude": 49.289677,
+                          "longitude": 1.6744454,
+                          "departement": {
+                              "numero": "27",
+                              "nom": "Eure",
+                              "region": {
+                                  "nom": "Normandie"
+                              }
+                          }
+                      }
+                  }
+              },
+              {
+                  "id": 91957,
+                  "differenceHeurePassage": 2,
+                  "prix": 47.0,
+                  "lieuCovoiturage": {
+                      "id": 986,
+                      "nom": "Carrefour giratoire direction Compiègne",
+                      "adresse": "Rue de la Libération",
+                      "latitude": 49.501377,
+                      "longitude": 2.616325,
+                      "type": "AUTO_STOP",
+                      "commune": {
+                          "codeInsee": "60698",
+                          "codePostal": "60420",
+                          "nom": "Wacquemoulin",
+                          "latitude": 49.50823,
+                          "longitude": 2.6214466,
+                          "departement": {
+                              "numero": "60",
+                              "nom": "Oise",
+                              "region": {
+                                  "nom": "Hauts-de-France"
+                              }
+                          }
+                      }
+                  }
+              },
+              {
+                  "id": 91958,
+                  "differenceHeurePassage": 3,
+                  "prix": 47.0,
+                  "lieuCovoiturage": {
+                      "id": 5431,
+                      "nom": "Covoiturage SANEF Paris-Oise / Pont Sainte Maxence",
+                      "adresse": "A1 Sortie 9",
+                      "latitude": 49.32117,
+                      "longitude": 2.6960638,
+                      "type": "SORTIE_AUTOROUTE",
+                      "commune": {
+                          "codeInsee": "60509",
+                          "codePostal": "60700",
+                          "nom": "Pont-Sainte-Maxence",
+                          "latitude": 49.30497,
+                          "longitude": 2.607981,
+                          "departement": {
+                              "numero": "60",
+                              "nom": "Oise",
+                              "region": {
+                                  "nom": "Hauts-de-France"
+                              }
+                          }
+                      }
+                  }
+              }
+          ]
+      },
+      {
+          "id": 12514,
+          "dateOffre": 1704495600000,
+          "nombrePlaces": 2,
+          "modeleVoiture": "2020,Jaguar,F-Type",
+          "heureDepart": 1704567600000,
+          "heureArrive": 1704693600000,
+          "covoitureur": {
+              "email": "mohamed.blanchard@hotmail.fr",
+              "nom": "Pons",
+              "prenom": "Enzo",
+              "dateNaissance": 227497262845,
+              "urlPhoto": "https://s3.amazonaws.com/uifaces/faces/twitter/janpalounek/128.jpg",
+              "token": null,
+              "dateCreation": 1706473203.912120000,
+              "numeroTelephone": "06 22 28 97 93"
+          },
+          "pointPassageCovoiturages": [
+              {
+                  "id": 95387,
+                  "differenceHeurePassage": 8,
+                  "prix": 11.0,
+                  "lieuCovoiturage": {
+                      "id": 5417,
+                      "nom": "Bollwiller - Aire de repos du Nouveau Monde",
+                      "adresse": "Aire de repos du Nouveau Monde  au Sud-Est du giratoire",
+                      "latitude": 47.871887,
+                      "longitude": 7.248306,
+                      "type": "AIRE_COVOITURAGE",
+                      "commune": {
+                          "codeInsee": "68043",
+                          "codePostal": "68540",
+                          "nom": "Bollwiller",
+                          "latitude": 47.85403,
+                          "longitude": 7.2515945,
+                          "departement": {
+                              "numero": "68",
+                              "nom": "Haut-Rhin",
+                              "region": {
+                                  "nom": "Grand Est"
+                              }
+                          }
+                      }
+                  }
+              },
+              {
+                  "id": 95386,
+                  "differenceHeurePassage": 6,
+                  "prix": 11.0,
+                  "lieuCovoiturage": {
+                      "id": 60,
+                      "nom": "Porte des sablons",
+                      "adresse": "Porte des sablons",
+                      "latitude": 48.282787,
+                      "longitude": 2.604653,
+                      "type": "AUTO_STOP",
+                      "commune": {
+                          "codeInsee": "77244",
+                          "codePostal": "77760",
+                          "nom": "Larchant",
+                          "latitude": 48.28293,
+                          "longitude": 2.5988667,
+                          "departement": {
+                              "numero": "77",
+                              "nom": "Seine-et-Marne",
+                              "region": {
+                                  "nom": "Île-de-France"
+                              }
+                          }
+                      }
+                  }
+              },
+              {
+                  "id": 95384,
+                  "differenceHeurePassage": 0,
+                  "prix": 19.0,
+                  "lieuCovoiturage": {
+                      "id": 56,
+                      "nom": "Aire de covoiturage de Montméghe",
+                      "adresse": "RD120-RD922",
+                      "latitude": 44.93609,
+                      "longitude": 2.408459,
+                      "type": "AIRE_COVOITURAGE",
+                      "commune": {
+                          "codeInsee": "15267",
+                          "codePostal": "15000",
+                          "nom": "Ytrac",
+                          "latitude": 44.916134,
+                          "longitude": 2.365981,
+                          "departement": {
+                              "numero": "15",
+                              "nom": "Cantal",
+                              "region": {
+                                  "nom": "Auvergne-Rhône-Alpes"
+                              }
+                          }
+                      }
+                  }
+              },
+              {
+                  "id": 95385,
+                  "differenceHeurePassage": 2,
+                  "prix": 13.0,
+                  "lieuCovoiturage": {
+                      "id": 1706,
+                      "nom": "Arret de Bus Rue de l'Abbaye",
+                      "adresse": "Rue de l'Abbaye",
+                      "latitude": 49.522636,
+                      "longitude": 2.569119,
+                      "type": "AUTO_STOP",
+                      "commune": {
+                          "codeInsee": "60585",
+                          "codePostal": "60420",
+                          "nom": "Saint-Martin-aux-Bois",
+                          "latitude": 49.525,
+                          "longitude": 2.5600393,
+                          "departement": {
+                              "numero": "60",
+                              "nom": "Oise",
+                              "region": {
+                                  "nom": "Hauts-de-France"
+                              }
+                          }
+                      }
+                  }
+              },
+              {
+                  "id": 95388,
+                  "differenceHeurePassage": 8,
+                  "prix": 11.0,
+                  "lieuCovoiturage": {
+                      "id": 873,
+                      "nom": "D26",
+                      "adresse": "D26",
+                      "latitude": 49.255352,
+                      "longitude": 2.676512,
+                      "type": "AUTO_STOP",
+                      "commune": {
+                          "codeInsee": "60100",
+                          "codePostal": "60810",
+                          "nom": "Brasseuse",
+                          "latitude": 49.25188,
+                          "longitude": 2.678774,
+                          "departement": {
+                              "numero": "60",
+                              "nom": "Oise",
+                              "region": {
+                                  "nom": "Hauts-de-France"
+                              }
+                          }
+                      }
+                  }
+              },
+              {
+                  "id": 95383,
+                  "differenceHeurePassage": 0,
+                  "prix": 67.0,
+                  "lieuCovoiturage": {
+                      "id": 5936,
+                      "nom": "Bourg",
+                      "adresse": null,
+                      "latitude": 44.084866,
+                      "longitude": 0.512162,
+                      "type": "AUTO_STOP",
+                      "commune": {
+                          "codeInsee": "47282",
+                          "codePostal": "47310",
+                          "nom": "Saint-Vincent-de-Lamontjoie",
+                          "latitude": 44.09291,
+                          "longitude": 0.49971825,
+                          "departement": {
+                              "numero": "47",
+                              "nom": "Lot-et-Garonne",
+                              "region": {
+                                  "nom": "Nouvelle-Aquitaine"
+                              }
+                          }
+                      }
+                  }
+              }
+          ]
+      },
+      {
+          "id": 14047,
+          "dateOffre": 1704495600000,
+          "nombrePlaces": 2,
+          "modeleVoiture": "2019,Mitsubishi,Eclipse Cross",
+          "heureDepart": 1704528000000,
+          "heureArrive": 1704794400000,
+          "covoitureur": {
+              "email": "julien.renault@gmail.com",
+              "nom": "Martin",
+              "prenom": "Benjamin",
+              "dateNaissance": 403648659936,
+              "urlPhoto": "https://s3.amazonaws.com/uifaces/faces/twitter/karthipanraj/128.jpg",
+              "token": null,
+              "dateCreation": null,
+              "numeroTelephone": "+33 789889688"
+          },
+          "pointPassageCovoiturages": [
+              {
+                  "id": 97204,
+                  "differenceHeurePassage": 11,
+                  "prix": 10.0,
+                  "lieuCovoiturage": {
+                      "id": 370,
+                      "nom": "Mairie",
+                      "adresse": "RD 529",
+                      "latitude": 45.009476,
+                      "longitude": 5.7003827,
+                      "type": "AUTO_STOP",
+                      "commune": {
+                          "codeInsee": "38277",
+                          "codePostal": "38450",
+                          "nom": "Notre-Dame-de-Commiers",
+                          "latitude": 45.00945,
+                          "longitude": 5.704004,
+                          "departement": {
+                              "numero": "38",
+                              "nom": "Isère",
+                              "region": {
+                                  "nom": "Auvergne-Rhône-Alpes"
+                              }
+                          }
+                      }
+                  }
+              },
+              {
+                  "id": 97206,
+                  "differenceHeurePassage": 13,
+                  "prix": 10.0,
+                  "lieuCovoiturage": {
+                      "id": 4585,
+                      "nom": "Bourg - EHPAD - impasse de chartreuse",
+                      "adresse": "1-153 Avenue de Chartreuse  38380 Entre-Deux-Guiers  France",
+                      "latitude": 45.43187,
+                      "longitude": 5.7533,
+                      "type": "AUTO_STOP",
+                      "commune": {
+                          "codeInsee": "38155",
+                          "codePostal": "38380",
+                          "nom": "Entre-deux-Guiers",
+                          "latitude": 45.415627,
+                          "longitude": 5.7563624,
+                          "departement": {
+                              "numero": "38",
+                              "nom": "Isère",
+                              "region": {
+                                  "nom": "Auvergne-Rhône-Alpes"
+                              }
+                          }
+                      }
+                  }
+              },
+              {
+                  "id": 97201,
+                  "differenceHeurePassage": 4,
+                  "prix": 73.0,
+                  "lieuCovoiturage": {
+                      "id": 6637,
+                      "nom": "Face à la Poste",
+                      "adresse": "Le bourg D600",
+                      "latitude": 44.126907,
+                      "longitude": 1.880481,
+                      "type": "AUTO_STOP",
+                      "commune": {
+                          "codeInsee": "81165",
+                          "codePostal": "81170",
+                          "nom": "Milhars",
+                          "latitude": 44.12272,
+                          "longitude": 1.8747668,
+                          "departement": {
+                              "numero": "81",
+                              "nom": "Tarn",
+                              "region": {
+                                  "nom": "Occitanie"
+                              }
+                          }
+                      }
+                  }
+              },
+              {
+                  "id": 97202,
+                  "differenceHeurePassage": 8,
+                  "prix": 10.0,
+                  "lieuCovoiturage": {
+                      "id": 4084,
+                      "nom": "Brial",
+                      "adresse": "100 chemin de Brial",
+                      "latitude": 43.939274,
+                      "longitude": 1.3066558,
+                      "type": "AUTO_STOP",
+                      "commune": {
+                          "codeInsee": "82025",
+                          "codePostal": "82710",
+                          "nom": "Bressols",
+                          "latitude": 43.954494,
+                          "longitude": 1.3161118,
+                          "departement": {
+                              "numero": "82",
+                              "nom": "Tarn-et-Garonne",
+                              "region": {
+                                  "nom": "Occitanie"
+                              }
+                          }
+                      }
+                  }
+              },
+              {
+                  "id": 97203,
+                  "differenceHeurePassage": 11,
+                  "prix": 10.0,
+                  "lieuCovoiturage": {
+                      "id": 559,
+                      "nom": "Libération",
+                      "adresse": "Rue de la libération",
+                      "latitude": 48.47221,
+                      "longitude": 2.291079,
+                      "type": "AUTO_STOP",
+                      "commune": {
+                          "codeInsee": "91080",
+                          "codePostal": "91590",
+                          "nom": "Boissy-le-Cutté",
+                          "latitude": 48.470287,
+                          "longitude": 2.2851815,
+                          "departement": {
+                              "numero": "91",
+                              "nom": "Essonne",
+                              "region": {
+                                  "nom": "Île-de-France"
+                              }
+                          }
+                      }
+                  }
+              },
+              {
+                  "id": 97205,
+                  "differenceHeurePassage": 11,
+                  "prix": 10.0,
+                  "lieuCovoiturage": {
+                      "id": 4452,
+                      "nom": "Musée 2",
+                      "adresse": "D 961",
+                      "latitude": 47.889874,
+                      "longitude": 2.5101776,
+                      "type": "AUTO_STOP",
+                      "commune": {
+                          "codeInsee": "45187",
+                          "codePostal": "45260",
+                          "nom": "Lorris",
+                          "latitude": 47.862747,
+                          "longitude": 2.4984221,
+                          "departement": {
+                              "numero": "45",
+                              "nom": "Loiret",
+                              "region": {
+                                  "nom": "Centre-Val de Loire"
+                              }
+                          }
+                      }
+                  }
+              }
+          ]
+      },
+      {
+          "id": 14093,
+          "dateOffre": 1704495600000,
+          "nombrePlaces": 2,
+          "modeleVoiture": "2015,Volkswagen,Atlas",
+          "heureDepart": 1704549600000,
+          "heureArrive": 1704679200000,
+          "covoitureur": {
+              "email": "alexis.remy@gmail.com",
+              "nom": "Faure",
+              "prenom": "Tom",
+              "dateNaissance": 1160380544487,
+              "urlPhoto": "https://s3.amazonaws.com/uifaces/faces/twitter/plbabin/128.jpg",
+              "token": null,
+              "dateCreation": null,
+              "numeroTelephone": "+33 7 05 57 77 14"
+          },
+          "pointPassageCovoiturages": [
+              {
+                  "id": 97410,
+                  "differenceHeurePassage": 1,
+                  "prix": 68.0,
+                  "lieuCovoiturage": {
+                      "id": 3137,
+                      "nom": "Camping",
+                      "adresse": null,
+                      "latitude": 45.452602,
+                      "longitude": 5.882974,
+                      "type": "AUTO_STOP",
+                      "commune": {
+                          "codeInsee": "73107",
+                          "codePostal": "73670",
+                          "nom": "Entremont-le-Vieux",
+                          "latitude": 45.46193,
+                          "longitude": 5.885145,
+                          "departement": {
+                              "numero": "73",
+                              "nom": "Savoie",
+                              "region": {
+                                  "nom": "Auvergne-Rhône-Alpes"
+                              }
+                          }
+                      }
+                  }
+              },
+              {
+                  "id": 97412,
+                  "differenceHeurePassage": 7,
+                  "prix": 21.0,
+                  "lieuCovoiturage": {
+                      "id": 1584,
+                      "nom": "Saizenay-1",
+                      "adresse": "Rue des Aiguillons",
+                      "latitude": 46.96243,
+                      "longitude": 5.9156327,
+                      "type": "AUTO_STOP",
+                      "commune": {
+                          "codeInsee": "39497",
+                          "codePostal": "39110",
+                          "nom": "Saizenay",
+                          "latitude": 46.97018,
+                          "longitude": 5.93379,
+                          "departement": {
+                              "numero": "39",
+                              "nom": "Jura",
+                              "region": {
+                                  "nom": "Bourgogne-Franche-Comté"
+                              }
+                          }
+                      }
+                  }
+              },
+              {
+                  "id": 97414,
+                  "differenceHeurePassage": 8,
+                  "prix": 10.0,
+                  "lieuCovoiturage": {
+                      "id": 410,
+                      "nom": "Chauffour",
+                      "adresse": "D909",
+                      "latitude": 49.18919,
+                      "longitude": 2.4466078,
+                      "type": "AUTO_STOP",
+                      "commune": {
+                          "codeInsee": "60282",
+                          "codePostal": "60270",
+                          "nom": "Gouvieux",
+                          "latitude": 49.189583,
+                          "longitude": 2.4202633,
+                          "departement": {
+                              "numero": "60",
+                              "nom": "Oise",
+                              "region": {
+                                  "nom": "Hauts-de-France"
+                              }
+                          }
+                      }
+                  }
+              },
+              {
+                  "id": 97413,
+                  "differenceHeurePassage": 7,
+                  "prix": 16.0,
+                  "lieuCovoiturage": {
+                      "id": 850,
+                      "nom": "Chauve - Place de L'église",
+                      "adresse": "7 Route d'Arthon en Retz. 44320 Chauve",
+                      "latitude": 47.150414,
+                      "longitude": -1.98447,
+                      "type": "PARKING",
+                      "commune": {
+                          "codeInsee": "44038",
+                          "codePostal": "44320",
+                          "nom": "Chauvé",
+                          "latitude": 47.158867,
+                          "longitude": -2.0120013,
+                          "departement": {
+                              "numero": "44",
+                              "nom": "Loire-Atlantique",
+                              "region": {
+                                  "nom": "Pays de la Loire"
+                              }
+                          }
+                      }
+                  }
+              },
+              {
+                  "id": 97411,
+                  "differenceHeurePassage": 5,
+                  "prix": 54.0,
+                  "lieuCovoiturage": {
+                      "id": 2955,
+                      "nom": "Place Saint -Macé",
+                      "adresse": "place Saint-Macé",
+                      "latitude": 48.090244,
+                      "longitude": 2.7910683,
+                      "type": "AUTO_STOP",
+                      "commune": {
+                          "codeInsee": "45145",
+                          "codePostal": "45210",
+                          "nom": "Ferrières-en-Gâtinais",
+                          "latitude": 48.105537,
+                          "longitude": 2.8042686,
+                          "departement": {
+                              "numero": "45",
+                              "nom": "Loiret",
+                              "region": {
+                                  "nom": "Centre-Val de Loire"
+                              }
+                          }
+                      }
+                  }
+              }
+          ]
+      },
+      {
+          "id": 41546,
+          "dateOffre": 1704495600000,
+          "nombrePlaces": 2,
+          "modeleVoiture": "2021,Lexus,RX",
+          "heureDepart": 1704524400000,
+          "heureArrive": 1704729600000,
+          "covoitureur": {
+              "email": "justine.vasseur@yahoo.fr",
+              "nom": "Lefèvre",
+              "prenom": "Océane",
+              "dateNaissance": 1187347866344,
+              "urlPhoto": "https://s3.amazonaws.com/uifaces/faces/twitter/colgruv/128.jpg",
+              "token": null,
+              "dateCreation": 1706473207.753047000,
+              "numeroTelephone": "+33 6 12 88 33 08"
+          },
+          "pointPassageCovoiturages": [
+              {
+                  "id": 169585,
+                  "differenceHeurePassage": 0,
+                  "prix": 70.0,
+                  "lieuCovoiturage": {
+                      "id": 5225,
+                      "nom": "Le Mollard",
+                      "adresse": null,
+                      "latitude": 45.418926,
+                      "longitude": 6.096146,
+                      "type": "AUTO_STOP",
+                      "commune": {
+                          "codeInsee": "38078",
+                          "codePostal": "38580",
+                          "nom": "La Chapelle-du-Bard",
+                          "latitude": 45.4026,
+                          "longitude": 6.1380053,
+                          "departement": {
+                              "numero": "38",
+                              "nom": "Isère",
+                              "region": {
+                                  "nom": "Auvergne-Rhône-Alpes"
+                              }
+                          }
+                      }
+                  }
+              },
+              {
+                  "id": 169590,
+                  "differenceHeurePassage": 13,
+                  "prix": 12.0,
+                  "lieuCovoiturage": {
+                      "id": 4250,
+                      "nom": "Raujolles bis",
+                      "adresse": "Boulevard Raymond VII",
+                      "latitude": 44.0818,
+                      "longitude": 3.04599,
+                      "type": "AUTO_STOP",
+                      "commune": {
+                          "codeInsee": "12084",
+                          "codePostal": "12100",
+                          "nom": "Creissels",
+                          "latitude": 44.06499,
+                          "longitude": 3.05962,
+                          "departement": {
+                              "numero": "12",
+                              "nom": "Aveyron",
+                              "region": {
+                                  "nom": "Occitanie"
+                              }
+                          }
+                      }
+                  }
+              },
+              {
+                  "id": 169587,
+                  "differenceHeurePassage": 6,
+                  "prix": 17.0,
+                  "lieuCovoiturage": {
+                      "id": 6643,
+                      "nom": "Parking covoiturage D0031",
+                      "adresse": "D0031",
+                      "latitude": 48.222095,
+                      "longitude": 3.730838,
+                      "type": "PARKING",
+                      "commune": {
+                          "codeInsee": "10003",
+                          "codePostal": "10190",
+                          "nom": "Aix-Villemaur-Pâlis",
+                          "latitude": 48.197575,
+                          "longitude": 3.736328,
+                          "departement": {
+                              "numero": "10",
+                              "nom": "Aube",
+                              "region": {
+                                  "nom": "Grand Est"
+                              }
+                          }
+                      }
+                  }
+              },
+              {
+                  "id": 169589,
+                  "differenceHeurePassage": 12,
+                  "prix": 14.0,
+                  "lieuCovoiturage": {
+                      "id": 4051,
+                      "nom": "Aire de covoiturage du Gué Gorand",
+                      "adresse": "9 Rue de l'Atlantique. 85220 Coéx",
+                      "latitude": 46.6968,
+                      "longitude": -1.7644,
+                      "type": "AIRE_COVOITURAGE",
+                      "commune": {
+                          "codeInsee": "85070",
+                          "codePostal": "85220",
+                          "nom": "Coëx",
+                          "latitude": 46.70787,
+                          "longitude": -1.7578834,
+                          "departement": {
+                              "numero": "85",
+                              "nom": "Vendée",
+                              "region": {
+                                  "nom": "Pays de la Loire"
+                              }
+                          }
+                      }
+                  }
+              },
+              {
+                  "id": 169588,
+                  "differenceHeurePassage": 10,
+                  "prix": 14.0,
+                  "lieuCovoiturage": {
+                      "id": 6346,
+                      "nom": "Vaugrigneuse MACHERY",
+                      "adresse": "Rue des jardins",
+                      "latitude": 48.60306,
+                      "longitude": 2.089269,
+                      "type": "AUTO_STOP",
+                      "commune": {
+                          "codeInsee": "91634",
+                          "codePostal": "91640",
+                          "nom": "Vaugrigneuse",
+                          "latitude": 48.601334,
+                          "longitude": 2.1054149,
+                          "departement": {
+                              "numero": "91",
+                              "nom": "Essonne",
+                              "region": {
+                                  "nom": "Île-de-France"
+                              }
+                          }
+                      }
+                  }
+              },
+              {
+                  "id": 169586,
+                  "differenceHeurePassage": 2,
+                  "prix": 31.0,
+                  "lieuCovoiturage": {
+                      "id": 1649,
+                      "nom": "Carrefour route de Conflans/rue des anciens combattants",
+                      "adresse": "1 rue des anciens combattants",
+                      "latitude": 47.94577,
+                      "longitude": 2.8464088,
+                      "type": "AUTO_STOP",
+                      "commune": {
+                          "codeInsee": "45165",
+                          "codePostal": "45220",
+                          "nom": "Gy-les-Nonains",
+                          "latitude": 47.928753,
+                          "longitude": 2.8460398,
+                          "departement": {
+                              "numero": "45",
+                              "nom": "Loiret",
+                              "region": {
+                                  "nom": "Centre-Val de Loire"
+                              }
+                          }
+                      }
+                  }
+              }
+          ]
+      },
+      {
+          "id": 44794,
+          "dateOffre": 1704495600000,
+          "nombrePlaces": 1,
+          "modeleVoiture": "2017,BMW,X5",
+          "heureDepart": 1704567600000,
+          "heureArrive": 1704736800000,
+          "covoitureur": {
+              "email": "lola.barbier@hotmail.fr",
+              "nom": "Schmitt",
+              "prenom": "Nicolas",
+              "dateNaissance": 998182169877,
+              "urlPhoto": "https://s3.amazonaws.com/uifaces/faces/twitter/snowshade/128.jpg",
+              "token": null,
+              "dateCreation": null,
+              "numeroTelephone": "0685271485"
+          },
+          "pointPassageCovoiturages": [
+              {
+                  "id": 179024,
+                  "differenceHeurePassage": 12,
+                  "prix": 16.0,
+                  "lieuCovoiturage": {
+                      "id": 1201,
+                      "nom": "La Colonne",
+                      "adresse": "D753 / D949 - Torfou",
+                      "latitude": 47.03147,
+                      "longitude": -1.0925944,
+                      "type": "AIRE_COVOITURAGE",
+                      "commune": {
+                          "codeInsee": "49301",
+                          "codePostal": "49230",
+                          "nom": "Sèvremoine",
+                          "latitude": 47.125656,
+                          "longitude": -0.9983418,
+                          "departement": {
+                              "numero": "49",
+                              "nom": "Maine-et-Loire",
+                              "region": {
+                                  "nom": "Pays de la Loire"
+                              }
+                          }
+                      }
+                  }
+              },
+              {
+                  "id": 179023,
+                  "differenceHeurePassage": 11,
+                  "prix": 31.0,
+                  "lieuCovoiturage": {
+                      "id": 6635,
+                      "nom": "Centre du village",
+                      "adresse": null,
+                      "latitude": 44.20471,
+                      "longitude": 1.6706285,
+                      "type": "AUTO_STOP",
+                      "commune": {
+                          "codeInsee": "82095",
+                          "codePostal": "82240",
+                          "nom": "Lavaurette",
+                          "latitude": 44.207397,
+                          "longitude": 1.6699951,
+                          "departement": {
+                              "numero": "82",
+                              "nom": "Tarn-et-Garonne",
+                              "region": {
+                                  "nom": "Occitanie"
+                              }
+                          }
+                      }
+                  }
+              },
+              {
+                  "id": 179021,
+                  "differenceHeurePassage": 3,
+                  "prix": 52.0,
+                  "lieuCovoiturage": {
+                      "id": 287,
+                      "nom": "Tessé",
+                      "adresse": null,
+                      "latitude": 48.858734,
+                      "longitude": 1.741576,
+                      "type": "AUTO_STOP",
+                      "commune": {
+                          "codeInsee": "78236",
+                          "codePostal": "78910",
+                          "nom": "Flexanville",
+                          "latitude": 48.85511,
+                          "longitude": 1.7431203,
+                          "departement": {
+                              "numero": "78",
+                              "nom": "Yvelines",
+                              "region": {
+                                  "nom": "Île-de-France"
+                              }
+                          }
+                      }
+                  }
+              },
+              {
+                  "id": 179022,
+                  "differenceHeurePassage": 7,
+                  "prix": 33.0,
+                  "lieuCovoiturage": {
+                      "id": 7756,
+                      "nom": "Abribus DECAUX Eglise",
+                      "adresse": "Rue de l'Eglise",
+                      "latitude": 49.584675,
+                      "longitude": 2.585817,
+                      "type": "AUTO_STOP",
+                      "commune": {
+                          "codeInsee": "60503",
+                          "codePostal": "60420",
+                          "nom": "Le Ployron",
+                          "latitude": 49.586372,
+                          "longitude": 2.5818372,
+                          "departement": {
+                              "numero": "60",
+                              "nom": "Oise",
+                              "region": {
+                                  "nom": "Hauts-de-France"
+                              }
+                          }
+                      }
+                  }
+              }
+          ]
+      },
+      {
+          "id": 38213,
+          "dateOffre": 1704495600000,
+          "nombrePlaces": 2,
+          "modeleVoiture": "2017,BMW,X5",
+          "heureDepart": 1704549600000,
+          "heureArrive": 1704693600000,
+          "covoitureur": {
+              "email": "ines.laurent@hotmail.fr",
+              "nom": "Picard",
+              "prenom": "Enzo",
+              "dateNaissance": 111561302106,
+              "urlPhoto": "https://s3.amazonaws.com/uifaces/faces/twitter/gipsy_raf/128.jpg",
+              "token": null,
+              "dateCreation": 1706473213.728930000,
+              "numeroTelephone": "+33 764247940"
+          },
+          "pointPassageCovoiturages": [
+              {
+                  "id": 187002,
+                  "differenceHeurePassage": 8,
+                  "prix": 70.0,
+                  "lieuCovoiturage": {
+                      "id": 683,
+                      "nom": "La Robinière - Direction Nord - Chançay",
+                      "adresse": "2 Rue des Violettes",
+                      "latitude": 47.437504,
+                      "longitude": 0.868184,
+                      "type": "AUTO_STOP",
+                      "commune": {
+                          "codeInsee": "37052",
+                          "codePostal": "37210",
+                          "nom": "Chançay",
+                          "latitude": 47.44967,
+                          "longitude": 0.8805792,
+                          "departement": {
+                              "numero": "37",
+                              "nom": "Indre-et-Loire",
+                              "region": {
+                                  "nom": "Centre-Val de Loire"
+                              }
+                          }
+                      }
+                  }
+              },
+              {
+                  "id": 187001,
+                  "differenceHeurePassage": 5,
+                  "prix": 80.0,
+                  "lieuCovoiturage": {
+                      "id": 5285,
+                      "nom": "Saint Nazaire Mairie",
+                      "adresse": null,
+                      "latitude": 45.06008,
+                      "longitude": 5.24896,
+                      "type": "AUTO_STOP",
+                      "commune": {
+                          "codeInsee": "26320",
+                          "codePostal": "26190",
+                          "nom": "Saint-Nazaire-en-Royans",
+                          "latitude": 45.057346,
+                          "longitude": 5.244472,
+                          "departement": {
+                              "numero": "26",
+                              "nom": "Drôme",
+                              "region": {
+                                  "nom": "Auvergne-Rhône-Alpes"
+                              }
+                          }
+                      }
+                  }
+              },
+              {
+                  "id": 187000,
+                  "differenceHeurePassage": 1,
+                  "prix": 95.0,
+                  "lieuCovoiturage": {
+                      "id": 6940,
+                      "nom": "Aire de covoiturage de Sainte Julitte",
+                      "adresse": "E60. 56190 Muzillac",
+                      "latitude": 47.584446,
+                      "longitude": -2.545577,
+                      "type": "AIRE_COVOITURAGE",
+                      "commune": {
+                          "codeInsee": "56002",
+                          "codePostal": "56190",
+                          "nom": "Ambon",
+                          "latitude": 47.5571,
+                          "longitude": -2.5405738,
+                          "departement": {
+                              "numero": "56",
+                              "nom": "Morbihan",
+                              "region": {
+                                  "nom": "Bretagne"
+                              }
+                          }
+                      }
+                  }
+              },
+              {
+                  "id": 187003,
+                  "differenceHeurePassage": 8,
+                  "prix": 46.0,
+                  "lieuCovoiturage": {
+                      "id": 7319,
+                      "nom": "Place du village",
+                      "adresse": null,
+                      "latitude": 45.248154,
+                      "longitude": -0.38973,
+                      "type": "AUTO_STOP",
+                      "commune": {
+                          "codeInsee": "17118",
+                          "codePostal": "17130",
+                          "nom": "Corignac",
+                          "latitude": 45.24486,
+                          "longitude": -0.39280322,
+                          "departement": {
+                              "numero": "17",
+                              "nom": "Charente-Maritime",
+                              "region": {
+                                  "nom": "Nouvelle-Aquitaine"
+                              }
+                          }
+                      }
+                  }
+              },
+              {
+                  "id": 187004,
+                  "differenceHeurePassage": 8,
+                  "prix": 28.0,
+                  "lieuCovoiturage": {
+                      "id": 1327,
+                      "nom": "Base de loisirs",
+                      "adresse": "Boulevard Adrien Barthélémy",
+                      "latitude": 45.434837,
+                      "longitude": -0.429815,
+                      "type": "AUTO_STOP",
+                      "commune": {
+                          "codeInsee": "17197",
+                          "codePostal": "17500",
+                          "nom": "Jonzac",
+                          "latitude": 45.441982,
+                          "longitude": -0.42761484,
+                          "departement": {
+                              "numero": "17",
+                              "nom": "Charente-Maritime",
+                              "region": {
+                                  "nom": "Nouvelle-Aquitaine"
+                              }
+                          }
+                      }
+                  }
+              }
+          ]
+      }
+  ],
+  "nombrePlaceOffreCovoiturage": 25
+}

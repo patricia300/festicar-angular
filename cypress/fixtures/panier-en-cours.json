@@ -1,0 +1,147 @@
+{
+  "panier": {
+      "id": 8654,
+      "dateCreation": 1706707887.576271000,
+      "dateModification": 1706707887.576291000,
+      "statut": "EN_COURS"
+  },
+  "articles": [
+      {
+          "id": 96184,
+          "festival": {
+              "id": 250,
+              "nom": "GAROSNOW",
+              "dateDebut": 1705014000000,
+              "siteWeb": "www.garosnow.com",
+              "tarifPass": 21.0,
+              "dateFin": 1705100400000,
+              "nombrePass": 47,
+              "codePostalCommune": "66210",
+              "nomCommune": "Les Angles",
+              "nomSousDomaine": "Musiques amplifiées ou électroniques",
+              "nomDomainePrincipal": "Musiques actuelles",
+              "nomOrganisateur": "Olivier Lilou",
+              "offreCovoiturages": [
+                  {
+                      "id": 8553,
+                      "dateOffre": 1704927600000,
+                      "nombrePlaces": 2,
+                      "modeleVoiture": "2021,Mitsubishi,Outlander",
+                      "heureDepart": 1704985200000,
+                      "heureArrive": 1705140000000,
+                      "covoitureur": {
+                          "email": "arthur.meunier@gmail.com",
+                          "nom": "Royer",
+                          "prenom": "Antoine",
+                          "dateNaissance": 863860212360,
+                          "urlPhoto": "https://s3.amazonaws.com/uifaces/faces/twitter/kumarrajan12123/128.jpg",
+                          "token": null,
+                          "dateCreation": null,
+                          "numeroTelephone": "+33 6 38 81 63 60"
+                      },
+                      "pointPassageCovoiturages": [
+                          {
+                              "id": 37948,
+                              "differenceHeurePassage": 6,
+                              "prix": 17.0,
+                              "lieuCovoiturage": {
+                                  "id": 5780,
+                                  "nom": "Lamartine",
+                                  "adresse": null,
+                                  "latitude": 45.224228,
+                                  "longitude": 5.876175,
+                                  "type": "AUTO_STOP",
+                                  "commune": {
+                                      "codeInsee": "38538",
+                                      "codePostal": "38420",
+                                      "nom": "Le Versoud",
+                                      "latitude": 45.22219,
+                                      "longitude": 5.85872,
+                                      "departement": {
+                                          "numero": "38",
+                                          "nom": "Isère",
+                                          "region": {
+                                              "nom": "Auvergne-Rhône-Alpes"
+                                          }
+                                      }
+                                  }
+                              }
+                          }
+                      ]
+                  }
+              ],
+              "nombrePlaceOffreCovoiturage": 33
+          },
+          "quantite": 2
+      },
+      {
+          "id": 96186,
+          "festival": {
+              "id": 215,
+              "nom": "FESTIVAL DIVERSCENES",
+              "dateDebut": 1704582000000,
+              "siteWeb": "http://diverscene.jimdo.com",
+              "tarifPass": 21.0,
+              "dateFin": 1706914800000,
+              "nombrePass": 86,
+              "codePostalCommune": "53810",
+              "nomCommune": "Changé",
+              "nomSousDomaine": "Musiques traditionnelles et du monde",
+              "nomDomainePrincipal": "Musiques actuelles",
+              "nomOrganisateur": "Bernard Mathéo",
+              "offreCovoiturages": [
+                  {
+                      "id": 5644,
+                      "dateOffre": 1704495600000,
+                      "nombrePlaces": 2,
+                      "modeleVoiture": "2019,Acura,RDX",
+                      "heureDepart": 1704567600000,
+                      "heureArrive": 1704819600000,
+                      "covoitureur": {
+                          "email": "benjamin.schneider@yahoo.fr",
+                          "nom": "Leroux",
+                          "prenom": "Marie",
+                          "dateNaissance": 1126221191490,
+                          "urlPhoto": "https://s3.amazonaws.com/uifaces/faces/twitter/serefka/128.jpg",
+                          "token": null,
+                          "dateCreation": null,
+                          "numeroTelephone": "0613739983"
+                      },
+                      "pointPassageCovoiturages": [
+                          {
+                              "id": 24887,
+                              "differenceHeurePassage": 4,
+                              "prix": 20.0,
+                              "lieuCovoiturage": {
+                                  "id": 3024,
+                                  "nom": "Parking de L'Eglise",
+                                  "adresse": "Le Bourg. route des rivoires",
+                                  "latitude": 45.554688,
+                                  "longitude": 5.4820585,
+                                  "type": "PARKING",
+                                  "commune": {
+                                      "codeInsee": "38381",
+                                      "codePostal": "38110",
+                                      "nom": "Saint-Didier-de-la-Tour",
+                                      "latitude": 45.54795,
+                                      "longitude": 5.487342,
+                                      "departement": {
+                                          "numero": "38",
+                                          "nom": "Isère",
+                                          "region": {
+                                              "nom": "Auvergne-Rhône-Alpes"
+                                          }
+                                      }
+                                  }
+                              }
+                          }
+                      ]
+                  }
+              ],
+              "nombrePlaceOffreCovoiturage": 25
+          },
+          "quantite": 1
+      }
+  ],
+  "articlesNonDisponible": null
+}
