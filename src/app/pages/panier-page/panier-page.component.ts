@@ -87,7 +87,7 @@ export class PanierPageComponent {
             console.log('Payer Panier', this.panierService.currentPanier)
             this.panierService.payerPanier(this.panierService.currentPanier.id).subscribe({
               next: (res: PaymentResponse) => {
-                if(!res.articlesNonDisponible) {
+                if(res.articlesNonDisponible == null) {
                   // Paiement réussi
                   this.toastService.showSuccess('Paiement réussi');
                 } else {
@@ -95,13 +95,13 @@ export class PanierPageComponent {
                     const foundIdx = this.articles.findIndex(a => a.id === articleNonDispo.id);
                     switch(articleNonDispo.classType) {
                       case ClassTypePaymentResponse.FESTIVAL:
-                        if(foundIdx >  -1) this.panierService.supprimerArticle(this.articles[foundIdx].id).subscribe();
+                        if(foundIdx >  -1) this.articles.splice(foundIdx, 1);
                         break;
                       case ClassTypePaymentResponse.OFFRE_COVOITURAGE:
                         if(articleNonDispo.nbPassDisponible > 0) {
                           this.articles[foundIdx].quantite = articleNonDispo.nbPassDisponible;
                         } else {
-                          if(foundIdx > -1) this.panierService.supprimerArticle(this.articles[foundIdx].id).subscribe();
+                          if(foundIdx > -1) this.articles.splice(foundIdx, 1);
                         }
                         break;
                       default:
@@ -113,7 +113,7 @@ export class PanierPageComponent {
                   this.modalIndisponibleIsVisible = true;
                 }
 
-                this.populateArticles();
+                // this.populateArticles();
                 this.populatePaymentHistory();
               },
               error: () => this.toastService.showError('Echec du paiement')
