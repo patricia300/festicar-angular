@@ -112,5 +112,15 @@
         <div>Chargement ...</div>
       </div>
     </div>
+
+    <div class="card flex justify-content-center">
+        <p-paginator
+          (onPageChange)="onPageChange($event)"
+          [first]="this.festivalsService.pagination.first"
+          [rows]="this.festivalsService.pagination.rows"
+          [totalRecords]="this.festivalsService.pagination.totalOfElements"
+          [rowsPerPageOptions]="[10, 20, 30]"
+        ></p-paginator>
+    </div>
   </div>
 </div>

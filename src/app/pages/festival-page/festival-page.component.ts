@@ -1,6 +1,7 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { COMMUNE, DATE_DEBUT, DOMAINE, Festival } from 'src/app/interfaces/festival';
+import { PageEvent } from 'src/app/interfaces/page-event';
 import { AuthService } from 'src/app/services/authService/auth.service';
 import { DomaineService } from 'src/app/services/domaine.service';
 import { FestivalsService } from 'src/app/services/festivals.service';
@@ -36,7 +37,7 @@ export class FestivalPageComponent implements OnInit {
     private router: Router){}
 
   ngOnInit(): void {
-    this.festivalsService.getAll().subscribe({
+    this.festivalsService.getAll(this.festivalsService.pagination.page, this.festivalsService.pagination.rows).subscribe({
       error: () => this.toastService.showError('Echec lors de la récupération des festivals')
     });
 
@@ -156,19 +157,25 @@ export class FestivalPageComponent implements OnInit {
     return this.selectedFilterOption === DOMAINE;
   }
 
+  onPageChange(event: any) {
+    console.log('Event', event);
+    this.festivalsService.pagination = <PageEvent>event;
+    this.festivalsService.getAll(this.festivalsService.pagination.page, this.festivalsService.pagination.rows).subscribe()
+  }
+
   @HostListener("window:scroll", ["$event"])
   onWindowScroll() {
     const scrollTop: number = window.scrollY;
     const visibleHeight: number = window.innerHeight;
     const totalHeight: number = document.documentElement.scrollHeight;
 
-    if (scrollTop + visibleHeight >= totalHeight) {
-      console.log('Le défilement est au plus bas.');
-      const currentPage = this.festivalsService.currentPageable?.number;
-      if(currentPage != undefined) {
-        this.festivalsService.getAll(currentPage + 1).subscribe()
-      }
-    }
+    // if (scrollTop + visibleHeight >= totalHeight) {
+    //   console.log('Le défilement est au plus bas.');
+    //   const currentPage = this.festivalsService.currentPageable?.number;
+    //   if(currentPage != undefined) {
+    //     this.festivalsService.getAll(currentPage + 1).subscribe()
+    //   }
+    // }
   }
 
 }
