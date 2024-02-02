@@ -12,6 +12,11 @@ export interface Panier {
   articles: Article[]
 }
 
+export interface GetCurrentPanier {
+  panier: Panier,
+  articles: Article[],
+}
+
 export interface GetAllPanierResponse {
   panier: {
     id: number,

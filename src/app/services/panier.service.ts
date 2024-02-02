@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, finalize, tap } from 'rxjs';
-import { GetAllPanierResponse, Panier, PaymentResponse } from '../interfaces/panier';
+import { GetAllPanierResponse, GetCurrentPanier, Panier, PaymentResponse } from '../interfaces/panier';
 import { PanierRequestBodyDto } from '../interfaces/panier-request-body-dto';
 
 @Injectable({
@@ -22,11 +22,11 @@ export class PanierService {
     );
   }
 
-  getCurrentPanier(email: string): Observable<Panier> {
+  getCurrentPanier(email: string): Observable<GetCurrentPanier> {
     this.currentPanierIsLoading = true;
-    return this.http.get<Panier>('panier', { params: { email } }).pipe(
+    return this.http.get<GetCurrentPanier>('panier', { params: { email } }).pipe(
       tap((panier) => {
-        this.currentPanier = panier;
+        this.currentPanier = panier.panier;
         this.nbArticles = this.currentPanier.articles.length;
 
         console.log("get current panier: ", this.currentPanier);
