@@ -9,6 +9,8 @@ import { ArticleCard } from 'src/app/interfaces/article';
 export class ArticleCardComponent {
   @Input({required: true}) article!: ArticleCard;
   @Input() paid: boolean = false;
+  @Input() selectable: boolean = true;
+  @Input() deletable: boolean = true;
   @Output() supprimer = new EventEmitter<number>();
 
 

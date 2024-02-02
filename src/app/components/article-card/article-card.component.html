@@ -2,7 +2,7 @@
   <p-card>
     <div class="m-0 flex">
       <p-checkbox
-        *ngIf="!paid"
+        *ngIf="!paid && selectable"
         styleClass="mr-5"
         [binary]="true"
         [(ngModel)]="article.checked"
@@ -90,7 +90,7 @@
         </div>
 
         <p-button
-          *ngIf="!paid"
+          *ngIf="!paid && deletable"
           class="supprimer-button"
           label="Supprimer"
           size="small"

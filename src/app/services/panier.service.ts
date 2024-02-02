@@ -39,8 +39,8 @@ export class PanierService {
     return this.http.post<Panier>('panier', panierRequestBodyDto);
   }
 
-  payerPanier(id: number): Observable<PaymentResponse> {
-    return this.http.put<PaymentResponse>('panier/payer', { params: { id }});
+  payerPanier(idPanier: number): Observable<PaymentResponse> {
+    return this.http.put<PaymentResponse>('panier/payer', { params: { id: idPanier }});
   }
 
   paiementPartiel(payload: {emailFestivalier: string, articles: number[]}): Observable<PaymentResponse> {

@@ -2,7 +2,7 @@ import { CurrencyPipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { StatutPanier } from 'src/app/enums/statut-panier';
 import { Article, ArticleCard } from 'src/app/interfaces/article';
-import { Panier, PanierPayesListing, PaymentResponse } from 'src/app/interfaces/panier';
+import { ClassTypePaymentResponse, Panier, PanierPayesListing, PaymentResponse } from 'src/app/interfaces/panier';
 import { AuthService } from 'src/app/services/authService/auth.service';
 import { ConfirmDialogService } from 'src/app/services/confirm-dialog.service';
 import { PanierService } from 'src/app/services/panier.service';
@@ -16,6 +16,9 @@ import { ToastService } from 'src/app/services/toast.service';
 export class PanierPageComponent {
   articles: ArticleCard[] = [];
   paniersPayes: PanierPayesListing[] = [];
+
+  modalIndisponibleIsVisible: boolean = false;
+  articlesDisponiblesRestants: ArticleCard[] = [];
 
   constructor(
     protected panierService: PanierService,
@@ -67,6 +70,10 @@ export class PanierPageComponent {
     );
   }
 
+  validerPanierArticlesRestants() {
+
+  }
+
   validerPanier() {
     const selectedArticles = this.articles.filter(a => a.checked);
 
@@ -76,20 +83,41 @@ export class PanierPageComponent {
         'Paiement du panier',
         `Vous allez payer un montant de ${this.currencyPipe.transform(this.getTotalAmount(), 'EUR')}`,
         () => {
-          this.panierService.payerPanier(this.articles[0].festival.id).subscribe({
-            next: (res: PaymentResponse) => {
-              if(!res.articlesNonDisponible) {
-                // Paiement réussi
-                this.toastService.showSuccess('Paiement réussi');
+          if(this.panierService.currentPanier) {
+            this.panierService.payerPanier(this.panierService.currentPanier.id).subscribe({
+              next: (res: PaymentResponse) => {
+                if(!res.articlesNonDisponible) {
+                  // Paiement réussi
+                  this.toastService.showSuccess('Paiement réussi');
+                } else {
+                  res.articlesNonDisponible.forEach(articleNonDispo => {
+                    const foundIdx = this.articles.findIndex(a => a.id === articleNonDispo.id);
+                    switch(articleNonDispo.classType) {
+                      case ClassTypePaymentResponse.FESTIVAL:
+                        if(foundIdx >  -1) this.panierService.supprimerArticle(this.articles[foundIdx].id).subscribe();
+                        break;
+                      case ClassTypePaymentResponse.OFFRE_COVOITURAGE:
+                        if(articleNonDispo.nbPassDisponible > 0) {
+                          this.articles[foundIdx].quantite = articleNonDispo.nbPassDisponible;
+                        } else {
+                          if(foundIdx > -1) this.panierService.supprimerArticle(this.articles[foundIdx].id).subscribe();
+                        }
+                        break;
+                      default:
+                        break;
+                    }
+                  });
+
+                  this.articlesDisponiblesRestants = this.articles;
+                  this.modalIndisponibleIsVisible = true;
+                }
+
                 this.populateArticles();
                 this.populatePaymentHistory();
-              } else {
-                //TODO:
-                // TSY REUSSI
-              }
-            },
-            error: () => this.toastService.showError('Echec du paiement')
-          });
+              },
+              error: () => this.toastService.showError('Echec du paiement')
+            });
+          }
         }
       );
     } else {
@@ -108,11 +136,47 @@ export class PanierPageComponent {
                 // Paiement réussi
                 this.toastService.showSuccess('Paiement réussi');
                 this.populateArticles();
-                this.populatePaymentHistory();
               } else {
-                //TODO:
-                // TSY REUSSI
+                this.modalIndisponibleIsVisible = true;
+                res.articlesNonDisponible.forEach(articleNonDispo => {
+                  const found = this.articles.find(a => a.id === articleNonDispo.id);
+                  switch(articleNonDispo.classType) {
+                    case ClassTypePaymentResponse.FESTIVAL:
+                      if(found) {
+                        this.panierService.supprimerArticle(found.id).subscribe();
+                        paymentPayload.articles = paymentPayload.articles.filter(idArticle => idArticle !== found.id)
+                      }
+                      break;
+                    case ClassTypePaymentResponse.OFFRE_COVOITURAGE:
+                      if(found) {
+                        this.panierService.supprimerArticle(found.id).subscribe();
+                        paymentPayload.articles = paymentPayload.articles.filter(idArticle => idArticle !== found.id)
+                      }
+                      // if(articleNonDispo.nbPassDisponible > 0) {
+                      //   // TODO: Gros soucis
+                      //   if(found) {
+                      //     const foundIdx = this.articles.findIndex(a => a.id === found.id);
+                      //     if(foundIdx > -1) this.articles[foundIdx].quantite = articleNonDispo.nbPassDisponible;
+                      //   }
+                      // } else {
+                      //   if(found) {
+                      //     this.panierService.supprimerArticle(found.id).subscribe();
+                      //     paymentPayload.articles = paymentPayload.articles.filter(idArticle => idArticle !== found.id)
+                      //   }
+                      // }
+                      break;
+                    default:
+                      break;
+                  }
+                });
               }
+              this.articlesDisponiblesRestants = [];
+              paymentPayload.articles.forEach(payloadIdArticle => {
+                const found = this.articles.find(articl => articl.id === payloadIdArticle);
+                if(found) this.articlesDisponiblesRestants.push();
+              });
+
+              this.populatePaymentHistory();
             },
             error: () => this.toastService.showError('Echec du paiement')
           })
@@ -144,6 +208,10 @@ export class PanierPageComponent {
     return selectedArticleCount > 0 ?
        `Payer ${selectedArticleCount} article(s) selectionné(s) : ${this.currencyPipe.transform(this.getTotalAmount(), 'EUR')}` :
        `Payer tout le panier : ${this.currencyPipe.transform(this.getTotalAmount(), 'EUR')}`
+  }
+
+  getIndisponibleButtonText(): string {
+    return `Payer les tickets disponibles : ${this.currencyPipe.transform(this.getTotalAmount(), 'EUR')}`
   }
 
   footerIsHidden(): boolean {
