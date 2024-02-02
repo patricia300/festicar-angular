@@ -8,9 +8,9 @@
         <div class="filter-input">
           <span class="p-input-icon-left w-full">
             <i class="pi pi-search"></i>
-            <input class="w-full p-inputtext-sm" [(ngModel)]="festivalSearchValue" type="search" placeholder="Rechercher votre festival ... " pInputText />
+            <input data-cy="festival-search-input" class="w-full p-inputtext-sm" [(ngModel)]="festivalSearchValue" type="search" placeholder="Rechercher votre festival ... " pInputText />
           </span>
-          <p-button styleClass="w-full mt-3" label="Rechercher" size="small" (click)="getFestivalByName()"/>
+          <p-button data-cy="festival-search-button" styleClass="w-full mt-3" label="Rechercher" size="small" (click)="getFestivalByName()"/>
         </div>
         <p-divider align="left" type="solid">
           <div class="titre">Filtrer</div>

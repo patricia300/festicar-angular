@@ -1,4 +1,4 @@
-import { email, token } from "../../fixtures/oauth-data";
+import { email, token } from "../fixtures/oauth-data";
 
 describe('panier listing test', () => {
   beforeEach(() => {

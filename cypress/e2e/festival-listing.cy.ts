@@ -24,5 +24,4 @@ describe('festival listing test', () => {
     cy.get('[data-cy="festival-page"]').find('[data-cy="festival-card"]').should('have.length', 10);
   });
 
-
-})
+});
