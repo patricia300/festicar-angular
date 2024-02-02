@@ -56,6 +56,7 @@ import { PanierPageComponent } from './pages/panier-page/panier-page.component';
 import { ArticleCardComponent } from './components/article-card/article-card.component';
 import { CheckboxModule } from 'primeng/checkbox';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { TabViewModule } from 'primeng/tabview';
 
 @NgModule({
   declarations: [
@@ -109,7 +110,8 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
     ToastrModule.forRoot(),
     CommonModule,
     CheckboxModule,
-    ConfirmDialogModule
+    ConfirmDialogModule,
+    TabViewModule
   ],
   providers: [
     httpInterceptorProviders,

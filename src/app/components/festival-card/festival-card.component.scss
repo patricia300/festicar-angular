@@ -33,12 +33,19 @@
     }
 
     .header-right {
-      .place-restante {
-        background-color: rgb(146, 195, 48);
+      .place-restante, .place-non-disponible {
         padding: .2rem .5rem;
         border-radius: 4px;
         font-size: small;
         color: white;
+      }
+
+      .place-restante {
+        background-color: rgb(146, 195, 48);
+      }
+
+      .place-non-disponible {
+        background-color: rgb(245, 50, 50);
       }
     }
   }

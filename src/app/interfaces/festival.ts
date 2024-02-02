@@ -13,5 +13,11 @@ export interface Festival {
   nomSousDomaine: string,
   nomDomainePrincipal: string,
   nomOrganisateur: string,
-  offreCovoiturages: OffreCovoiturage[]
+  offreCovoiturages: OffreCovoiturage[],
+  nombrePlaceOffreCovoiturage?: number
 }
+
+
+export const COMMUNE = 'Commune';
+export const DATE_DEBUT = 'Date de début du festival';
+export const DOMAINE = 'Domaine';

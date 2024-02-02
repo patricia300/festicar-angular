@@ -1,9 +1,95 @@
 <div class="panier-page">
-  <app-article-card
-    *ngFor="let article of articles"
-    [article]="article"
-    (supprimer)="supprimerArticle($event)"
-  />
+  <p-tabView>
+    <p-tabPanel header="En cours">
+      <div class="flex justify-content-center mb-5" *ngIf="panierService.currentPanierIsLoading">
+        <div class="loader text-center">
+          <p-progressSpinner styleClass="w-4rem h-4rem"/>
+          <div>Chargement ...</div>
+        </div>
+      </div>
+
+      <app-article-card
+        *ngFor="let article of articles"
+        [article]="article"
+        (supprimer)="supprimerArticle($event)"
+      />
+
+      <div class="panier-vide" *ngIf="articles.length < 1 && !panierService.currentPanierIsLoading">
+        <div>
+          <div class="message">
+            Votre panier est vide, vous pouvez le remplir en choisissant vos pass festival.
+          </div>
+          <div class="w-full flex justify-content-center">
+            <p-button label="Voir la liste des festivals" [routerLink]="'/festivals'"></p-button>
+          </div>
+        </div>
+      </div>
+    </p-tabPanel>
+
+    <p-tabPanel header="Historique des réservations">
+      <div class="flex justify-content-center mb-5" *ngIf="panierService.paymentHistoryIsLoading">
+        <div class="loader text-center">
+          <p-progressSpinner styleClass="w-4rem h-4rem"/>
+          <div>Chargement ...</div>
+        </div>
+      </div>
+
+      <div *ngFor="let panier of paniersPayes">
+        <div *ngIf="panier.articles.length > 0">
+          <!-- <p-divider align="left" type="solid">
+            <div class="titre">{{ panier.panier.dateModification | date }}</div>
+          </p-divider> -->
+
+          <app-article-card
+            *ngFor="let article of panier.articles"
+            [article]="article"
+            [paid]="true"
+          />
+        </div>
+      </div>
+
+      <div class="panier-vide" *ngIf="paniersPayes.length < 1 && !panierService.paymentHistoryIsLoading">
+        <div>
+          <div class="message">
+            Votre historique est vide, vous pouvez le remplir en achetant vos pass festival.
+          </div>
+          <div class="w-full flex justify-content-center">
+            <p-button label="Voir la liste des festivals" [routerLink]="'/festivals'"></p-button>
+          </div>
+        </div>
+      </div>
+    </p-tabPanel>
+  </p-tabView>
+
+  <p-dialog
+    [header]="'Certains tickets ne sont plus disponibles sauf les suivants ... '"
+    [(visible)]="modalIndisponibleIsVisible"
+    [modal]="true"
+    [style]="{ width: '80vw', minWidth: '23rem' }"
+  >
+    <app-article-card
+      *ngFor="let article of articlesDisponiblesRestants"
+      [article]="article"
+      [selectable]="false"
+      [deletable]="false"
+      (supprimer)="supprimerArticle($event)"
+    />
+
+    <div class="panier-vide" *ngIf="articlesDisponiblesRestants.length < 1">
+      <div>
+        <div class="message">
+          Malheuresement, tous les articles que vous avez selectionnés ne sont plus disponibles
+        </div>
+      </div>
+    </div>
+
+    <app-footer-action
+      [disabled]="articlesDisponiblesRestants.length < 1"
+      [hidden]="articlesDisponiblesRestants.length < 1"
+      [buttonText]="getIndisponibleButtonText()"
+      (clickRightButton)="validerPanier()"
+    />
+  </p-dialog>
 </div>
 
 <app-footer-action

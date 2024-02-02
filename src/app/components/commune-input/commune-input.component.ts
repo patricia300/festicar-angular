@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { AutoCompleteCompleteEvent } from 'primeng/autocomplete';
 import { CommuneSearchItem } from 'src/app/interfaces/commune';
 import { CommuneService } from 'src/app/services/commune.service';
@@ -10,6 +10,7 @@ import { CommuneService } from 'src/app/services/commune.service';
 })
 export class CommuneInputComponent {
   @Input() placeholder: string = 'Adresse de votre commune';
+  @Output() selectCommune = new EventEmitter<string>();
 
   selectedCommune?: CommuneSearchItem;
   communeSuggestions: CommuneSearchItem[] = [];
@@ -22,5 +23,9 @@ export class CommuneInputComponent {
 
   filterCommune(event: AutoCompleteCompleteEvent) {
     this.communeSuggestions = this.communeService.communes.filter(c => c.nom.toLowerCase().includes(event.query.toLowerCase()));
+  }
+
+  onSelectCommune() {
+    this.selectCommune.emit(this.selectedCommune?.codeINSEE);
   }
 }

@@ -79,7 +79,7 @@ export class AuthService {
           if(utilisateur){
             this.utilisateurService.utilisateur=utilisateur;
             this.setToken(credential);
-            localStorage.setItem('userEmail', utilisateur.email);
+            this.setUserEmail(credential);
             this.toastService.showSuccess('Connexion réussie');
             this.panierService.getCurrentPanier(utilisateur.email).subscribe();
           }else{
@@ -95,7 +95,7 @@ export class AuthService {
               next: (utilisateur: Utilisateur) => {
                 this.utilisateurService.utilisateur=utilisateur;
                 this.setToken(credential);
-                localStorage.setItem('userEmail', utilisateur.email);
+                this.setUserEmail(credential);
                 this.toastService.showSuccess('Compte créé et connecté')
               },
               error: () => this.toastService.showError('Compte utilisateur non créé')
@@ -111,6 +111,11 @@ export class AuthService {
   private setToken(credential: any){
     localStorage.setItem('token', credential.credential.accessToken);
     this.token = this.getToken();
+  }
+
+  private setUserEmail(credential: any) {
+    localStorage.setItem('userEmail', credential.user.email);
+    this.userEmail = localStorage.getItem('userEmail');
   }
 
   private getToken() {

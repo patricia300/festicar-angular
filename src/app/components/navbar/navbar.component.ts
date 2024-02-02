@@ -13,31 +13,15 @@ import { PanierService } from 'src/app/services/panier.service';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
-  @Input() showCommuneSearchInput: boolean = false;
-  @Input() showFestivalSearchInput: boolean = false;
-
-  profilItems?: MenuItem[];
-  panierItems?: MenuItem[];
-
-  selectedCommune?: CommuneSearchItem;
-  communeSuggestions: CommuneSearchItem[] = [];
-
   constructor(
-    private communeService: CommuneService,
     protected panierService: PanierService,
     protected authService: AuthService,
     private confirmDialogService: ConfirmDialogService) {}
 
   ngOnInit() {
-    this.communeService.initData();
-
     if(this.authService.isAuthenticated() && this.authService.userEmail) {
       this.panierService.getCurrentPanier(this.authService.userEmail).subscribe();
     }
-  }
-
-  filterCommune(event: AutoCompleteCompleteEvent) {
-    this.communeSuggestions = this.communeService.communes.filter(c => c.nom.toLowerCase().includes(event.query.toLowerCase()));
   }
 
   authenticateWithGoogle(){

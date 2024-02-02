@@ -2,6 +2,7 @@
   <p-card>
     <div class="m-0 flex">
       <p-checkbox
+        *ngIf="!paid && selectable"
         styleClass="mr-5"
         [binary]="true"
         [(ngModel)]="article.checked"
@@ -83,18 +84,23 @@
                 {{ event.adresse }}
             </ng-template>
             <ng-template pTemplate="opposite" let-event>
-              {{ event.date }}
+              {{ event.date | date: 'dd/MM/yyyy hh:mm' }}
             </ng-template>
           </p-timeline>
         </div>
 
         <p-button
+          *ngIf="!paid && deletable"
           class="supprimer-button"
           label="Supprimer"
           size="small"
           aria-label="supprimerbtn"
           (click)="supprimerArticle()"
         />
+
+        <div class="paid-mention" *ngIf="paid">
+          {{ 'Payé' | uppercase }}
+        </div>
       </div>
     </div>
 

@@ -17,15 +17,17 @@ export class CovoiturageCardComponent {
 
   getTrajetInfo() {
     const lieuCovoiturage = this.offreCovoiturage.pointPassagePlusProche?.lieuCovoiturage;
+    const dateDepart: Date = new Date(this.offreCovoiturage?.heureDepart || 0);
+    const differenceHeurePassage: number = this.offreCovoiturage.pointPassagePlusProche?.differenceHeurePassage || 0;
 
     return [
       {
         adresse: `${lieuCovoiturage?.adresse} ${lieuCovoiturage?.commune.nom}, ${lieuCovoiturage?.commune.codePostal}`,
-        date: '09:30'
+        date: dateDepart.setHours(dateDepart.getHours() + differenceHeurePassage)
       },
       {
         adresse: this.festival?.nomCommune,
-        date: '20:00'
+        date: this.offreCovoiturage.heureArrive
       }
     ];
   }
