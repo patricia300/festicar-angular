@@ -27,7 +27,7 @@ export class PanierService {
     return this.http.get<GetCurrentPanier>('panier', { params: { email } }).pipe(
       tap((panier) => {
         this.currentPanier = panier.panier;
-        this.nbArticles = this.currentPanier.articles.length;
+        this.nbArticles = panier.articles.length;
 
         console.log("get current panier: ", this.currentPanier);
       }),
