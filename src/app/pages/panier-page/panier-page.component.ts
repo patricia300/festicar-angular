@@ -84,6 +84,7 @@ export class PanierPageComponent {
         `Vous allez payer un montant de ${this.currencyPipe.transform(this.getTotalAmount(), 'EUR')}`,
         () => {
           if(this.panierService.currentPanier) {
+            console.log('Payer Panier', this.panierService.currentPanier)
             this.panierService.payerPanier(this.panierService.currentPanier.id).subscribe({
               next: (res: PaymentResponse) => {
                 if(!res.articlesNonDisponible) {
