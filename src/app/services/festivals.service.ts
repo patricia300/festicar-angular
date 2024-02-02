@@ -4,6 +4,7 @@ import { Observable, finalize, tap } from 'rxjs';
 import { Festival } from '../interfaces/festival';
 import { Pageable } from '../interfaces/pageable';
 import { formatDate } from '../utils/date.util';
+import { PageEvent } from '../interfaces/page-event';
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +14,13 @@ export class FestivalsService {
   festivals: Festival[] = [];
   festivalsIsLoading: boolean = false;
   currentPageable?: Pageable<Festival>;
+  pagination: PageEvent = {
+    page: 0,
+    pageCount: 0,
+    rows: 10,
+    first: 0,
+    totalOfElements: 0
+  };
 
   constructor(private http: HttpClient) { }
 
@@ -23,8 +31,11 @@ export class FestivalsService {
       .get<Pageable<Festival>>('festivals', { params: { numeroPage, taillePage, tri } })
       .pipe(
         tap((pageableFestival) => {
-          this.festivals = [...this.festivals, ...pageableFestival.content];
+          // this.festivals = [...this.festivals, ...pageableFestival.content];
+          this.festivals = pageableFestival.content;
           this.currentPageable = pageableFestival;
+          this.pagination.pageCount = pageableFestival.totalPages;
+          this.pagination.totalOfElements = pageableFestival.totalElements;
         }),
         finalize(() => this.festivalsIsLoading = false)
       )

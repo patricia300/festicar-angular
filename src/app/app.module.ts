@@ -57,6 +57,7 @@ import { ArticleCardComponent } from './components/article-card/article-card.com
 import { CheckboxModule } from 'primeng/checkbox';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { TabViewModule } from 'primeng/tabview';
+import { Paginator, PaginatorModule } from 'primeng/paginator';
 
 @NgModule({
   declarations: [
@@ -111,7 +112,8 @@ import { TabViewModule } from 'primeng/tabview';
     CommonModule,
     CheckboxModule,
     ConfirmDialogModule,
-    TabViewModule
+    TabViewModule,
+    PaginatorModule
   ],
   providers: [
     httpInterceptorProviders,
