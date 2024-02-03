@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
-  apiUrl: 'http://localhost:8080',
+  apiUrl: 'http://129.88.210.27:8080',
   firebaseConfig : {
     apiKey: "AIzaSyCVVMb7qO5Y1VP1PAJft3YNFka1Gzc0IwA",
     authDomain: "festicar-9578c.firebaseapp.com",
