@@ -123,13 +123,6 @@
       (acheterPass)="onAcheterPassFestival($event)"
     />
 
-    <div class="flex justify-content-center mb-5" *ngIf="festivalsService.festivalsIsLoading">
-      <div class="loader text-center">
-        <p-progressSpinner styleClass="w-4rem h-4rem"/>
-        <div>Chargement ...</div>
-      </div>
-    </div>
-
     <div class="card flex justify-content-center">
         <p-paginator
           *ngIf="showPaginator"

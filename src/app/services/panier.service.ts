@@ -24,11 +24,14 @@ export class PanierService {
 
   getCurrentPanier(email: string): Observable<GetCurrentPanier> {
     this.currentPanierIsLoading = true;
+    this.currentPanier = undefined;
     return this.http.get<GetCurrentPanier>('panier', { params: { email } }).pipe(
       tap((panier) => {
-        this.currentPanier = panier.panier;
-        this.currentPanier.articles = panier.articles;
-        this.nbArticles = this.currentPanier.articles.length;
+        if(panier) {
+          this.currentPanier = panier.panier;
+          this.currentPanier.articles = panier.articles;
+          this.nbArticles = this.currentPanier.articles.length;
+        }
 
         console.log("get current panier: ", this.currentPanier);
       }),

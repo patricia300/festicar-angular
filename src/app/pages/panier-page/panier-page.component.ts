@@ -90,6 +90,7 @@ export class PanierPageComponent {
                 if(res.articlesNonDisponible == null) {
                   // Paiement réussi
                   this.toastService.showSuccess('Paiement réussi');
+                  this.populateArticles();
                 } else {
                   res.articlesNonDisponible.forEach(articleNonDispo => {
                     const foundIdx = this.articles.findIndex(a => a.id === articleNonDispo.id);
@@ -113,7 +114,6 @@ export class PanierPageComponent {
                   this.modalIndisponibleIsVisible = true;
                 }
 
-                // this.populateArticles();
                 this.populatePaymentHistory();
               },
               error: () => this.toastService.showError('Echec du paiement')
@@ -221,8 +221,11 @@ export class PanierPageComponent {
 
   populateArticles() {
     if(this.authService.userEmail) {
+      this.articles = [];
       this.panierService.getCurrentPanier(this.authService.userEmail).subscribe({
-        next: (panier) => this.articles = panier.articles.map((a) => this.mapArticle(a)),
+        next: (panier) => {
+          if(panier) this.articles = panier.articles.map((a) => this.mapArticle(a))
+        },
         error: () => this.toastService.showError('Echec de la récuperation du panier courant')
       });
     } else {

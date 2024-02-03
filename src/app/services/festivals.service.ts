@@ -26,6 +26,7 @@ export class FestivalsService {
 
   getAll(numeroPage = 0, taillePage = 10, tri = 'asc'): Observable<Pageable<Festival>> {
     this.festivalsIsLoading = true;
+    this.festivals = [];
 
     return this.http
       .get<Pageable<Festival>>('festivals', { params: { numeroPage, taillePage, tri } })
