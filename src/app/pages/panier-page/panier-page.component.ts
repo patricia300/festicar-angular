@@ -139,49 +139,46 @@ export class PanierPageComponent {
           }
           this.panierService.paiementPartiel(paymentPayload).subscribe({
             next: (res: PaymentResponse) => {
-              if(!res.articlesNonDisponible) {
-                // Paiement réussi
+              if(res.articlesNonDisponible == null) {
+                // Paiement des seulements les articles séléctionnés réussi
                 this.toastService.showSuccess('Paiement réussi');
                 this.populateArticles();
+                this.resetArtcileDisponiblesRestants();
               } else {
+                // un ou plusieurs articles parmis les selectionnés non disponibles
                 this.modalIndisponibleIsVisible = true;
                 res.articlesNonDisponible.forEach(articleNonDispo => {
-                  const found = this.articles.find(a => a.id === articleNonDispo.id);
+                  const idxSelectedArticle = selectedArticles.findIndex(a => a.id === articleNonDispo.id);
+                  const idxAllArticle = this.articles.findIndex(a => a.id === articleNonDispo.id);
                   switch(articleNonDispo.classType) {
                     case ClassTypePaymentResponse.FESTIVAL:
-                      if(found) {
-                        this.panierService.supprimerArticle(found.id).subscribe();
-                        paymentPayload.articles = paymentPayload.articles.filter(idArticle => idArticle !== found.id)
+                      if(idxSelectedArticle >  -1) {
+                        // supprimer l'article de la liste des articles du panier et des articles selectionnés
+                        this.articles.splice(idxAllArticle, 1);
+                        selectedArticles.splice(idxSelectedArticle, 1);
+                        // mettre à jour les listes d'id à envoyer au backend
+                        paymentPayload.articles = selectedArticles.map(a => a.id);
                       }
                       break;
                     case ClassTypePaymentResponse.OFFRE_COVOITURAGE:
-                      if(found) {
-                        this.panierService.supprimerArticle(found.id).subscribe();
-                        paymentPayload.articles = paymentPayload.articles.filter(idArticle => idArticle !== found.id)
+                      if(articleNonDispo.nbPassDisponible > 0) {
+                        this.articles[idxAllArticle].quantite = articleNonDispo.nbPassDisponible;
+                      } else {
+                        // supprimer l'article de la liste des articles du panier et des articles selectionnés
+                        this.articles.splice(idxAllArticle, 1);
+                        selectedArticles.splice(idxSelectedArticle, 1);
+                        // mettre à jour les listes d'id à envoyer au backend
+                        paymentPayload.articles = selectedArticles.map(a => a.id);
                       }
-                      // if(articleNonDispo.nbPassDisponible > 0) {
-                      //   // TODO: Gros soucis
-                      //   if(found) {
-                      //     const foundIdx = this.articles.findIndex(a => a.id === found.id);
-                      //     if(foundIdx > -1) this.articles[foundIdx].quantite = articleNonDispo.nbPassDisponible;
-                      //   }
-                      // } else {
-                      //   if(found) {
-                      //     this.panierService.supprimerArticle(found.id).subscribe();
-                      //     paymentPayload.articles = paymentPayload.articles.filter(idArticle => idArticle !== found.id)
-                      //   }
-                      // }
                       break;
                     default:
                       break;
                   }
                 });
+
+                this.articlesDisponiblesRestants = selectedArticles;
+                this.modalIndisponibleIsVisible = true;
               }
-              this.articlesDisponiblesRestants = [];
-              paymentPayload.articles.forEach(payloadIdArticle => {
-                const found = this.articles.find(articl => articl.id === payloadIdArticle);
-                if(found) this.articlesDisponiblesRestants.push();
-              });
 
               this.populatePaymentHistory();
             },
