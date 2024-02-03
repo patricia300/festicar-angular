@@ -74,6 +74,11 @@ export class PanierPageComponent {
 
   }
 
+  resetArtcileDisponiblesRestants() {
+    this.articlesDisponiblesRestants = [];
+    this.modalIndisponibleIsVisible = false;
+  }
+
   validerPanier() {
     const selectedArticles = this.articles.filter(a => a.checked);
 
@@ -84,14 +89,15 @@ export class PanierPageComponent {
         `Vous allez payer un montant de ${this.currencyPipe.transform(this.getTotalAmount(), 'EUR')}`,
         () => {
           if(this.panierService.currentPanier) {
-            console.log('Payer Panier', this.panierService.currentPanier)
             this.panierService.payerPanier(this.panierService.currentPanier.id).subscribe({
               next: (res: PaymentResponse) => {
                 if(res.articlesNonDisponible == null) {
                   // Paiement réussi
                   this.toastService.showSuccess('Paiement réussi');
                   this.populateArticles();
+                  this.resetArtcileDisponiblesRestants();
                 } else {
+                  // un ou plusieurs articles non disponibles
                   res.articlesNonDisponible.forEach(articleNonDispo => {
                     const foundIdx = this.articles.findIndex(a => a.id === articleNonDispo.id);
                     switch(articleNonDispo.classType) {
