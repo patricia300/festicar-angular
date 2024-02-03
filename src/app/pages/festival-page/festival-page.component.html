@@ -18,6 +18,7 @@
 
         <div class="filter-input">
           <p-dropdown
+            data-cy="filter-option-select"
             [options]="filterOptions"
             [(ngModel)]="selectedFilterOption"
             [showClear]="true"
@@ -28,7 +29,7 @@
 
         <div class="filter-input" *ngIf="showCommuneFilter()">
           <app-commune-input (selectCommune)="onSelectCommune($event)"></app-commune-input>
-          <p-button styleClass="w-full mt-3" label="Filtrer" size="small" (click)="filterByCommune()"/>
+          <p-button data-cy="commune-filter-button" styleClass="w-full mt-3" label="Filtrer" size="small" (click)="filterByCommune()"/>
         </div>
         <div class="filter-input" *ngIf="showDateDebutFilter()">
           <input [(ngModel)]="dateDebutFilterValue" type="date" placeholder="Date début" class="p-inputtext-sm" pInputText />
@@ -54,7 +55,6 @@
         <app-sort-item iconClass="pi pi-angle-double-right" label="Le plus proche" />
         <div class="filter-input">
           <p-button
-            data-cy="festival-search-button"
             styleClass="w-full mt-3"
             label="Reinitialiser la liste"
             size="small"

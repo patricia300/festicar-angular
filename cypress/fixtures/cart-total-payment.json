@@ -1,0 +1,79 @@
+{
+  "panier": {
+      "id": 82907,
+      "dateCreation": 1706953503.876849,
+      "dateModification": 1706953525.322807,
+      "statut": "PAYER"
+  },
+  "articles": [
+      {
+          "id": 96241,
+          "festival": {
+              "id": 2556,
+              "nom": "Manifesta",
+              "dateDebut": 1748815200000,
+              "siteWeb": "https://www.manifesta13.org/",
+              "tarifPass": 26,
+              "dateFin": 1759269600000,
+              "nombrePass": 64,
+              "codePostalCommune": "13001",
+              "nomCommune": "Marseille 01",
+              "nomSousDomaine": "Arts plastiques et visuels",
+              "nomDomainePrincipal": "Arts plastiques et visuels",
+              "nomOrganisateur": "Gautier Louise",
+              "offreCovoiturages": [
+                  {
+                      "id": 4294,
+                      "dateOffre": 1748728800000,
+                      "nombrePlaces": 0,
+                      "modeleVoiture": "2018,Land Rover,Range Rover Evoque",
+                      "heureDepart": 1748761200000,
+                      "heureArrive": 1748808000000,
+                      "covoitureur": {
+                          "email": "lena.martinez@yahoo.fr",
+                          "nom": "Fournier",
+                          "prenom": "Célia",
+                          "dateNaissance": 774406818450,
+                          "urlPhoto": "https://s3.amazonaws.com/uifaces/faces/twitter/alessandroribe/128.jpg",
+                          "token": null,
+                          "dateCreation": null,
+                          "numeroTelephone": "+33 688449496"
+                      },
+                      "pointPassageCovoiturages": [
+                          {
+                              "id": 18855,
+                              "differenceHeurePassage": 3,
+                              "prix": 21,
+                              "lieuCovoiturage": {
+                                  "id": 83,
+                                  "nom": "Aire de covoiturage du Tertre",
+                                  "adresse": "giratoire nord Déviation de La Membrolle",
+                                  "latitude": 47.56662,
+                                  "longitude": -0.678134,
+                                  "type": "AIRE_COVOITURAGE",
+                                  "commune": {
+                                      "codeInsee": "49200",
+                                      "codePostal": "49770",
+                                      "nom": "Longuenée-en-Anjou",
+                                      "latitude": 47.56077,
+                                      "longitude": -0.6834685,
+                                      "departement": {
+                                          "numero": "49",
+                                          "nom": "Maine-et-Loire",
+                                          "region": {
+                                              "nom": "Pays de la Loire"
+                                          }
+                                      }
+                                  }
+                              }
+                          }
+                      ]
+                  }
+              ],
+              "nombrePlaceOffreCovoiturage": 21
+          },
+          "quantite": 1
+      }
+  ],
+  "articlesNonDisponible": null
+}

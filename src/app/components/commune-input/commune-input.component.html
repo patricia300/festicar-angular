@@ -1,6 +1,7 @@
 <div class="location-input">
   <i class="pi pi-map-marker"></i>
   <p-autoComplete
+    data-cy="commune-autocomplete"
     [placeholder]="placeholder"
     [(ngModel)]="selectedCommune"
     (ngModelChange)="onSelectCommune()"
