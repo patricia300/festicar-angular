@@ -31,7 +31,6 @@ export class FestivalsService {
       .get<Pageable<Festival>>('festivals', { params: { numeroPage, taillePage, tri } })
       .pipe(
         tap((pageableFestival) => {
-          // this.festivals = [...this.festivals, ...pageableFestival.content];
           this.festivals = pageableFestival.content;
           this.currentPageable = pageableFestival;
           this.pagination.pageCount = pageableFestival.totalPages;

@@ -26,6 +26,7 @@ export class FestivalPageComponent implements OnInit {
   communeFilterValue: string = '';
   dateDebutFilterValue: string = '';
   domaineFilterValue: string = '';
+  showPaginator: boolean = false;
 
   constructor(
     protected festivalsService: FestivalsService,
@@ -38,6 +39,7 @@ export class FestivalPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.festivalsService.getAll(this.festivalsService.pagination.page, this.festivalsService.pagination.rows).subscribe({
+      next: () => this.showPaginator = true,
       error: () => this.toastService.showError('Echec lors de la récupération des festivals')
     });
 
@@ -54,13 +56,9 @@ export class FestivalPageComponent implements OnInit {
     if(this.festivalSearchValue) {
       this.festivalsService.getAllByName(this.festivalSearchValue).subscribe({
         next: (festivals) => {
+          this.showPaginator = false;
           if(festivals.length < 1) this.toastService.showInfo('Aucun festival ne correspond à votre recherche');
         },
-        error: () => this.toastService.showError('Echec lors de la récupération des festivals')
-      });
-    } else {
-      this.festivalsService.festivals = [];
-      this.festivalsService.getAll().subscribe({
         error: () => this.toastService.showError('Echec lors de la récupération des festivals')
       });
     }
@@ -97,13 +95,9 @@ export class FestivalPageComponent implements OnInit {
     if(this.communeFilterValue) {
       this.festivalsService.getAllFestivalsByCommune(this.communeFilterValue).subscribe({
         next: (festivals) => {
+          this.showPaginator = false;
           if(festivals.length < 1) this.toastService.showInfo('Aucun festival ne correspond à votre filtre');
         },
-        error: () => this.toastService.showError('Echec lors de la récupération des festivals')
-      });
-    } else {
-      this.festivalsService.festivals = [];
-      this.festivalsService.getAll().subscribe({
         error: () => this.toastService.showError('Echec lors de la récupération des festivals')
       });
     }
@@ -117,13 +111,9 @@ export class FestivalPageComponent implements OnInit {
     if(this.dateDebutFilterValue) {
       this.festivalsService.getAllFestivalsByDate(this.dateDebutFilterValue).subscribe({
         next: (festivals) => {
+          this.showPaginator = false;
           if(festivals.length < 1) this.toastService.showInfo('Aucun festival ne correspond à votre filtre');
         },
-        error: () => this.toastService.showError('Echec lors de la récupération des festivals')
-      });
-    } else {
-      this.festivalsService.festivals = [];
-      this.festivalsService.getAll().subscribe({
         error: () => this.toastService.showError('Echec lors de la récupération des festivals')
       });
     }
@@ -133,13 +123,9 @@ export class FestivalPageComponent implements OnInit {
     if(this.domaineFilterValue) {
       this.festivalsService.getAllFestivalsByDomaine(this.domaineFilterValue).subscribe({
         next: (festivals) => {
+          this.showPaginator = false;
           if(festivals.length < 1) this.toastService.showInfo('Aucun festival ne correspond à votre filtre');
         },
-        error: () => this.toastService.showError('Echec lors de la récupération des festivals')
-      });
-    } else {
-      this.festivalsService.festivals = [];
-      this.festivalsService.getAll().subscribe({
         error: () => this.toastService.showError('Echec lors de la récupération des festivals')
       });
     }
@@ -158,24 +144,26 @@ export class FestivalPageComponent implements OnInit {
   }
 
   onPageChange(event: any) {
-    console.log('Event', event);
     this.festivalsService.pagination = <PageEvent>event;
-    this.festivalsService.getAll(this.festivalsService.pagination.page, this.festivalsService.pagination.rows).subscribe()
+    this.festivalsService.getAll(this.festivalsService.pagination.page, this.festivalsService.pagination.rows).subscribe(() => {
+      window.scroll(0,0);
+    });
   }
 
-  @HostListener("window:scroll", ["$event"])
-  onWindowScroll() {
-    const scrollTop: number = window.scrollY;
-    const visibleHeight: number = window.innerHeight;
-    const totalHeight: number = document.documentElement.scrollHeight;
+  reinitialiserFestivals() {
+    this.festivalSearchValue = '';
+    this.selectedFilterOption = '';
+    this.communeFilterValue = '';
+    this.dateDebutFilterValue = '';
+    this.domaineFilterValue = '';
 
-    // if (scrollTop + visibleHeight >= totalHeight) {
-    //   console.log('Le défilement est au plus bas.');
-    //   const currentPage = this.festivalsService.currentPageable?.number;
-    //   if(currentPage != undefined) {
-    //     this.festivalsService.getAll(currentPage + 1).subscribe()
-    //   }
-    // }
+    this.festivalsService.pagination.page = 0;
+    this.festivalsService.getAll(this.festivalsService.pagination.page, this.festivalsService.pagination.rows).subscribe({
+      next: () => {
+        this.showPaginator = true;
+        window.scroll(0,0);
+      },
+      error: () => this.toastService.showError('Echec lors de la récupération des festivals')
+    });
   }
-
 }

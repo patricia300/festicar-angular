@@ -52,6 +52,15 @@
         <app-sort-item iconClass="pi pi-calendar-times" label="Début le plus proche" />
         <app-sort-item iconClass="pi pi-money-bill" label="Prix croissant" />
         <app-sort-item iconClass="pi pi-angle-double-right" label="Le plus proche" />
+        <div class="filter-input">
+          <p-button
+            data-cy="festival-search-button"
+            styleClass="w-full mt-3"
+            label="Reinitialiser la liste"
+            size="small"
+            (click)="reinitialiserFestivals()"
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -101,6 +110,13 @@
   </p-dialog>
 
   <div class="main-section">
+    <div class="flex justify-content-center mb-5" *ngIf="festivalsService.festivalsIsLoading">
+      <div class="loader text-center">
+        <p-progressSpinner styleClass="w-4rem h-4rem"/>
+        <div>Chargement ...</div>
+      </div>
+    </div>
+
     <app-festival-card
       *ngFor="let festival of festivalsService.festivals"
       [festival]="festival"
@@ -116,6 +132,7 @@
 
     <div class="card flex justify-content-center">
         <p-paginator
+          *ngIf="showPaginator"
           (onPageChange)="onPageChange($event)"
           [first]="this.festivalsService.pagination.first"
           [rows]="this.festivalsService.pagination.rows"
