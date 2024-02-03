@@ -42,8 +42,8 @@ export interface PanierPayesListing {
 }
 
 export enum ClassTypePaymentResponse {
-  OFFRE_COVOITURAGE,
-  FESTIVAL
+  OFFRE_COVOITURAGE = "OFFRE_COVOITURAGE",
+  FESTIVAL = "FESTIVAL"
 }
 
 export interface PaymentResponse {
