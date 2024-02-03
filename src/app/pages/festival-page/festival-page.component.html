@@ -1,5 +1,5 @@
-<div class="festival-page">
-  <div class="sort-section">
+<div data-cy="festival-page" class="festival-page">
+  <div data-cy="festival-filter-section" class="sort-section">
     <div class="sticky-section">
       <div class="section-filtrer">
         <p-divider align="left" type="solid">
@@ -8,9 +8,9 @@
         <div class="filter-input">
           <span class="p-input-icon-left w-full">
             <i class="pi pi-search"></i>
-            <input class="w-full p-inputtext-sm" [(ngModel)]="festivalSearchValue" type="search" placeholder="Rechercher votre festival ... " pInputText />
+            <input data-cy="festival-search-input" class="w-full p-inputtext-sm" [(ngModel)]="festivalSearchValue" type="search" placeholder="Rechercher votre festival ... " pInputText />
           </span>
-          <p-button styleClass="w-full mt-3" label="Rechercher" size="small" (click)="getFestivalByName()"/>
+          <p-button data-cy="festival-search-button" styleClass="w-full mt-3" label="Rechercher" size="small" (click)="getFestivalByName()"/>
         </div>
         <p-divider align="left" type="solid">
           <div class="titre">Filtrer</div>
@@ -52,6 +52,15 @@
         <app-sort-item iconClass="pi pi-calendar-times" label="Début le plus proche" />
         <app-sort-item iconClass="pi pi-money-bill" label="Prix croissant" />
         <app-sort-item iconClass="pi pi-angle-double-right" label="Le plus proche" />
+        <div class="filter-input">
+          <p-button
+            data-cy="festival-search-button"
+            styleClass="w-full mt-3"
+            label="Reinitialiser la liste"
+            size="small"
+            (click)="reinitialiserFestivals()"
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -80,6 +89,7 @@
         />
       </div>
       <p-button
+        data-cy="ajout-au-panier-btn"
         label="Ajouter au panier"
         size="small"
         styleClass="w-full"
@@ -100,12 +110,6 @@
   </p-dialog>
 
   <div class="main-section">
-    <app-festival-card
-      *ngFor="let festival of festivalsService.festivals"
-      [festival]="festival"
-      (acheterPass)="onAcheterPassFestival($event)"
-    />
-
     <div class="flex justify-content-center mb-5" *ngIf="festivalsService.festivalsIsLoading">
       <div class="loader text-center">
         <p-progressSpinner styleClass="w-4rem h-4rem"/>
@@ -113,8 +117,15 @@
       </div>
     </div>
 
+    <app-festival-card
+      *ngFor="let festival of festivalsService.festivals"
+      [festival]="festival"
+      (acheterPass)="onAcheterPassFestival($event)"
+    />
+
     <div class="card flex justify-content-center">
         <p-paginator
+          *ngIf="showPaginator"
           (onPageChange)="onPageChange($event)"
           [first]="this.festivalsService.pagination.first"
           [rows]="this.festivalsService.pagination.rows"

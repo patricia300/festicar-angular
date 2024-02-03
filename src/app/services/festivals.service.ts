@@ -26,12 +26,12 @@ export class FestivalsService {
 
   getAll(numeroPage = 0, taillePage = 10, tri = 'asc'): Observable<Pageable<Festival>> {
     this.festivalsIsLoading = true;
+    this.festivals = [];
 
     return this.http
       .get<Pageable<Festival>>('festivals', { params: { numeroPage, taillePage, tri } })
       .pipe(
         tap((pageableFestival) => {
-          // this.festivals = [...this.festivals, ...pageableFestival.content];
           this.festivals = pageableFestival.content;
           this.currentPageable = pageableFestival;
           this.pagination.pageCount = pageableFestival.totalPages;

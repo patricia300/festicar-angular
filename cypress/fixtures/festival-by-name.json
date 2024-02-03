@@ -1,0 +1,18 @@
+[
+  {
+      "id": 1042,
+      "nom": "LA FONTAINE DU RIRE",
+      "dateDebut": 1705014000000,
+      "siteWeb": "http://www.la-tete-de-mule.fr/",
+      "tarifPass": 12.0,
+      "dateFin": 1712959200000,
+      "nombrePass": 42,
+      "codePostalCommune": "21000",
+      "nomCommune": "Dijon",
+      "nomSousDomaine": "Humour",
+      "nomDomainePrincipal": "Divers Spectacle vivant",
+      "nomOrganisateur": "Joly Valentin",
+      "offreCovoiturages": [],
+      "nombrePlaceOffreCovoiturage": 13
+  }
+]

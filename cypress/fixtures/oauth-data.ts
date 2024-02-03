@@ -1,0 +1,2 @@
+export const token = 'ya29.a0AfB_byAft7XZ82LSQsslySu1HTUF30KqslzKNJMNEYrlvLzRdyL_s4Wu8xsFwoiZiL5rlBdcf-jy3PlFmDpBSnQsvNhDqbPnIJvOecjGpFVf8PuK1dJKtK8j1seiUij2ZN3ve79oiY7GjqYgZDhwW8U6Apo7CaNUkQSUaCgYKAUISARASFQHGX2MiXpC54ORubbHEOy81-Tfiyw0171';
+export const email = 'fragg.rzfrsn@gmail.com'

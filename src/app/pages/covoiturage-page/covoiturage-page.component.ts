@@ -57,7 +57,7 @@ export class CovoituragePageComponent implements OnInit {
     else {
       const data: PanierRequestBodyDto = {
         emailFestivalier: this.authService.userEmail,
-        articles: this.reservations
+        articles: this.reservations.filter(r => r.quantite > 0) // envoyer seulement ceux qui n'ont pas 0 quantité
       }
       this.panierService.postPanier(data).subscribe({
         next: () => {
