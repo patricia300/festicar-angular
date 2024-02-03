@@ -5,16 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { httpInterceptorProviders } from './http-interceptors';
 import { HttpClientModule } from '@angular/common/http';
-import { HomePageComponent } from './components/home-page/home-page.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { FestivalFinderComponent } from './components/festival-finder/festival-finder.component';
-import { ListFestivalsComponent } from './components/list-festivals/list-festivals.component';
-import { FestivalComponent } from './components/festival/festival.component';
-import { PanierModifierComponent } from './components/panier-modifier/panier-modifier.component';
-import { ListArticlesComponent } from './components/list-articles/list-articles.component';
-import { ArticleComponent } from './components/article/article.component';
 import { AuthenticationComponent } from './components/authentication/authentication.component';
-import { PaginationComponent } from './components/pagination/pagination.component';
 import { CurrencyPipe, registerLocaleData } from '@angular/common';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
@@ -62,15 +54,7 @@ import { Paginator, PaginatorModule } from 'primeng/paginator';
 @NgModule({
   declarations: [
     AppComponent,
-    HomePageComponent,
     NavbarComponent,
-    FestivalFinderComponent,
-    ListFestivalsComponent,
-    FestivalComponent,
-    PanierModifierComponent,
-    ListArticlesComponent,
-    ArticleComponent,
-    PaginationComponent,
     AuthenticationComponent,
     CovoituragePageComponent,
     SortItemComponent,
